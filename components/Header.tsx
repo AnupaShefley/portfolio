@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Work', href: '#work' },
+  { label: 'About', href: '/#about' },
+  { label: 'Skills', href: '/#skills' },
+  { label: 'Work', href: '/#work' },
 ]
 
 export default function Header() {
@@ -21,12 +23,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setIsMobileMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (href.startsWith('/#')) {
+      const hash = href.slice(1)
+      if (pathname === '/') {
+        const element = document.querySelector(hash)
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        window.location.href = href
+      }
     }
   }
 
@@ -40,13 +50,12 @@ export default function Header() {
       }`}
     >
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <motion.a
-          href="#hero"
-          onClick={(e) => scrollToSection(e, '#hero')}
+        <Link
+          href="/"
           className="text-2xl font-serif italic text-teal-dark font-semibold hover:opacity-80 transition-opacity"
         >
           Anupa Shefley
-        </motion.a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -59,15 +68,19 @@ export default function Header() {
               {item.label}
             </a>
           ))}
-          <motion.a
-            href="#contact"
-            onClick={(e) => scrollToSection(e, '#contact')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-teal-dark text-white px-6 py-2 rounded-lg font-medium hover:bg-teal-content transition-colors"
+          <Link
+            href={isHome ? '/#contact' : '/#contact'}
+            onClick={(e) => isHome && scrollToSection(e, '/#contact')}
+            className="inline-block"
           >
-            Let's chat
-          </motion.a>
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="block bg-teal-dark text-white px-6 py-2 rounded-lg font-medium hover:bg-teal-content transition-colors"
+            >
+              Let's chat
+            </motion.span>
+          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -129,14 +142,18 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <motion.a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, '#contact')}
-                whileTap={{ scale: 0.95 }}
-                className="bg-teal-dark text-white px-6 py-2 rounded-lg font-medium hover:bg-teal-content transition-colors text-center mt-2"
+              <Link
+                href="/#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block"
               >
-                Let's chat
-              </motion.a>
+                <motion.span
+                  whileTap={{ scale: 0.95 }}
+                  className="block bg-teal-dark text-white px-6 py-2 rounded-lg font-medium hover:bg-teal-content transition-colors text-center mt-2"
+                >
+                  Let's chat
+                </motion.span>
+              </Link>
             </div>
           </motion.div>
         )}

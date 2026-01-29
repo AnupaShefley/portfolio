@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 import type { Project } from '@/types'
 
 const projects: Project[] = [
   {
     id: '1',
+    slug: 'highbury-primary',
     title: 'Highbury Primary School',
     category: 'Research / Usability Study',
     description: 'A comprehensive usability study and research project for a primary school website redesign.',
@@ -56,14 +58,8 @@ export default function Work() {
         </motion.div>
 
         <div className="space-y-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-              className="bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 cursor-pointer group"
-            >
+          {projects.map((project, index) => {
+            const cardContent = (
               <div className="grid md:grid-cols-2 gap-8 p-8">
                 {/* Text content */}
                 <div className="flex flex-col justify-center">
@@ -83,8 +79,28 @@ export default function Work() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
+            )
+
+            const cardClassName =
+              'block bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 cursor-pointer group'
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
+              >
+                {project.slug ? (
+                  <Link href={`/works/${project.slug}`} className={cardClassName}>
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <div className={cardClassName}>{cardContent}</div>
+                )}
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
