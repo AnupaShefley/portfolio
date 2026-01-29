@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import PhilosophySection from '@/components/PhilosophySection'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Work from '@/components/Work'
@@ -11,11 +12,15 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <About />
-      <Skills />
-      <Work />
-      <Contact />
-      <Footer />
+      {/* Content scrolls up and overlays the hero; not visible on initial load */}
+      <div className="relative z-10">
+        <PhilosophySection />
+        <About />
+        <Skills />
+        <Work />
+        <Contact />
+        <Footer />
+      </div>
     </main>
   )
 }
