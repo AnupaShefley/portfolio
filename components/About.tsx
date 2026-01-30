@@ -18,7 +18,7 @@ export default function About() {
             {/* Background image - right side, full height */}
             <div className="absolute inset-0">
               <Image
-                src="/girlriver.jpg"
+                src="./girlriver.jpg"
                 alt=""
                 fill
                 className="object-cover object-right"
@@ -83,7 +83,7 @@ export default function About() {
           </div>
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-teal-light/30">
             <Image
-              src="/dubai.jpg"
+              src="./dubai.jpg"
               alt="Dubai skyline"
               fill
               className="object-cover"
