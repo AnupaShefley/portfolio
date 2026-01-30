@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const nextConfig = {
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
+  output: 'export',
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
+    unoptimized: true,
     domains: ['localhost'],
   },
 }
