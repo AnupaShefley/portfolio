@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -11,62 +12,53 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="py-24 md:py-32 relative bg-background">
       <div className="container mx-auto px-6">
-        {/* Main About section with overlapping teal box */}
+        {/* Main About section: image on right (girlriver.jpg), teal overlay on left */}
         <div className="relative">
-          {/* Background image area */}
-          <div className="relative h-[600px] md:h-[700px] rounded-lg overflow-hidden">
-            {/* Placeholder for background image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-light/20 to-teal-medium/30">
-              <div className="absolute inset-0 flex items-center justify-center text-teal-dark/30">
-                <p className="text-sm">Background image placeholder</p>
-              </div>
+          <div className="relative min-h-[520px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden">
+            {/* Background image - right side, full height */}
+            <div className="absolute inset-0">
+              <Image
+                src="/girlriver.jpg"
+                alt=""
+                fill
+                className="object-cover object-right"
+                sizes="(max-width: 768px) 100vw, 66vw"
+              />
             </div>
 
-            {/* Teal content box overlapping from left */}
+            {/* Teal overlay box - left, ~one-third width, overlapping image */}
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+              initial={{ opacity: 0, x: -80 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
               transition={{ duration: 0.8 }}
-              className="absolute left-0 top-0 bottom-0 w-full md:w-2/3 lg:w-1/2 bg-teal-content p-8 md:p-12 lg:p-16 flex flex-col justify-center"
+              className="absolute left-0 top-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-[38%] bg-teal-content p-8 md:p-12 lg:p-16 flex flex-col justify-center"
             >
-              <motion.div
+              <motion.p
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-xs md:text-sm uppercase tracking-widest text-white font-medium mb-3"
               >
-                <p className="text-sm uppercase tracking-wider text-white/80 mb-4">Prepare Yourself</p>
-              </motion.div>
-              
+                Prepare Yourself
+              </motion.p>
+
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6"
+                initial={{ opacity: 0, y: 16 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white mb-6"
               >
                 About Me
               </motion.h2>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="space-y-4 text-white/90 leading-relaxed mb-6"
-              >
-                <p>
-                  I have been fortunate to have spent my childhood in Dubai where they say East meets the West. 
-                  Growing up in the midst of so many cultures truly shaped my thoughts and ideas. They have helped 
-                  me to understand and cater to different people with diverse needs and beliefs.
-                </p>
-              </motion.div>
 
               <motion.a
                 href="#skills"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="inline-block text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all w-fit"
+                transition={{ duration: 0.5, delay: 0.45 }}
+                className="text-xs md:text-sm uppercase tracking-widest text-white underline underline-offset-4 decoration-white/90 hover:decoration-white transition-all w-fit"
               >
-                Let's Dig In
+                Let&apos;s Dig In
               </motion.a>
             </motion.div>
           </div>
