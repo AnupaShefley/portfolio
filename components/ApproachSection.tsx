@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { asset } from '@/lib/asset'
 
 const steps = [
   { title: 'EMPATHIZE', desc: 'Research and understand the user or customer needs' },
@@ -52,7 +53,7 @@ export default function ApproachSection() {
               className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-background"
             >
               <Image
-                src="/designprocess.jpg"
+                src={asset('/designprocess.jpg')}
                 alt="My approach to design and writing process"
                 fill
                 className="object-cover"

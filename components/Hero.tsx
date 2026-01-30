@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { asset } from '@/lib/asset'
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
       {/* Background image - landing.jpg fills the hero */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Landing.jpg"
+          src={asset('/Landing.jpg')}
           alt=""
           fill
           className="object-cover"

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import type { Skill } from '@/types'
+import { asset } from '@/lib/asset'
 
 const skills: Skill[] = [
   {
@@ -61,7 +62,7 @@ export default function Skills() {
               className="relative h-64 md:h-96 rounded-lg overflow-hidden"
             >
               <Image
-                src="/skills.jpg"
+                src={asset('/skills.jpg')}
                 alt="Skills and experience in design and development"
                 fill
                 className="object-cover"
