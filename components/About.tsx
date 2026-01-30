@@ -82,10 +82,13 @@ export default function About() {
             </p>
           </div>
           <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-teal-light/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-light/20 to-teal-medium/30" />
-            <div className="absolute inset-0 flex items-center justify-center text-teal-dark/50">
-              <p className="text-sm">Dubai skyline image</p>
-            </div>
+            <Image
+              src="/dubai.jpg"
+              alt="Dubai skyline"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </motion.div>
 
