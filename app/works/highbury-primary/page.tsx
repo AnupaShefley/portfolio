@@ -287,12 +287,21 @@ export default function HighburyPrimaryPage() {
           {/* Other works CTA */}
           <section className="pt-12 border-t border-teal-medium/30">
             <p className="text-teal-dark/80 mb-6">View more work</p>
-            <Link
-              href="/#work"
-              className="inline-flex items-center gap-2 bg-teal-content text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors"
-            >
-              Back to My Work <span aria-hidden>→</span>
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/works/calendarredesign"
+                className="inline-flex items-center gap-2 text-teal-content hover:text-teal-dark font-medium transition-colors"
+              >
+                iOS Calendar Redesign <span aria-hidden>→</span>
+              </Link>
+              <span className="text-teal-medium/50">|</span>
+              <Link
+                href="/#work"
+                className="inline-flex items-center gap-2 bg-teal-content text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors"
+              >
+                Back to My Work <span aria-hidden>→</span>
+              </Link>
+            </div>
           </section>
         </div>
       </article>

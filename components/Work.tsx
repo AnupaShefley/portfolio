@@ -17,6 +17,7 @@ const projects: Project[] = [
   },
   {
     id: '2',
+    slug: 'calendarredesign',
     title: 'iOS Calendar',
     category: 'User Research and Design',
     description: 'User research and design project focusing on improving calendar application usability.',
