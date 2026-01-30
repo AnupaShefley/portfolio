@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import PhilosophySection from '@/components/PhilosophySection'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
+import ApproachSection from '@/components/ApproachSection'
 import Work from '@/components/Work'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
@@ -17,6 +18,7 @@ export default function Home() {
         <PhilosophySection />
         <About />
         <Skills />
+        <ApproachSection />
         <Work />
         <Contact />
         <Footer />

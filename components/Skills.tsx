@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -59,16 +60,13 @@ export default function Skills() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative h-64 md:h-96 rounded-lg overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-light/30 to-teal-medium/30" />
-              <div className="absolute inset-0 flex items-center justify-center text-teal-dark/50">
-                <div className="text-center">
-                  <p className="text-lg mb-4">I design and develop experiences</p>
-                  <p className="text-lg mb-4">that make people's lives <strong>simple.</strong></p>
-                  <button className="mt-4 px-6 py-2 bg-teal-dark text-white rounded-lg hover:bg-teal-content transition-colors">
-                    See my work
-                  </button>
-                </div>
-              </div>
+              <Image
+                src="/skills.jpg"
+                alt="Skills and experience in design and development"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </motion.div>
 
             {/* Right side - Skills */}
