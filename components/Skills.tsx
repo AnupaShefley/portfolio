@@ -61,7 +61,7 @@ export default function Skills() {
               className="relative h-64 md:h-96 rounded-lg overflow-hidden"
             >
               <Image
-                src="./skills.jpg"
+                src="/skills.jpg"
                 alt="Skills and experience in design and development"
                 fill
                 className="object-cover"

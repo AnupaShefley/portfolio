@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: 'Highbury Primary School',
     category: 'Research / Usability Study',
     description: 'A comprehensive usability study and research project for a primary school website redesign.',
-    image: './placeholder-project-1.jpg',
+    image: '/placeholder-project-1.jpg',
   },
   {
     id: '2',
@@ -21,14 +21,14 @@ const projects: Project[] = [
     title: 'iOS Calendar',
     category: 'User Research and Design',
     description: 'User research and design project focusing on improving calendar application usability.',
-    image: './placeholder-project-2.jpg',
+    image: '/placeholder-project-2.jpg',
   },
   {
     id: '3',
     title: 'E-commerce Platform',
     category: 'Full-Stack Development',
     description: 'Complete e-commerce solution with modern UI/UX and robust backend architecture.',
-    image: './placeholder-project-3.jpg',
+    image: '/placeholder-project-3.jpg',
   },
 ]
 

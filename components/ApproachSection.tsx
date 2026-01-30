@@ -52,7 +52,7 @@ export default function ApproachSection() {
               className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-background"
             >
               <Image
-                src="./designprocess.jpg"
+                src="/designprocess.jpg"
                 alt="My approach to design and writing process"
                 fill
                 className="object-cover"
