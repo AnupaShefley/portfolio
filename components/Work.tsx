@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Project } from '@/types'
 import { asset } from '@/lib/asset'
 
@@ -33,32 +33,58 @@ const projects: Project[] = [
   },
 ]
 
+const WORK_HEADER_IMAGE = asset('/works.jpg')
+
 export default function Work() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="work" ref={ref} className="py-24 md:py-32 relative bg-teal-content">
+    <section id="work" ref={ref} className="relative bg-teal-content pt-8 md:pt-10">
+      {/* My Work header – two-column grid, image left (overlapping), teal block right */}
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <p className="text-sm uppercase tracking-wider text-white/70 mb-4">No Blood, But Sweat and Tears</p>
-          <h2 className="text-5xl md:text-6xl font-serif font-bold text-white">My Work</h2>
-          <motion.a
-            href="#contact"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="inline-block mt-6 text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all"
-          >
-            Check It Out
-          </motion.a>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] md:min-h-[480px]">
+        {/* Left: large image that overlaps container edges for a layered feel */}
+        <div className="relative overflow-visible min-h-[280px] md:min-h-0 order-2 md:order-1">
+          <div className="absolute inset-0 md:inset-y-0 md:left-0 md:right-0 md:-right-[12%] md:-top-6 md:-bottom-6 z-10">
+            <Image
+              src={asset('/works.jpg')}
+              alt="Workspace and design process"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 60vw"
+              priority={false}
+            />
+          </div>
+        </div>
 
+        {/* Right: solid muted teal block with centred text */}
+        <div className="relative flex flex-col items-center justify-center text-center px-6 py-16 md:py-24 bg-teal-content md:bg-[#3d6b6d] order-1 md:order-2 z-20">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-sm"
+          >
+            <p className="text-xs md:text-sm uppercase tracking-[0.2em] text-white/80 mb-4">
+              No Blood, But Sweat and Tears
+            </p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+              My Work
+            </h2>
+            <Link
+              href="#contact"
+              className="inline-block text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all"
+            >
+              Check it out
+            </Link>
+          </motion.div>
+        </div>
+        </div>
+      </div>
+
+      {/* Projects list */}
+      <div className="container mx-auto px-6 py-24 md:py-32">
         <div className="space-y-8">
           {projects.map((project, index) => {
             const cardContent = (
@@ -77,7 +103,14 @@ export default function Work() {
                 {/* Image placeholder */}
                 <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all">
                   <div className="absolute inset-0 bg-gradient-to-br from-teal-light/30 to-teal-medium/30 flex items-center justify-center">
-                    <p className="text-white/50 text-sm">Project Preview</p>
+                  <Image
+              src={asset('/highbury.jpg')}
+              alt="Workspace and design process"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 60vw"
+              priority={false}
+            />
                   </div>
                 </div>
               </div>
