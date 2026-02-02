@@ -33,20 +33,20 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
-          {/* Designer - top left, bold and visible above ANUPA */}
+          {/* Designer - above name, scrolls in from left */}
           <motion.div
+            className="overflow-hidden mb-2 md:mb-4 pb-3 md:pb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="overflow-hidden mb-2 md:mb-4 pb-3 md:pb-4"
+            transition={{ duration: 0.3 }}
           >
             <motion.span
               className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
-              initial={{ opacity: 0, x: '-120%', scale: 0.92 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
+              initial={{ x: '-120%' }}
+              animate={{ x: 0 }}
               transition={{
-                delay: 0.3,
-                duration: 1.2,
+                delay: 0.9,
+                duration: 1,
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
@@ -54,48 +54,36 @@ export default function Hero() {
             </motion.span>
           </motion.div>
 
-          {/* Main name - ANUPA left, SHEFLEY right, dark green serif (reference) */}
+          {/* Main name - giant to small with bounce */}
           <motion.h1
             className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-teal-dark flex flex-col md:flex-row md:justify-between md:items-center md:gap-4 lg:gap-8 drop-shadow-[0_0_40px_rgba(130,196,187,0.12)]"
+            initial={{ scale: 5, opacity: 0.85 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 180,
+              damping: 14,
+              mass: 0.8,
+            }}
           >
-            <motion.span
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 1,
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              ANUPA
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 1.5,
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              SHEFLEY
-            </motion.span>
+            <motion.span>ANUPA</motion.span>
+            <motion.span>SHEFLEY</motion.span>
           </motion.h1>
 
-          {/* Developer - below right, bold and visible below SHEFLEY */}
+          {/* Developer - below name, scrolls in from right */}
           <motion.div
+            className="mt-2 md:mt-4 overflow-hidden md:text-right pb-3 md:pb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-2 md:mt-4 overflow-hidden md:text-right pb-3 md:pb-4"
+            transition={{ duration: 0.3 }}
           >
             <motion.span
               className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
-              initial={{ opacity: 0, x: '120%', scale: 0.92 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
+              initial={{ x: '120%' }}
+              animate={{ x: 0 }}
               transition={{
-                delay: 2,
-                duration: 1.2,
+                delay: 0.9,
+                duration: 1,
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
