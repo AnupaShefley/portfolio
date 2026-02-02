@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import HighburyImageGrid from '@/components/HighburyImageGrid'
 
 export const metadata: Metadata = {
   title: 'Highbury Primary School | Anupa Shefley',
@@ -15,14 +16,10 @@ export default function HighburyPrimaryPage() {
       <Header />
 
       <article className="pt-24 pb-16 md:pt-32 md:pb-24">
+        <HighburyImageGrid />
+
         {/* Hero */}
         <header className="container mx-auto px-6 mb-16 md:mb-24">
-          <Link
-            href="/#work"
-            className="inline-flex items-center gap-2 text-teal-medium hover:text-teal-content text-sm font-medium mb-8 transition-colors"
-          >
-            <span aria-hidden>←</span> Back to Work
-          </Link>
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-teal-dark mb-4">
             Highbury Primary School
           </h1>
