@@ -1,13 +1,29 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useRef } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import IosImageGrid from '@/components/IosImageGrid'
+import { asset } from '@/lib/asset'
 
-export const metadata: Metadata = {
-  title: 'iOS Calendar Redesign for Conference Meetings | Anupa Shefley',
-  description:
-    'User research and design project improving the iOS Calendar for online meetings and remote work — from research and usability testing to high-fidelity prototypes.',
+function AnimatedImageSection({ children }: { children: React.ReactNode }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  )
 }
 
 export default function CalendarRedesignPage() {
@@ -67,17 +83,28 @@ export default function CalendarRedesignPage() {
               evolved from its physical form to a digital version available on phones and
               computers.
             </p>
-            <p className="text-teal-dark/70 text-sm">
-              Source:{' '}
-              <a
-                href="https://blog.otter.ai/work-from-home-statistics/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-teal-content hover:underline"
-              >
-                blog.otter.ai/work-from-home-statistics
-              </a>
-            </p>
+            <AnimatedImageSection>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src={asset('/homestatistics.png')}
+                  alt="Work from home statistics"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 672px"
+                />
+              </div>
+              <p className="text-teal-dark/70 text-sm mt-3 italic">
+                Source:{' '}
+                <a
+                  href="https://blog.otter.ai/work-from-home-statistics/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-content hover:underline"
+                >
+                  blog.otter.ai/work-from-home-statistics
+                </a>
+              </p>
+            </AnimatedImageSection>
           </section>
 
           {/* Research */}
@@ -139,6 +166,17 @@ export default function CalendarRedesignPage() {
               applications available in the market. The research was carried out primarily amongst
               two categories of individuals — remote workers and parents/students.
             </p>
+            <AnimatedImageSection>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-6">
+                <Image
+                  src={asset('/comicg.png')}
+                  alt="User research comic"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 672px"
+                />
+              </div>
+            </AnimatedImageSection>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               In the case of remote workers, feedback from colleagues and co-workers emphasised the
               need for current calendars or meeting apps to <strong>keep track of online
@@ -225,9 +263,17 @@ export default function CalendarRedesignPage() {
                   This level of prototype generally consists of roughly drawn sketches and
                   diagrams. These sketches are ideal for brainstorming and team collaboration.
                 </p>
-                <div className="aspect-video rounded-lg bg-teal-content/20 border border-teal-medium/30 flex items-center justify-center">
-                  <p className="text-teal-dark/60 text-sm">Initial sketches for low fidelity prototypes</p>
-                </div>
+                <AnimatedImageSection>
+                  <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                    <Image
+                      src={asset('/bookdrawing.png')}
+                      alt="Initial sketches for low fidelity prototypes"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 672px"
+                    />
+                  </div>
+                </AnimatedImageSection>
               </div>
 
               <div>
@@ -240,6 +286,30 @@ export default function CalendarRedesignPage() {
                   information architecture. The screens were designed in Balsamiq. This helped to
                   focus on the main elements that were needed for the screens.
                 </p>
+                <div className="space-y-6">
+                  <AnimatedImageSection>
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                      <Image
+                        src={asset('/lofi.png')}
+                        alt="Mid fidelity prototype wireframe"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                      />
+                    </div>
+                  </AnimatedImageSection>
+                  <AnimatedImageSection>
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                      <Image
+                        src={asset('/lofi2.png')}
+                        alt="Mid fidelity prototype wireframe"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                      />
+                    </div>
+                  </AnimatedImageSection>
+                </div>
               </div>
 
               <div>
