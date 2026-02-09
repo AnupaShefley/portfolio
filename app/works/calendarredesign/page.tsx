@@ -8,6 +8,7 @@ import { useRef } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import IosImageGrid from '@/components/IosImageGrid'
+import OtherWorks from '@/components/OtherWorks'
 import { asset } from '@/lib/asset'
 
 function AnimatedImageSection({ children }: { children: React.ReactNode }) {
@@ -437,25 +438,8 @@ export default function CalendarRedesignPage() {
             </p>
           </section>
 
-          {/* Other works CTA */}
-          <section className="pt-12 border-t border-teal-medium/30">
-            <p className="text-teal-dark/80 mb-6">View more work</p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/works/highbury-primary"
-                className="inline-flex items-center gap-2 text-teal-content hover:text-teal-dark font-medium transition-colors"
-              >
-                Highbury Primary School <span aria-hidden>→</span>
-              </Link>
-              <span className="text-teal-medium/50">|</span>
-              <Link
-                href="/#work"
-                className="inline-flex items-center gap-2 bg-teal-content text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors"
-              >
-                Back to My Work <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </section>
+          {/* Other Works */}
+          <OtherWorks currentSlug="calendarredesign" />
         </div>
       </article>
 

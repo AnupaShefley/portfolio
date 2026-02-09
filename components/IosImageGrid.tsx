@@ -9,7 +9,7 @@ const IMAGES = [
   asset('/ios1-Event Details added.png'),
   asset('/ios2-Add new event.png'),
   asset('/ios3-Video conference details.png'),
-  asset('/ios4-Detailed Day Viewscreen1.png'),
+  asset('/Detailed Day.png'),
 ] as const
 
 /** Shuffle array with a fixed seed so order is stable across renders. */
