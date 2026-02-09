@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HighburyImageGrid from '@/components/HighburyImageGrid'
+import { asset } from '@/lib/asset'
 
 export const metadata: Metadata = {
   title: 'Highbury Primary School | Anupa Shefley',
@@ -49,8 +51,14 @@ export default function HighburyPrimaryPage() {
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
               Original School Website
             </h2>
-            <div className="aspect-video rounded-lg bg-teal-content/20 border border-teal-medium/30 flex items-center justify-center">
-              <p className="text-teal-dark/60 text-sm">Original school website screenshot</p>
+            <div className="relative w-full min-h-[420px] md:min-h-[520px] overflow-hidden">
+              <Image
+                src={asset('/Original School Website.png')}
+                alt="Original Highbury Primary School website"
+                fill
+                className="object-cover object-top"
+                sizes="100vw"
+              />
             </div>
           </section>
 
@@ -220,6 +228,15 @@ export default function HighburyPrimaryPage() {
               the system have issues in navigating the website and finding the information that
               they require.
             </p>
+            <div className="relative mt-8 w-full max-w-md mx-auto aspect-video">
+              <Image
+                src={asset('/feedback.png')}
+                alt="User feedback from usability testing"
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 448px"
+              />
+            </div>
           </section>
 
           {/* Wireframes */}
@@ -247,8 +264,14 @@ export default function HighburyPrimaryPage() {
                 the two most searched pieces of information on the website.
               </li>
             </ul>
-            <div className="aspect-video rounded-lg bg-teal-content/20 border border-teal-medium/30 flex items-center justify-center">
-              <p className="text-teal-dark/60 text-sm">Wireframe / prototype screenshot</p>
+            <div className="relative w-full min-h-[700px] md:min-h-[900px] overflow-hidden">
+              <Image
+                src={asset('/Wireframe Highbury.png')}
+                alt="Highbury Primary School wireframe and landing page"
+                fill
+                className="object-contain object-top"
+                sizes="(max-width: 768px) 100vw, 672px"
+              />
             </div>
           </section>
 
@@ -281,22 +304,37 @@ export default function HighburyPrimaryPage() {
             </ul>
           </section>
 
-          {/* Other works CTA */}
+          {/* Other Works */}
           <section className="pt-12 border-t border-teal-medium/30">
-            <p className="text-teal-dark/80 mb-6">View more work</p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/works/calendarredesign"
-                className="inline-flex items-center gap-2 text-teal-content hover:text-teal-dark font-medium transition-colors"
-              >
-                iOS Calendar Redesign <span aria-hidden>→</span>
-              </Link>
-              <span className="text-teal-medium/50">|</span>
+            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">
+              Other Works
+            </h2>
+            <Link
+              href="/works/calendarredesign"
+              className="group flex flex-col sm:flex-row gap-6 sm:gap-8 items-stretch sm:items-center p-4 rounded-lg border border-teal-medium/20 hover:border-teal-content/40 hover:bg-teal-content/5 transition-all"
+            >
+              <div className="relative w-full sm:w-72 sm:min-w-[18rem] aspect-[4/3] rounded-lg overflow-hidden bg-teal-content/10 shrink-0">
+                <Image
+                  src={asset('/ios.jpg')}
+                  alt="iOS Calendar redesign"
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, 288px"
+                />
+              </div>
+              <span className="text-xl md:text-2xl font-serif font-bold text-teal-dark group-hover:text-teal-content transition-colors flex items-center">
+                iOS Calendar Redesign for Conference Meetings
+                <span aria-hidden className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  →
+                </span>
+              </span>
+            </Link>
+            <div className="mt-6">
               <Link
                 href="/#work"
-                className="inline-flex items-center gap-2 bg-teal-content text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-dark transition-colors"
+                className="inline-flex items-center gap-2 text-teal-medium hover:text-teal-dark text-sm font-medium transition-colors"
               >
-                Back to My Work <span aria-hidden>→</span>
+                <span aria-hidden>←</span> Back to My Work
               </Link>
             </div>
           </section>
