@@ -42,18 +42,18 @@ export default function CalendarRedesignPage() {
           <p className="text-xl md:text-2xl text-teal-dark/90 max-w-2xl mb-8">
             User research and design to adapt the iOS Calendar for remote work and online meetings.
           </p>
-          <dl className="flex flex-wrap gap-x-8 gap-y-2 text-teal-dark/80">
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">Field</dt>
-              <dd>User Research and Design</dd>
+          <dl className="flex flex-wrap gap-4 md:gap-6 mt-8 p-6 md:p-8 bg-teal-content/10 border border-teal-medium/30 rounded-lg backdrop-blur-sm">
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Field</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">User Research and Design</dd>
             </div>
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">Sector</dt>
-              <dd>Telecommunication</dd>
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Sector</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">Telecommunication</dd>
             </div>
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">My Role</dt>
-              <dd>UX Researcher, Product Designer</dd>
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">My Role</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">UX Researcher, Product Designer</dd>
             </div>
           </dl>
         </header>
@@ -264,14 +264,19 @@ export default function CalendarRedesignPage() {
                   diagrams. These sketches are ideal for brainstorming and team collaboration.
                 </p>
                 <AnimatedImageSection>
-                  <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                    <Image
-                      src={asset('/bookdrawing.png')}
-                      alt="Initial sketches for low fidelity prototypes"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 672px"
-                    />
+                  <div>
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-3">
+                      <Image
+                        src={asset('/bookdrawing.png')}
+                        alt="Initial sketches for low fidelity prototypes"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 672px"
+                      />
+                    </div>
+                    <p className="text-teal-dark/70 text-sm italic text-center">
+                      Initial sketches for low fidelity prototypes
+                    </p>
                   </div>
                 </AnimatedImageSection>
               </div>
@@ -319,26 +324,96 @@ export default function CalendarRedesignPage() {
                 <p className="text-teal-dark/90 leading-relaxed mb-4">
                   The final clickable prototypes were implemented in Figma.
                 </p>
-                <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-teal-dark/90 text-sm">
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Home Screen
-                  </li>
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Detailed View
-                  </li>
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Add new event
-                  </li>
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Video Conference
-                  </li>
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Event details
-                  </li>
-                  <li className="rounded-lg bg-teal-content/10 border border-teal-medium/20 p-4 flex items-center justify-center min-h-[80px]">
-                    Lock screen notification
-                  </li>
-                </ul>
+                <AnimatedImageSection>
+                  <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] px-6 md:px-12 lg:px-24">
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-[1400px] mx-auto">
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/Home Screen.png')}
+                            alt="Home Screen"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Home Screen
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/Detailed Day.png')}
+                            alt="Detailed View"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Detailed View
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/ios2-Add new event.png')}
+                            alt="Add new event"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Add new event
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/ios3-Video conference details.png')}
+                            alt="Video Conference"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Video Conference
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/ios1-Event Details added.png')}
+                            alt="Event details"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Event Details
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-lg overflow-hidden mb-2">
+                          <Image
+                            src={asset('/Lockscreen.png')}
+                            alt="Lock screen notification"
+                            fill
+                            className="object-contain"
+                            sizes="200px"
+                          />
+                        </div>
+                        <p className="text-teal-dark/70 text-xs md:text-sm italic text-center">
+                          Lock Screen notification
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedImageSection>
               </div>
             </div>
           </section>

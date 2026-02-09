@@ -29,18 +29,18 @@ export default function HighburyPrimaryPage() {
             An approach to redesigning an entire school website from initial research, usability
             testing to final prototype.
           </p>
-          <dl className="flex flex-wrap gap-x-8 gap-y-2 text-teal-dark/80">
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">Field</dt>
-              <dd>Research / Usability Study</dd>
+          <dl className="flex flex-wrap gap-4 md:gap-6 mt-8 p-6 md:p-8 bg-teal-content/10 border border-teal-medium/30 rounded-lg backdrop-blur-sm">
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Field</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">Research / Usability Study</dd>
             </div>
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">Sector</dt>
-              <dd>Education</dd>
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Sector</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">Education</dd>
             </div>
-            <div>
-              <dt className="text-xs uppercase tracking-wider text-teal-medium">My Role</dt>
-              <dd>UX Researcher, Product Designer</dd>
+            <div className="flex-1 min-w-[200px]">
+              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">My Role</dt>
+              <dd className="text-base md:text-lg text-teal-dark font-medium">UX Researcher, Product Designer</dd>
             </div>
           </dl>
         </header>
