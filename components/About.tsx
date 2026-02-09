@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { asset } from '@/lib/asset'
+import { hashLink } from '@/lib/link'
 
 export default function About() {
   const ref = useRef(null)
@@ -53,7 +54,7 @@ export default function About() {
               </motion.h2>
 
               <motion.a
-                href="#skills"
+                href={hashLink('/#skills')}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}

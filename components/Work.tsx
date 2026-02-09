@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { projects } from '@/lib/projects'
 import { asset } from '@/lib/asset'
+import { hashLink } from '@/lib/link'
 
 const WORK_HEADER_IMAGE = asset('/works.jpg')
 
@@ -72,7 +73,7 @@ export default function Work() {
               </motion.h2>
               <motion.div variants={headerTextItem}>
                 <Link
-                  href="#contact"
+                  href={hashLink('/#contact')}
                   className="inline-block text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all"
                 >
                   Check it out

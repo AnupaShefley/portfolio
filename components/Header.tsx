@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import { hashLink } from '@/lib/link'
 
 const navItems = [
   { label: 'About', href: '/#about' },
@@ -35,7 +36,8 @@ export default function Header() {
         const element = document.querySelector(hash)
         if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       } else {
-        window.location.href = href
+        // Use basePath-aware link when navigating from other pages
+        window.location.href = hashLink(href)
       }
     }
   }
@@ -61,7 +63,7 @@ export default function Header() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={hashLink(item.href)}
               onClick={(e) => scrollToSection(e, item.href)}
               className="text-teal-dark hover:text-teal-medium transition-colors font-medium"
             >
@@ -69,7 +71,7 @@ export default function Header() {
             </a>
           ))}
           <Link
-            href={isHome ? '/#contact' : '/#contact'}
+            href={hashLink('/#contact')}
             onClick={(e) => isHome && scrollToSection(e, '/#contact')}
             className="inline-block"
           >
@@ -135,7 +137,7 @@ export default function Header() {
               {navItems.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={hashLink(item.href)}
                   onClick={(e) => scrollToSection(e, item.href)}
                   className="text-teal-dark hover:text-teal-medium transition-colors font-medium py-2"
                 >
@@ -143,7 +145,7 @@ export default function Header() {
                 </a>
               ))}
               <Link
-                href="/#contact"
+                href={hashLink('/#contact')}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block"
               >
