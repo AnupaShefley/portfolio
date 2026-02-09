@@ -8,9 +8,9 @@ interface OtherWorksProps {
 }
 
 export default function OtherWorks({ currentSlug }: OtherWorksProps) {
-  // Filter out current project and only show projects with slugs
+  // Filter out current project, only show active projects with slugs
   const otherProjects = projects.filter(
-    (project) => project.slug && project.slug !== currentSlug
+    (project) => project.slug && project.slug !== currentSlug && project.active !== false
   )
 
   if (otherProjects.length === 0) {

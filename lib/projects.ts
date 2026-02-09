@@ -9,6 +9,7 @@ export const projects: Project[] = [
     category: 'Research / Usability Study',
     description: 'A comprehensive usability study and research project for a primary school website redesign.',
     image: asset('/highbury.jpg'),
+    active: true,
   },
   {
     id: '2',
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     category: 'User Research and Design',
     description: 'User research and design project focusing on improving calendar application usability.',
     image: asset('/ios.jpg'),
+    active: true,
   },
   {
     id: '3',
@@ -24,5 +26,17 @@ export const projects: Project[] = [
     category: 'Full-Stack Development',
     description: 'Complete e-commerce solution with modern UI/UX and robust backend architecture.',
     image: asset('/designprocess.jpg'),
+    active: false, // Set to false to hide, true to show
+  },
+  {
+    id: '4',
+    slug: 'ecofleet',
+    title: 'EcoFleet',
+    category: 'Research, Design and stakeholder alignment',
+    description: 'Fleet management and mobility solution focused on sustainability and efficiency.',
+    image: asset('/designprocess.jpg'), // TODO: Replace with EcoFleet image
+    company: 'Dynamon',
+    role: 'UX/UI Designer',
+    active: true,
   },
 ]

@@ -27,6 +27,9 @@ export default function Work() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
+  // Filter to only show active projects (active defaults to true if not specified)
+  const activeProjects = projects.filter((project) => project.active !== false)
+
   return (
     <section id="work" ref={ref} className="relative bg-teal-content pt-8 md:pt-10 overflow-x-hidden">
       {/* My Work header – two-column grid, image left (overlapping), teal block right */}
@@ -94,7 +97,7 @@ export default function Work() {
       {/* Projects list */}
       <div id="projects-list" className="container mx-auto px-6 py-24 md:py-32">
         <div className="space-y-8">
-          {projects.map((project, index) => {
+          {activeProjects.map((project, index) => {
             const cardContent = (
               <div className="grid md:grid-cols-2 gap-8 p-8">
                 {/* Text content */}

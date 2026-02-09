@@ -6,6 +6,9 @@ export interface Project {
   description: string
   image: string
   link?: string
+  active?: boolean // If false, project won't be displayed. Defaults to true.
+  company?: string // Company or client name
+  role?: string // Specific role for this project
 }
 
 export interface Skill {
