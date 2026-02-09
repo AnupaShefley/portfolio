@@ -72,12 +72,19 @@ export default function Work() {
                 My Work
               </motion.h2>
               <motion.div variants={headerTextItem}>
-                <Link
-                  href={hashLink('/#contact')}
-                  className="inline-block text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all"
+                <a
+                  href={hashLink('/#work')}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const projectsSection = document.querySelector('#projects-list')
+                    if (projectsSection) {
+                      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    }
+                  }}
+                  className="inline-block text-sm uppercase tracking-wider text-white underline underline-offset-4 hover:no-underline transition-all cursor-pointer"
                 >
                   Check it out
-                </Link>
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -85,7 +92,7 @@ export default function Work() {
       </div>
 
       {/* Projects list */}
-      <div className="container mx-auto px-6 py-24 md:py-32">
+      <div id="projects-list" className="container mx-auto px-6 py-24 md:py-32">
         <div className="space-y-8">
           {projects.map((project, index) => {
             const cardContent = (
