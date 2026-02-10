@@ -220,95 +220,51 @@ export default function HighburyPrimaryPage() {
               Some of the prominent comments were:
             </p>
 
-            <div className="space-y-12 sm:space-y-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-x-6 gap-y-0 sm:gap-y-1">
               {/* Quote 1 - person left */}
-              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
-                {/* Layer 1: Quotation marks - bottom, semi-transparent, peeking from corners */}
-                <span
-                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &ldquo;
-                </span>
-                <span
-                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &rdquo;
-                </span>
-                {/* Layer 2: Card - semi-transparent white, shadow */}
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pl-28 sm:pl-32 pr-6 sm:pr-8">
-                  <p className="text-teal-dark/90 italic text-base sm:text-lg">&ldquo;That is not straightforward.&rdquo;</p>
+              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
+                {/* Layer 1: Quotation marks - just above the card corners */}
+                
+                {/* Layer 2: Card */}
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pl-24 sm:pl-28 pr-4 sm:pr-5">
+                  <p className="text-teal-dark/90 italic text-sm sm:text-base">&ldquo;That is not straightforward.&rdquo;</p>
                 </div>
-                {/* Layer 3: Person - larger than card, overlapping edges */}
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
-                  <Image src={asset('/person1.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                {/* Layer 3: Person - inset toward center so closing quote stays visible */}
+                <div className="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
+                  <Image src={asset('/person1.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
                 </div>
               </div>
 
               {/* Quote 2 - person right */}
-              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
-                <span
-                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &ldquo;
-                </span>
-                <span
-                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &rdquo;
-                </span>
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pr-28 sm:pr-32 pl-6 sm:pl-8">
-                  <p className="text-teal-dark/90 italic text-base sm:text-lg text-right">&ldquo;I am not sure whether I am on the right page.&rdquo;</p>
+              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
+
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pr-24 sm:pr-28 pl-4 sm:pl-5">
+                  <p className="text-teal-dark/90 italic text-sm sm:text-base text-right">&ldquo;I am not sure whether I am on the right page.&rdquo;</p>
                 </div>
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
-                  <Image src={asset('/person2.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                <div className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
+                  <Image src={asset('/person2.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
                 </div>
               </div>
 
               {/* Quote 3 - person left */}
-              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
-                <span
-                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &ldquo;
-                </span>
-                <span
-                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &rdquo;
-                </span>
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pl-28 sm:pl-32 pr-6 sm:pr-8">
-                  <p className="text-teal-dark/90 italic text-base sm:text-lg">&ldquo;I struggled with that task as it was not under Uniforms.&rdquo;</p>
+              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
+
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pl-24 sm:pl-28 pr-4 sm:pr-5">
+                  <p className="text-teal-dark/90 italic text-sm sm:text-base">&ldquo;I struggled with that task as it was not under Uniforms.&rdquo;</p>
                 </div>
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
-                  <Image src={asset('/person3.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                <div className="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
+                  <Image src={asset('/person3.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
                 </div>
               </div>
 
               {/* Quote 4 - person right */}
-              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
-                <span
-                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &ldquo;
-                </span>
-                <span
-                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
-                  aria-hidden
-                >
-                  &rdquo;
-                </span>
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pr-28 sm:pr-32 pl-6 sm:pl-8">
-                  <p className="text-teal-dark/90 italic text-base sm:text-lg text-right">&ldquo;The tab under which it was present was not easily identifiable.&rdquo;</p>
+              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
+ 
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pr-24 sm:pr-28 pl-4 sm:pl-5">
+                  <p className="text-teal-dark/90 italic text-sm sm:text-base text-right">&ldquo;The tab under which it was present was not easily identifiable.&rdquo;</p>
                 </div>
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
-                  <Image src={asset('/person4.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                <div className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
+                  <Image src={asset('/person4.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
                 </div>
               </div>
             </div>
