@@ -12,11 +12,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" ref={ref} className="py-24 md:py-32 relative bg-background">
+    <section id="about" ref={ref} className="py-12 md:py-16 relative bg-background">
       <div className="container mx-auto px-6">
         {/* Main About section: image on right (girlriver.jpg), teal overlay on left */}
         <div className="relative">
-          <div className="relative min-h-[520px] md:min-h-[600px] lg:min-h-[700px] overflow-hidden">
+          <div className="relative min-h-[320px] md:min-h-[360px] lg:min-h-[400px] overflow-hidden rounded-lg">
             {/* Background image - right side, full height */}
             <div className="absolute inset-0">
               <Image
@@ -33,13 +33,13 @@ export default function About() {
               initial={{ opacity: 0, x: -80 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
               transition={{ duration: 0.8 }}
-              className="absolute left-0 top-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-[38%] bg-teal-content p-8 md:p-12 lg:p-16 flex flex-col justify-center"
+              className="absolute left-0 top-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-[38%] bg-teal-content p-6 md:p-8 lg:p-10 flex flex-col justify-center rounded-l-lg"
             >
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xs md:text-sm uppercase tracking-widest text-white font-medium mb-3"
+                className="text-xs md:text-sm uppercase tracking-widest text-white font-medium mb-2"
               >
                 Prepare Yourself
               </motion.p>
@@ -48,7 +48,7 @@ export default function About() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white mb-6"
+                className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-4"
               >
                 About Me
               </motion.h2>
@@ -71,7 +71,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-24 md:mt-32 grid md:grid-cols-2 gap-12 items-center"
+          className="mt-12 md:mt-16 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
         >
           <div>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-teal-dark mb-6">

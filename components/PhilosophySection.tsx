@@ -6,7 +6,7 @@ export default function PhilosophySection() {
   return (
     <section
       id="philosophy"
-      className="relative z-10 min-h-[60vh] md:min-h-[50vh] flex items-center justify-center py-24 md:py-32"
+      className="relative z-10 min-h-[28vh] md:min-h-[24vh] flex items-center justify-center py-12 md:py-16"
     >
       {/* Distinct background - darker panel so it stands out over the hero */}
       <div className="absolute inset-0 bg-teal-dark/95 backdrop-blur-sm z-0" />

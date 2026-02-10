@@ -85,7 +85,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="skills" ref={ref} className="py-24 md:py-32 bg-background">
+    <section id="skills" ref={ref} className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -98,13 +98,13 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-teal-dark mb-12 text-center md:text-left"
+            className="text-4xl md:text-5xl font-serif font-bold text-teal-dark mb-8 text-center md:text-left"
           >
             My Skills
           </motion.h2>
 
           {/* Large screens: 2x2 grid — Top left: Image, Top right: Designer, Bottom left: Analyst, Bottom right: Developer */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch mb-0">
             {/* Top left - Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}

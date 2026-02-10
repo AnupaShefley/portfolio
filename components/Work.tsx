@@ -95,7 +95,7 @@ export default function Work() {
       </div>
 
       {/* Projects list */}
-      <div id="projects-list" className="container mx-auto px-6 py-24 md:py-32">
+      <div id="projects-list" className="container mx-auto px-6 py-12 md:py-16">
         <div className="space-y-8">
           {activeProjects.map((project, index) => {
             const cardContent = (

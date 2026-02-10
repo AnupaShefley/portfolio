@@ -19,14 +19,14 @@ export default function ApproachSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="approach" ref={ref} className="py-24 md:py-32 bg-background">
+    <section id="approach" ref={ref} className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-teal-dark mb-12">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-teal-dark mb-8">
             My Approach to Design & Writing
           </h3>
 
