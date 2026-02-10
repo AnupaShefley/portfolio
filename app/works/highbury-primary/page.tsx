@@ -214,23 +214,105 @@ export default function HighburyPrimaryPage() {
           {/* Findings */}
           <section>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Findings</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <p className="text-teal-dark/90 leading-relaxed mb-8">
               Thematic analysis of user comments both during task completion and feedback through
               post-task questionnaire emphasises the confusing layout of information on the site.
               Some of the prominent comments were:
             </p>
-            <ul className="space-y-3 text-teal-dark/90">
-              <li className="pl-4 border-l-2 border-teal-light">&ldquo;That is not straightforward.&rdquo;</li>
-              <li className="pl-4 border-l-2 border-teal-light">
-                &ldquo;I am not sure whether I am on the right page.&rdquo;
-              </li>
-              <li className="pl-4 border-l-2 border-teal-light">
-                &ldquo;I struggled with that task as it was not under Uniforms.&rdquo;
-              </li>
-              <li className="pl-4 border-l-2 border-teal-light">
-                &ldquo;The tab under which it was present was not easily identifiable.&rdquo;
-              </li>
-            </ul>
+
+            <div className="space-y-12 sm:space-y-14">
+              {/* Quote 1 - person left */}
+              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
+                {/* Layer 1: Quotation marks - bottom, semi-transparent, peeking from corners */}
+                <span
+                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &rdquo;
+                </span>
+                {/* Layer 2: Card - semi-transparent white, shadow */}
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pl-28 sm:pl-32 pr-6 sm:pr-8">
+                  <p className="text-teal-dark/90 italic text-base sm:text-lg">&ldquo;That is not straightforward.&rdquo;</p>
+                </div>
+                {/* Layer 3: Person - larger than card, overlapping edges */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
+                  <Image src={asset('/person1.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                </div>
+              </div>
+
+              {/* Quote 2 - person right */}
+              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
+                <span
+                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &rdquo;
+                </span>
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pr-28 sm:pr-32 pl-6 sm:pl-8">
+                  <p className="text-teal-dark/90 italic text-base sm:text-lg text-right">&ldquo;I am not sure whether I am on the right page.&rdquo;</p>
+                </div>
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
+                  <Image src={asset('/person2.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                </div>
+              </div>
+
+              {/* Quote 3 - person left */}
+              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
+                <span
+                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &rdquo;
+                </span>
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pl-28 sm:pl-32 pr-6 sm:pr-8">
+                  <p className="text-teal-dark/90 italic text-base sm:text-lg">&ldquo;I struggled with that task as it was not under Uniforms.&rdquo;</p>
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
+                  <Image src={asset('/person3.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                </div>
+              </div>
+
+              {/* Quote 4 - person right */}
+              <div className="relative flex items-center min-h-[200px] sm:min-h-[220px] overflow-visible">
+                <span
+                  className="pointer-events-none absolute -top-6 left-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <span
+                  className="pointer-events-none absolute -bottom-6 right-0 text-7xl sm:text-8xl md:text-9xl font-serif text-teal-dark/25 select-none"
+                  aria-hidden
+                >
+                  &rdquo;
+                </span>
+                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/80 shadow-lg border border-white/60 backdrop-blur-sm min-h-[100px] sm:min-h-[110px] py-4 pr-28 sm:pr-32 pl-6 sm:pl-8">
+                  <p className="text-teal-dark/90 italic text-base sm:text-lg text-right">&ldquo;The tab under which it was present was not easily identifiable.&rdquo;</p>
+                </div>
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-24 h-36 sm:w-28 sm:h-44 flex-shrink-0">
+                  <Image src={asset('/person4.webp')} alt="" fill className="object-contain object-center" sizes="112px" />
+                </div>
+              </div>
+            </div>
+
             <p className="text-teal-dark/90 leading-relaxed mt-8">
               The usability testing confirmed the hypothesis that was formulated through initial
               analysis of the website. The website content needs to be reorganised. The tests
