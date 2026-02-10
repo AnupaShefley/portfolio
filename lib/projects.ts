@@ -39,4 +39,13 @@ export const projects: Project[] = [
     role: 'UX/UI Designer',
     active: true,
   },
+  {
+    id: '5',
+    slug: 'zero-webapp',
+    title: 'ZERO Webapp',
+    category: 'Web Application / Data Platform',
+    description: 'Enterprise web application for managing and visualising operational data at scale.',
+    image: asset('/designprocess.jpg'),
+    active: true,
+  },
 ]
