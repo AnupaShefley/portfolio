@@ -48,4 +48,14 @@ export const projects: Project[] = [
     image: asset('/designprocess.jpg'),
     active: true,
   },
+  {
+    id: '6',
+    slug: 'zero2',
+    title: 'ZERO2 Webapp',
+    category: 'Master Data Management',
+    description:
+      'Case study mirroring the Murphy Oil master data management web experience in a web-native layout.',
+    image: asset('/designprocess.jpg'),
+    active: true,
+  },
 ]
