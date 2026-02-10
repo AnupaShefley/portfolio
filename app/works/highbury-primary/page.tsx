@@ -4,6 +4,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HighburyImageGrid from '@/components/HighburyImageGrid'
 import OtherWorks from '@/components/OtherWorks'
+import { AnimatedDiv } from '@/components/AnimatedSection'
+import { AnimatedPersonImage } from '@/components/AnimatedPersonImage'
 import { asset } from '@/lib/asset'
 
 export const metadata: Metadata = {
@@ -21,70 +23,73 @@ export default function HighburyPrimaryPage() {
         <HighburyImageGrid />
 
         {/* Hero */}
-        <header className="container mx-auto px-6 mb-16 md:mb-24">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-teal-dark mb-4">
+        <header className="w-full max-w-6xl mx-auto px-4 md:px-8 pt-8 mb-16 md:mb-20">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-teal-dark mb-4 tracking-tight pt-4">
             Highbury Primary School
           </h1>
-          <p className="text-xl md:text-2xl text-teal-dark/90 max-w-2xl mb-8">
+          <div className="h-1 w-20 rounded-full bg-gradient-to-r from-teal-content to-teal-light mb-6" aria-hidden />
+          <p className="text-base md:text-lg text-teal-dark/90 max-w-2xl mb-8 leading-snug">
             An approach to redesigning an entire school website from initial research, usability
             testing to final prototype.
           </p>
-          <dl className="flex flex-wrap gap-4 md:gap-6 mt-8 p-6 md:p-8 bg-teal-content/10 border border-teal-medium/30 rounded-lg backdrop-blur-sm">
-            <div className="flex-1 min-w-[200px]">
-              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Field</dt>
-              <dd className="text-base md:text-lg text-teal-dark font-medium">Research / Usability Study</dd>
+          <dl className="flex flex-wrap gap-4 md:gap-6 mt-6 p-5 md:p-6 rounded-xl bg-teal-content/10 border border-teal-medium/30">
+            <div className="flex-1 min-w-[160px]">
+              <dt className="text-xs uppercase tracking-wider font-semibold text-teal-content mb-1">Field</dt>
+              <dd className="text-sm text-teal-dark font-medium">Research / Usability Study</dd>
             </div>
-            <div className="flex-1 min-w-[200px]">
-              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">Sector</dt>
-              <dd className="text-base md:text-lg text-teal-dark font-medium">Education</dd>
+            <div className="flex-1 min-w-[160px]">
+              <dt className="text-xs uppercase tracking-wider font-semibold text-teal-content mb-1">Sector</dt>
+              <dd className="text-sm text-teal-dark font-medium">Education</dd>
             </div>
-            <div className="flex-1 min-w-[200px]">
-              <dt className="text-sm md:text-base uppercase tracking-wider font-semibold text-teal-content mb-2">My Role</dt>
-              <dd className="text-base md:text-lg text-teal-dark font-medium">UX Researcher, Product Designer</dd>
+            <div className="flex-1 min-w-[160px]">
+              <dt className="text-xs uppercase tracking-wider font-semibold text-teal-content mb-1">My Role</dt>
+              <dd className="text-sm text-teal-dark font-medium">UX Researcher, Product Designer</dd>
             </div>
           </dl>
         </header>
 
-        <div className="container mx-auto px-6 max-w-3xl space-y-20">
+        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 space-y-14 md:space-y-16">
           {/* Original school website */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Original School Website
             </h2>
-            <div className="relative w-full min-h-[420px] md:min-h-[520px] overflow-hidden">
-              <Image
-                src={asset('/Original School Website.png')}
-                alt="Original Highbury Primary School website"
-                fill
-                className="object-cover object-top"
-                sizes="100vw"
-              />
-            </div>
+            <AnimatedDiv delay={0.1}>
+              <div className="relative w-full min-h-[420px] md:min-h-[520px] overflow-hidden rounded-xl border border-teal-medium/20 shadow-lg">
+                <Image
+                  src={asset('/Original School Website.png')}
+                  alt="Original Highbury Primary School website"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1280px) 100vw, 1152px"
+                />
+              </div>
+            </AnimatedDiv>
           </section>
 
           {/* Research */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Research</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Research</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               In order to redesign the existing website, first I needed to find insight on users&apos;
               behaviours, attitudes and expectations. I started my research by focusing on Highbury
               school&apos;s key demographic — parents.
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mb-4">
+            <p className="text-teal-dark/90 leading-relaxed mb-3 text-base">
               Based on initial analysis, the two primary goals of a school site can be outlined as:
             </p>
-            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90">
+            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90 text-base">
               <li>Engagement and communication between school and existing parents.</li>
               <li>Highlight strengths and success stories of school to potential staff and new students.</li>
             </ol>
           </section>
 
           {/* Competitive analysis */}
-          <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
+          <section className="-mb-2">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Competitive Analysis
             </h2>
-            <p className="text-teal-dark/90 leading-relaxed">
+            <p className="text-teal-dark/90 leading-relaxed text-base">
               Primary school websites in local areas were compared to check how they compared with
               Highbury&apos;s site. It was found that many school sites provided information in an
               organised and functional layout. Compared to other sites, Highbury site provided
@@ -96,30 +101,32 @@ export default function HighburyPrimaryPage() {
 
           {/* User interviews */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">User Interviews</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">User Interviews</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               After completing the competitor analysis, I conducted a few interviews to evaluate the
               current website. The purpose of conducting this interview was to know if my analysis
               was biased, or if these issues have also been faced by other prospective parents.
               Interviews were conducted with participants, ranging from 21–35, across different
               backgrounds and levels of experience, who are current users of school website.
             </p>
-            <blockquote className="border-l-4 border-teal-content pl-6 py-2 my-6 italic text-teal-dark/90">
+            <blockquote className="border-l-4 border-teal-content pl-4 py-2 my-6 italic text-teal-dark/90 text-base font-medium">
               The information is so hard to find!
             </blockquote>
-            <div className="relative mt-8 w-full max-w-md mx-auto aspect-video">
-              <Image
-                src={asset('/feedback.png')}
-                alt="Social media feedback from users about the school website"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 448px"
-              />
-            </div>
+            <AnimatedDiv delay={0.15}>
+              <div className="relative mt-6 w-full max-w-lg mx-auto aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src={asset('/feedback.png')}
+                  alt="Social media feedback from users about the school website"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 512px"
+                />
+              </div>
+            </AnimatedDiv>
             <p className="text-sm text-teal-dark/70 text-center mt-2 italic">
               Social media feedback
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mt-6">
+            <p className="text-teal-dark/90 leading-relaxed mt-6 text-base">
               Some of the participants mentioned that if they were not able to get enough
               information, they would call the school to get more information. However, if the
               questions were ones that should be easily found on the website, it would be a waste
@@ -128,45 +135,47 @@ export default function HighburyPrimaryPage() {
               result in fewer inquiries, and the school&apos;s administration can focus better on
               other tasks.
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mt-6">
+            <p className="text-teal-dark/90 leading-relaxed mt-4 text-base mb-0">
               Overall feedback on the school website and initial research points to confusion
               amongst users to navigate around the site. Ease of finding information on the site
               can be improved.
             </p>
           </section>
 
-          {/* Problem statement */}
-          <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Problem Statement</h2>
-            <p className="text-teal-dark/90 leading-relaxed text-lg font-medium">
-              Redesign the website so that information is easily accessible to the target audience.
-            </p>
+          {/* Problem statement – special callout */}
+          <section className="my-10">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4 tracking-tight">Problem Statement</h2>
+            <div className="rounded-xl bg-teal-content/15 border-l-4 border-teal-content py-4 px-5 md:px-6">
+              <p className="text-teal-dark text-base md:text-lg font-bold leading-snug m-0">
+                Redesign the website so that information is easily accessible to the target audience.
+              </p>
+            </div>
           </section>
 
           {/* Usability testing */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Usability Testing
             </h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               Usability tests can be designed once an understanding has been achieved about user
               behaviours and website usage. This has been achieved through the persona creation,
               user journey and empathy mapping. Once the user research has been done, reasoning can
               be carried out to reach a logical understanding of the requirements of the system.
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               Through website analysis and checking feedback from parents who use the website, it
               can be seen that there is an issue with the content structure and website information
               architecture. Based on this analysis, the hypothesis has been formulated as below:
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mb-8 font-medium">
+            <p className="text-teal-dark/90 leading-relaxed mb-6 text-base font-bold">
               Users on Highbury Primary School&apos;s website find it difficult to find the
               information that they need.
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mb-4">
+            <p className="text-teal-dark/90 leading-relaxed mb-3 text-base">
               The usability test was designed with objectives:
             </p>
-            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90 mb-6">
+            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90 mb-4 text-base">
               <li>To check the ease with which information can be accessed on the site</li>
               <li>To analyse how site structure influences information retrieval</li>
               <li>To determine how content organisation can impact finding information</li>
@@ -176,16 +185,16 @@ export default function HighburyPrimaryPage() {
 
           {/* Participant recruitment */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Participant Recruitment
             </h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               The school website is primarily used by parents of kids in the age group of 4- to
               12-year-old. It can also be used by prospective parents looking to find more
               information about the school. Keeping this in mind, participants were recruited from
               friends and family who fulfilled the below shortlist criteria:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-teal-dark/90">
+            <ul className="list-disc list-inside space-y-2 text-teal-dark/90 text-base">
               <li>
                 Aged between 25 and 50 (as per statistics of average age of first-time parents in
                 UK — Office for National Statistics)
@@ -197,13 +206,13 @@ export default function HighburyPrimaryPage() {
 
           {/* Task design */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Task Design</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Task Design</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               The usability metric selected from inductive analysis was Navigation. Tasks were
               created to test how easy it was for the users to navigate from one page to another.
               Four tasks were finalised as below:
             </p>
-            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90">
+            <ol className="list-decimal list-inside space-y-2 text-teal-dark/90 text-base">
               <li>Find Inset dates for 2020–2021</li>
               <li>Find out how to access Numbots which is an educational website for kids</li>
               <li>Find out uniform/kit for Forest School days</li>
@@ -213,63 +222,53 @@ export default function HighburyPrimaryPage() {
 
           {/* Findings */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Findings</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-8">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Findings</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-6 text-base">
               Thematic analysis of user comments both during task completion and feedback through
               post-task questionnaire emphasises the confusing layout of information on the site.
               Some of the prominent comments were:
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 sm:gap-x-6 gap-y-0 sm:gap-y-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
               {/* Quote 1 - person left */}
-              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
-                {/* Layer 1: Quotation marks - just above the card corners */}
-                
-                {/* Layer 2: Card */}
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pl-24 sm:pl-28 pr-4 sm:pr-5">
-                  <p className="text-teal-dark/90 italic text-sm sm:text-base">&ldquo;That is not straightforward.&rdquo;</p>
+              <div className="relative flex items-center min-h-[100px] sm:min-h-[110px] overflow-visible">
+                <div className="relative z-10 flex-1 flex items-center rounded-xl bg-white/85 shadow-lg border border-teal-medium/20 min-h-[85px] sm:min-h-[95px] py-2 pl-20 sm:pl-24 pr-3 sm:pr-4">
+                  <p className="text-teal-dark font-medium italic text-sm sm:text-base">&ldquo;That is not straightforward.&rdquo;</p>
                 </div>
-                {/* Layer 3: Person - inset toward center so closing quote stays visible */}
-                <div className="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
-                  <Image src={asset('/person1.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
+                <div className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-16 h-24 sm:w-20 sm:h-32 flex-shrink-0">
+                  <AnimatedPersonImage src={asset('/person1.webp')} sizes="80px" delay={0} />
                 </div>
               </div>
 
-              {/* Quote 2 - person right */}
-              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
-
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pr-24 sm:pr-28 pl-4 sm:pl-5">
-                  <p className="text-teal-dark/90 italic text-sm sm:text-base text-right">&ldquo;I am not sure whether I am on the right page.&rdquo;</p>
+              <div className="relative flex items-center min-h-[100px] sm:min-h-[110px] overflow-visible">
+                <div className="relative z-10 flex-1 flex items-center rounded-xl bg-white/85 shadow-lg border border-teal-medium/20 min-h-[85px] sm:min-h-[95px] py-2 pr-20 sm:pr-24 pl-3 sm:pl-4">
+                  <p className="text-teal-dark font-medium italic text-sm sm:text-base text-right">&ldquo;I am not sure whether I am on the right page.&rdquo;</p>
                 </div>
-                <div className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
-                  <Image src={asset('/person2.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
+                <div className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-16 h-24 sm:w-20 sm:h-32 flex-shrink-0">
+                  <AnimatedPersonImage src={asset('/person2.webp')} sizes="80px" delay={0.6} />
                 </div>
               </div>
 
-              {/* Quote 3 - person left */}
-              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
-
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pl-24 sm:pl-28 pr-4 sm:pr-5">
-                  <p className="text-teal-dark/90 italic text-sm sm:text-base">&ldquo;I struggled with that task as it was not under Uniforms.&rdquo;</p>
+              <div className="relative flex items-center min-h-[100px] sm:min-h-[110px] overflow-visible">
+                <div className="relative z-10 flex-1 flex items-center rounded-xl bg-white/85 shadow-lg border border-teal-medium/20 min-h-[85px] sm:min-h-[95px] py-2 pl-20 sm:pl-24 pr-3 sm:pr-4">
+                  <p className="text-teal-dark font-medium italic text-sm sm:text-base">&ldquo;I struggled with that task as it was not under Uniforms.&rdquo;</p>
                 </div>
-                <div className="absolute left-5 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
-                  <Image src={asset('/person3.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
+                <div className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-16 h-24 sm:w-20 sm:h-32 flex-shrink-0">
+                  <AnimatedPersonImage src={asset('/person3.webp')} sizes="80px" />
                 </div>
               </div>
 
-              {/* Quote 4 - person right */}
-              <div className="relative flex items-center min-h-[110px] sm:min-h-[120px] overflow-visible">
- 
-                <div className="relative z-10 flex-1 flex items-center rounded-2xl bg-white/85 shadow-lg border border-white/60 backdrop-blur-sm min-h-[90px] sm:min-h-[100px] py-3 pr-24 sm:pr-28 pl-4 sm:pl-5">
-                  <p className="text-teal-dark/90 italic text-sm sm:text-base text-right">&ldquo;The tab under which it was present was not easily identifiable.&rdquo;</p>
+              <div className="relative flex items-center min-h-[100px] sm:min-h-[110px] overflow-visible">
+                <div className="relative z-10 flex-1 flex items-center rounded-xl bg-white/85 shadow-lg border border-teal-medium/20 min-h-[85px] sm:min-h-[95px] py-2 pr-20 sm:pr-24 pl-3 sm:pl-4">
+                  <p className="text-teal-dark font-medium italic text-sm sm:text-base text-right">&ldquo;The tab under which it was present was not easily identifiable.&rdquo;</p>
                 </div>
-                <div className="absolute right-5 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-20 h-28 sm:w-24 sm:h-36 flex-shrink-0">
-                  <Image src={asset('/person4.webp')} alt="" fill className="object-contain object-center" sizes="96px" />
+                <div className="absolute right-4 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-16 h-24 sm:w-20 sm:h-32 flex-shrink-0">
+                  <AnimatedPersonImage src={asset('/person4.webp')} sizes="80px" delay={1.8} />
                 </div>
               </div>
             </div>
 
-            <p className="text-teal-dark/90 leading-relaxed mt-8">
+            <p className="text-teal-dark/90 leading-relaxed mt-6 text-base">
               The usability testing confirmed the hypothesis that was formulated through initial
               analysis of the website. The website content needs to be reorganised. The tests
               confirmed that there are multiple scenarios where the content is not located under an
@@ -282,15 +281,15 @@ export default function HighburyPrimaryPage() {
 
           {/* Wireframes */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Wireframes</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Wireframes</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               After several rounds of usability tests on the wireframes, the following Landing
               Page was developed using Figma.
             </p>
-            <p className="text-teal-dark/90 leading-relaxed mb-4 font-medium">
+            <p className="text-teal-dark/90 leading-relaxed mb-3 text-base font-semibold">
               Page features:
             </p>
-            <ul className="list-disc list-inside space-y-2 text-teal-dark/90 mb-6">
+            <ul className="list-disc list-inside space-y-2 text-teal-dark/90 mb-6 text-base">
               <li>
                 The categories on the top of the page were reduced to the most important ones —
                 About Us and Parent Information. This would stop the initial confusion on which
@@ -305,26 +304,28 @@ export default function HighburyPrimaryPage() {
                 the two most searched pieces of information on the website.
               </li>
             </ul>
-            <div className="relative w-full min-h-[700px] md:min-h-[900px] overflow-hidden">
-              <Image
-                src={asset('/Wireframe Highbury.png')}
-                alt="Highbury Primary School wireframe and landing page"
-                fill
-                className="object-contain object-top"
-                sizes="(max-width: 768px) 100vw, 672px"
-              />
-            </div>
+            <AnimatedDiv delay={0.1}>
+              <div className="relative w-full min-h-[700px] md:min-h-[900px] overflow-hidden rounded-xl border border-teal-medium/20 shadow-lg">
+                <Image
+                  src={asset('/Wireframe Highbury.png')}
+                  alt="Highbury Primary School wireframe and landing page"
+                  fill
+                  className="object-contain object-top"
+                  sizes="(max-width: 1280px) 100vw, 1152px"
+                />
+              </div>
+            </AnimatedDiv>
           </section>
 
           {/* Conclusion */}
           <section>
-            <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Conclusion</h2>
-            <p className="text-teal-dark/90 leading-relaxed mb-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Conclusion</h2>
+            <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               The school website has lots of good content that is helpful to parents. However, due
               to the way in which the information is arranged on the website, it makes it
               confusing for parents. The website can be improved through the below recommendations:
             </p>
-            <ul className="list-disc list-inside space-y-3 text-teal-dark/90">
+            <ul className="list-disc list-inside space-y-3 text-teal-dark/90 text-base">
               <li>
                 The categories on the site need to be redesigned and labelled in a different way.
                 Currently the most confusing tabs are Parents, Children and Curriculum. This needs
@@ -346,7 +347,9 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Other Works */}
-          <OtherWorks currentSlug="highbury-primary" />
+          <section>
+            <OtherWorks currentSlug="highbury-primary" />
+          </section>
         </div>
       </article>
 
