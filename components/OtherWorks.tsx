@@ -22,23 +22,23 @@ export default function OtherWorks({ currentSlug }: OtherWorksProps) {
       <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">
         Other Works
       </h2>
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {otherProjects.map((project) => (
           <Link
             key={project.id}
             href={`/works/${project.slug}`}
-            className="group flex flex-col sm:flex-row gap-6 sm:gap-8 items-stretch sm:items-center p-4 rounded-lg border border-teal-medium/20 hover:border-teal-content/40 hover:bg-teal-content/5 transition-all"
+            className="group flex flex-col p-4 rounded-lg border border-teal-medium/20 hover:border-teal-content/40 hover:bg-teal-content/5 transition-all"
           >
-            <div className="relative w-full sm:w-72 sm:min-w-[18rem] aspect-[4/3] rounded-lg overflow-hidden bg-teal-content/10 shrink-0">
+            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-teal-content/10 shrink-0 mb-4">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                sizes="(max-width: 640px) 100vw, 288px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
             </div>
-            <span className="text-xl md:text-2xl font-serif font-bold text-teal-dark group-hover:text-teal-content transition-colors flex items-center">
+            <span className="text-lg md:text-xl font-serif font-bold text-teal-dark group-hover:text-teal-content transition-colors flex items-center">
               {project.title}
               <span aria-hidden className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 →

@@ -108,7 +108,7 @@ export default function Work() {
       {/* Custom "Visit" cursor – circle with label, follows pointer over case study links */}
       {visitCursor.visible && (
         <div
-          className="pointer-events-none fixed z-[9999] hidden md:flex items-center justify-center w-[100px] h-[100px] rounded-full border-2 border-teal-dark bg-white/90 text-teal-dark text-xs font-semibold uppercase tracking-wider"
+          className="pointer-events-none fixed z-[9999] hidden md:flex items-center justify-center w-[56px] h-[56px] rounded-full border-2 border-teal-dark bg-white/90 text-teal-dark text-[10px] font-semibold uppercase tracking-wider"
           style={{
             left: visitCursor.x,
             top: visitCursor.y,
