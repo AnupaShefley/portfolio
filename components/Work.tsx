@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { projects } from '@/lib/projects'
@@ -26,6 +26,17 @@ const headerTextItem = {
 export default function Work() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [visitCursor, setVisitCursor] = useState({ x: 0, y: 0, visible: false })
+
+  const handleCaseStudyMouseMove = useCallback((e: React.MouseEvent) => {
+    setVisitCursor((prev) => ({ ...prev, x: e.clientX, y: e.clientY }))
+  }, [])
+  const handleCaseStudyMouseEnter = useCallback((e: React.MouseEvent) => {
+    setVisitCursor({ x: e.clientX, y: e.clientY, visible: true })
+  }, [])
+  const handleCaseStudyMouseLeave = useCallback(() => {
+    setVisitCursor((prev) => ({ ...prev, visible: false }))
+  }, [])
 
   // Filter to only show active projects (active defaults to true if not specified)
   const activeProjects = projects.filter((project) => project.active !== false)
@@ -94,25 +105,48 @@ export default function Work() {
         </div>
       </div>
 
-      {/* Projects list */}
-      <div id="projects-list" className="container mx-auto px-6 py-12 md:py-16">
-        <div className="space-y-8">
+      {/* Custom "Visit" cursor – circle with label, follows pointer over case study links */}
+      {visitCursor.visible && (
+        <div
+          className="pointer-events-none fixed z-[9999] hidden md:flex items-center justify-center w-[100px] h-[100px] rounded-full border-2 border-teal-dark bg-white/90 text-teal-dark text-xs font-semibold uppercase tracking-wider"
+          style={{
+            left: visitCursor.x,
+            top: visitCursor.y,
+            transform: 'translate(-50%, -50%)',
+          }}
+          aria-hidden
+        >
+          VISIT
+        </div>
+      )}
+
+      {/* Projects list – two columns on desktop */}
+      <div
+        id="projects-list"
+        className="container mx-auto px-6 py-12 md:py-16"
+        onMouseMove={visitCursor.visible ? handleCaseStudyMouseMove : undefined}
+      >
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${visitCursor.visible ? 'cursor-none' : ''}`}
+        >
           {activeProjects.map((project, index) => {
             const cardContent = (
-              <div className="grid md:grid-cols-2 gap-8 p-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 md:p-8">
                 {/* Text content */}
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center order-2 sm:order-1">
                   <p className="text-sm uppercase tracking-wider text-white/70 mb-2">
                     {project.category}
                   </p>
-                  <h3 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4 group-hover:text-teal-light transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4 group-hover:text-teal-light transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-white/80 leading-relaxed">{project.description}</p>
+                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
+                    {project.description}
+                  </p>
                 </div>
 
                 {/* Project image */}
-                <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all">
+                <div className="relative h-56 md:h-72 rounded-lg overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all order-1 sm:order-2">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -125,7 +159,17 @@ export default function Work() {
             )
 
             const cardClassName =
-              'block bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 cursor-pointer group'
+              'block bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 group h-full'
+
+            const linkProps = project.slug
+              ? {
+                  href: `/works/${project.slug}`,
+                  className: `${cardClassName} ${visitCursor.visible ? 'cursor-none' : 'cursor-pointer'}`,
+                  onMouseEnter: handleCaseStudyMouseEnter,
+                  onMouseLeave: handleCaseStudyMouseLeave,
+                  onMouseMove: handleCaseStudyMouseMove,
+                }
+              : null
 
             return (
               <motion.div
@@ -138,14 +182,14 @@ export default function Work() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={{ y: -6 }}
-                className="transition-shadow duration-300 hover:shadow-xl"
+                className="transition-shadow duration-300 hover:shadow-xl h-full"
               >
                 {project.slug ? (
-                  <Link href={`/works/${project.slug}`} className={cardClassName}>
-                    {cardContent}
-                  </Link>
+                  <Link {...linkProps}>{cardContent}</Link>
                 ) : (
-                  <div className={cardClassName}>{cardContent}</div>
+                  <div className={`${cardClassName} cursor-default`}>
+                    {cardContent}
+                  </div>
                 )}
               </motion.div>
             )
