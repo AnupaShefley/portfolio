@@ -71,7 +71,7 @@ export default function EcoFleetPage() {
         {/* Hero image strip – main screenshot on laptop */}
         <section className="w-full max-w-6xl mx-auto px-4 md:px-8 mb-16 md:mb-20">
           <AnimatedDiv delay={0.1}>
-            <LaptopMockup className="mb-8 md:mb-10">
+            <LaptopMockup angle="none" className="mb-8 md:mb-10">
               <Image
                 src={asset('/Ecofleet/Screenshot 2026-02-09 165602.png')}
                 alt="EcoFleet overview dashboard showing high-level fleet transition planning"
@@ -188,7 +188,7 @@ export default function EcoFleetPage() {
             <AnimatedDiv delay={0.14}>
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
                 <div className="lg:col-span-8">
-                  <LaptopMockup angle="right">
+                  <LaptopMockup angle="none">
                     <Image
                       src={asset('/Ecofleet/Screenshot 2026-02-09 165855.png')}
                       alt="Scenario planning view comparing transition options in EcoFleet"
@@ -270,7 +270,7 @@ export default function EcoFleetPage() {
               live operations.
             </p>
             <AnimatedDiv delay={0.18}>
-              <LaptopMockup angle="left" className="max-w-5xl mx-auto">
+              <LaptopMockup angle="none" className="max-w-5xl mx-auto">
                 <Image
                   src={asset('/Ecofleet/Screenshot 2026-02-09 170052.png')}
                   alt="EcoFleet summary dashboard used to communicate outcomes to stakeholders"
