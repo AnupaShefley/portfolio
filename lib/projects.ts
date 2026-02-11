@@ -41,6 +41,18 @@ export const projects: Project[] = [
   },
   {
     id: '5',
+    slug: 'telematics-analysis',
+    title: 'Telematics Analysis',
+    category: 'Telematics data · Duty cycles',
+    description:
+      'Redesign of a telematics analysis workflow that turns raw journeys into clear, quality-checked duty cycles.',
+    image: asset('/backgroundData.jpg'),
+    company: 'Dynamon',
+    role: 'UX/UI Designer',
+    active: true,
+  },
+  {
+    id: '6',
     slug: 'zero-webapp',
     title: 'ZERO Webapp',
     category: 'Web Application / Data Platform',
@@ -49,7 +61,7 @@ export const projects: Project[] = [
     active: true,
   },
   {
-    id: '6',
+    id: '7',
     slug: 'zero2',
     title: 'ZERO2 Webapp',
     category: 'Master Data Management',
