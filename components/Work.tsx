@@ -161,16 +161,6 @@ export default function Work() {
             const cardClassName =
               'block bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 group h-full'
 
-            const linkProps = project.slug
-              ? {
-                  href: `/works/${project.slug}`,
-                  className: `${cardClassName} ${visitCursor.visible ? 'cursor-none' : 'cursor-pointer'}`,
-                  onMouseEnter: handleCaseStudyMouseEnter,
-                  onMouseLeave: handleCaseStudyMouseLeave,
-                  onMouseMove: handleCaseStudyMouseMove,
-                }
-              : null
-
             return (
               <motion.div
                 key={project.id}
@@ -185,7 +175,15 @@ export default function Work() {
                 className="transition-shadow duration-300 hover:shadow-xl h-full"
               >
                 {project.slug ? (
-                  <Link {...linkProps}>{cardContent}</Link>
+                  <Link
+                    href={`/works/${project.slug}`}
+                    className={`${cardClassName} ${visitCursor.visible ? 'cursor-none' : 'cursor-pointer'}`}
+                    onMouseEnter={handleCaseStudyMouseEnter}
+                    onMouseLeave={handleCaseStudyMouseLeave}
+                    onMouseMove={handleCaseStudyMouseMove}
+                  >
+                    {cardContent}
+                  </Link>
                 ) : (
                   <div className={`${cardClassName} cursor-default`}>
                     {cardContent}
