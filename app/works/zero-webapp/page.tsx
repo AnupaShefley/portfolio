@@ -2,7 +2,18 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { ZeroArchitectureDiagram, ZeroHeroVisualization } from '@/components/ZeroWebappGraphics'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Context',
+  'Challenges',
+  'Solution overview',
+  'Key web journeys',
+  'Outcomes',
+  'Reflection',
+].map((label) => ({ id: slugify(label), label }))
 
 export const metadata: Metadata = {
   title: 'ZERO Webapp | Anupa Shefley',
@@ -108,9 +119,11 @@ export default function ZeroWebappPage() {
           </dl>
         </header>
 
-        <div className="container mx-auto px-6 max-w-3xl space-y-20">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-3xl px-6 space-y-20">
           {/* Context */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Context</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               Large upstream and midstream organisations rely on hundreds of sources to describe
@@ -141,7 +154,7 @@ export default function ZeroWebappPage() {
           </section>
 
           {/* Challenges */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Challenges</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4">
               Discovery sessions with operations, production accounting and planning teams revealed
@@ -163,7 +176,7 @@ export default function ZeroWebappPage() {
           </section>
 
           {/* Solution overview with architecture diagram */}
-          <section>
+          <section id={TOC_SECTIONS[2].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Solution overview</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               ZERO introduces a dedicated master data layer exposed through a modern web interface.
@@ -199,7 +212,7 @@ export default function ZeroWebappPage() {
           </section>
 
           {/* Steward journeys */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
               Key web journeys
             </h2>
@@ -243,7 +256,7 @@ export default function ZeroWebappPage() {
           </section>
 
           {/* Outcomes */}
-          <section>
+          <section id={TOC_SECTIONS[4].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Outcomes</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               Quantitative metrics were used to track the impact of ZERO over time. By aligning
@@ -276,7 +289,7 @@ export default function ZeroWebappPage() {
           </section>
 
           {/* Reflection */}
-          <section>
+          <section id={TOC_SECTIONS[5].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Reflection</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               Designing ZERO as a web experience rather than as a purely technical platform helped
@@ -294,6 +307,7 @@ export default function ZeroWebappPage() {
 
           {/* Other works */}
           <OtherWorks currentSlug="zero-webapp" />
+          </div>
         </div>
       </article>
 

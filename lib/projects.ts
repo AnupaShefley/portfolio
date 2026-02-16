@@ -68,6 +68,16 @@ export const projects: Project[] = [
     description:
       'Case study mirroring the Murphy Oil master data management web experience in a web-native layout.',
     image: asset('/designprocess.jpg'),
+    active: false,
+  },
+  {
+    id: '8',
+    slug: 'navbar',
+    title: 'Navigation Bar Redesign',
+    category: 'UX / UI Design',
+    description:
+      'Case study on redesigning the global navigation bar to improve findability, consistency and user flows.',
+    image: asset('/designprocess.jpg'),
     active: true,
   },
 ]

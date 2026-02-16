@@ -9,7 +9,19 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import IosImageGrid from '@/components/IosImageGrid'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { asset } from '@/lib/asset'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Research',
+  'Competitive Analysis',
+  'User Interviews',
+  'Problem Statement',
+  'Usability Testing',
+  'Wireframes',
+  'Conclusion',
+].map((label) => ({ id: slugify(label), label }))
 
 function AnimatedImageSection({ children }: { children: React.ReactNode }) {
   const ref = useRef(null)
@@ -59,7 +71,9 @@ export default function CalendarRedesignPage() {
           </dl>
         </header>
 
-        <div className="container mx-auto px-6 max-w-3xl space-y-20">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-3xl px-6 space-y-20">
           {/* Context / Introduction */}
           <section>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
@@ -109,7 +123,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Research */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Research</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               As time moves on, people go after something that improves and makes life easier. In
@@ -133,7 +147,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Competitive Analysis */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
               Competitive Analysis
             </h2>
@@ -160,7 +174,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* User Interviews */}
-          <section>
+          <section id={TOC_SECTIONS[2].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">User Interviews</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               Research was conducted amongst individuals on the usability of various calendar
@@ -194,7 +208,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Problem Statement */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Problem Statement</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6">
               Online workers and students need to keep track of their meeting and class schedules.
@@ -217,7 +231,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Usability Testing */}
-          <section>
+          <section id={TOC_SECTIONS[4].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
               Usability Testing
             </h2>
@@ -247,7 +261,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Wireframes */}
-          <section>
+          <section id={TOC_SECTIONS[5].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Wireframes</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-8">
               A prototype is the simulation or sample version of a final product which can be used
@@ -420,7 +434,7 @@ export default function CalendarRedesignPage() {
           </section>
 
           {/* Conclusion */}
-          <section>
+          <section id={TOC_SECTIONS[6].id}>
             <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Conclusion</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6 italic">
               &ldquo;Consistency is one of the most powerful usability principles: when things
@@ -440,6 +454,7 @@ export default function CalendarRedesignPage() {
 
           {/* Other Works */}
           <OtherWorks currentSlug="calendarredesign" />
+          </div>
         </div>
       </article>
 

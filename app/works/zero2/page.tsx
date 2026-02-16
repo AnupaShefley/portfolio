@@ -2,7 +2,18 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { Zero2HeroGraphic, Zero2StripGraphic } from '@/components/Zero2Graphics'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Client and brief',
+  'Problem',
+  'Approach',
+  'Solution',
+  'Outcomes',
+  'Reflection',
+].map((label) => ({ id: slugify(label), label }))
 
 export const metadata: Metadata = {
   title: 'ZERO2 Webapp | Anupa Shefley',
@@ -60,9 +71,11 @@ export default function Zero2Page() {
         </section>
 
         {/* Body content – structured to mirror the original case study flow */}
-        <div className="mx-auto w-full max-w-5xl px-4 md:px-8 lg:px-10 mt-12 md:mt-16 space-y-20">
+        <div className="mx-auto w-full max-w-[1400px] px-4 md:px-8 lg:px-10 mt-12 md:mt-16 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-5xl space-y-20">
           {/* Client and brief */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Client and brief
             </h2>
@@ -86,7 +99,7 @@ export default function Zero2Page() {
           </section>
 
           {/* Problem */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Problem
             </h2>
@@ -112,7 +125,7 @@ export default function Zero2Page() {
           </section>
 
           {/* Approach / design */}
-          <section>
+          <section id={TOC_SECTIONS[2].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Approach
             </h2>
@@ -136,7 +149,7 @@ export default function Zero2Page() {
           </section>
 
           {/* Solution – narrative of the hub */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Solution
             </h2>
@@ -158,7 +171,7 @@ export default function Zero2Page() {
           </section>
 
           {/* Outcomes section is visually backed by the outcomes strip above */}
-          <section>
+          <section id={TOC_SECTIONS[4].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Outcomes
             </h2>
@@ -176,7 +189,7 @@ export default function Zero2Page() {
           </section>
 
           {/* Reflection */}
-          <section>
+          <section id={TOC_SECTIONS[5].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4">
               Reflection
             </h2>
@@ -194,6 +207,7 @@ export default function Zero2Page() {
 
           {/* Other works */}
           <OtherWorks currentSlug="zero2" />
+          </div>
         </div>
       </article>
 

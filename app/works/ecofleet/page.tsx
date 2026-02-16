@@ -3,9 +3,20 @@ import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { AnimatedDiv } from '@/components/AnimatedSection'
 import { LaptopMockup } from '@/components/LaptopMockup'
 import { asset } from '@/lib/asset'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Project Overview',
+  'Understanding the Fleet and Duty Cycles',
+  'Planning a Phased Transition',
+  'Infrastructure and Charging Strategy',
+  'Communicating Outcomes with Stakeholders',
+  'Impact',
+].map((label) => ({ id: slugify(label), label }))
 
 export const metadata: Metadata = {
   title: 'EcoFleet | Anupa Shefley',
@@ -103,9 +114,11 @@ export default function EcoFleetPage() {
           </AnimatedDiv>
         </section>
 
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 space-y-14 md:space-y-16">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-6xl space-y-14 md:space-y-16">
           {/* Project overview */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Project Overview
             </h2>
@@ -126,7 +139,7 @@ export default function EcoFleetPage() {
           </section>
 
           {/* Understanding the fleet */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Understanding the Fleet and Duty Cycles
             </h2>
@@ -167,7 +180,7 @@ export default function EcoFleetPage() {
           </section>
 
           {/* Planning the transition */}
-          <section>
+          <section id={TOC_SECTIONS[2].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Planning a Phased Transition
             </h2>
@@ -212,7 +225,7 @@ export default function EcoFleetPage() {
           </section>
 
           {/* Infrastructure and charging strategy */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Infrastructure and Charging Strategy
             </h2>
@@ -253,7 +266,7 @@ export default function EcoFleetPage() {
           </section>
 
           {/* Communicating outcomes */}
-          <section>
+          <section id={TOC_SECTIONS[4].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Communicating Outcomes with Stakeholders
             </h2>
@@ -283,7 +296,7 @@ export default function EcoFleetPage() {
           </section>
 
           {/* Impact */}
-          <section>
+          <section id={TOC_SECTIONS[5].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Impact
             </h2>
@@ -317,6 +330,7 @@ export default function EcoFleetPage() {
           <section>
             <OtherWorks currentSlug="ecofleet" />
           </section>
+          </div>
         </div>
       </article>
 

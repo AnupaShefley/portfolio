@@ -4,9 +4,25 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import HighburyImageGrid from '@/components/HighburyImageGrid'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { AnimatedDiv } from '@/components/AnimatedSection'
 import { AnimatedPersonImage } from '@/components/AnimatedPersonImage'
 import { asset } from '@/lib/asset'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Original School Website',
+  'Research',
+  'Competitive Analysis',
+  'User Interviews',
+  'Problem Statement',
+  'Usability Testing',
+  'Participant Recruitment',
+  'Task Design',
+  'Findings',
+  'Wireframes',
+  'Conclusion',
+].map((label) => ({ id: slugify(label), label }))
 
 export const metadata: Metadata = {
   title: 'Highbury Primary School | Anupa Shefley',
@@ -48,9 +64,11 @@ export default function HighburyPrimaryPage() {
           </dl>
         </header>
 
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 space-y-14 md:space-y-16">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-6xl space-y-14 md:space-y-16">
           {/* Original school website */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Original School Website
             </h2>
@@ -68,7 +86,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Research */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Research</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               In order to redesign the existing website, first I needed to find insight on users&apos;
@@ -85,7 +103,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Competitive analysis */}
-          <section className="-mb-2">
+          <section id={TOC_SECTIONS[2].id} className="-mb-2">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Competitive Analysis
             </h2>
@@ -100,7 +118,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* User interviews */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">User Interviews</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               After completing the competitor analysis, I conducted a few interviews to evaluate the
@@ -143,7 +161,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Problem statement – special callout */}
-          <section className="my-10">
+          <section id={TOC_SECTIONS[4].id} className="my-10">
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-4 tracking-tight">Problem Statement</h2>
             <div className="rounded-xl bg-teal-content/15 border-l-4 border-teal-content py-4 px-5 md:px-6">
               <p className="text-teal-dark text-base md:text-lg font-bold leading-snug m-0">
@@ -153,7 +171,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Usability testing */}
-          <section>
+          <section id={TOC_SECTIONS[5].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Usability Testing
             </h2>
@@ -184,7 +202,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Participant recruitment */}
-          <section>
+          <section id={TOC_SECTIONS[6].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Participant Recruitment
             </h2>
@@ -205,7 +223,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Task design */}
-          <section>
+          <section id={TOC_SECTIONS[7].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Task Design</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               The usability metric selected from inductive analysis was Navigation. Tasks were
@@ -221,7 +239,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Findings */}
-          <section>
+          <section id={TOC_SECTIONS[8].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Findings</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-6 text-base">
               Thematic analysis of user comments both during task completion and feedback through
@@ -280,7 +298,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Wireframes */}
-          <section>
+          <section id={TOC_SECTIONS[9].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Wireframes</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               After several rounds of usability tests on the wireframes, the following Landing
@@ -318,7 +336,7 @@ export default function HighburyPrimaryPage() {
           </section>
 
           {/* Conclusion */}
-          <section>
+          <section id={TOC_SECTIONS[10].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">Conclusion</h2>
             <p className="text-teal-dark/90 leading-relaxed mb-4 text-base">
               The school website has lots of good content that is helpful to parents. However, due
@@ -350,6 +368,7 @@ export default function HighburyPrimaryPage() {
           <section>
             <OtherWorks currentSlug="highbury-primary" />
           </section>
+          </div>
         </div>
       </article>
 

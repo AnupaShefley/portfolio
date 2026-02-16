@@ -3,9 +3,19 @@ import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
+import { ProjectToc } from '@/components/ProjectToc'
 import { AnimatedDiv } from '@/components/AnimatedSection'
 import { LaptopMockup } from '@/components/LaptopMockup'
 import { asset } from '@/lib/asset'
+import { slugify } from '@/lib/slug'
+
+const TOC_SECTIONS = [
+  'Context',
+  'Problem and Design Goals',
+  'Designing Safer Input Parameters',
+  'From Raw Results to Interpretable Duty Cycles',
+  'Impact',
+].map((label) => ({ id: slugify(label), label }))
 
 export const metadata: Metadata = {
   title: 'Telematics Analysis | Anupa Shefley',
@@ -116,9 +126,11 @@ export default function TelematicsAnalysisPage() {
         </section>
 
         {/* Main narrative */}
-        <div className="w-full max-w-6xl mx-auto px-4 md:px-8 space-y-14 md:space-y-16">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+          <ProjectToc sections={TOC_SECTIONS} />
+          <div className="min-w-0 flex-1 max-w-6xl space-y-14 md:space-y-16">
           {/* Context */}
-          <section>
+          <section id={TOC_SECTIONS[0].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Context
             </h2>
@@ -136,7 +148,7 @@ export default function TelematicsAnalysisPage() {
           </section>
 
           {/* Problem and goals */}
-          <section>
+          <section id={TOC_SECTIONS[1].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Problem and Design Goals
             </h2>
@@ -162,7 +174,7 @@ export default function TelematicsAnalysisPage() {
           </section>
 
           {/* Input experience */}
-          <section>
+          <section id={TOC_SECTIONS[2].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Designing Safer Input Parameters
             </h2>
@@ -197,7 +209,7 @@ export default function TelematicsAnalysisPage() {
           </section>
 
           {/* Results and quality analysis */}
-          <section>
+          <section id={TOC_SECTIONS[3].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               From Raw Results to Interpretable Duty Cycles
             </h2>
@@ -225,7 +237,7 @@ export default function TelematicsAnalysisPage() {
           </section>
 
           {/* Impact */}
-          <section>
+          <section id={TOC_SECTIONS[4].id}>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-teal-dark mb-6 tracking-tight">
               Impact
             </h2>
@@ -247,6 +259,7 @@ export default function TelematicsAnalysisPage() {
           <section>
             <OtherWorks currentSlug="telematics-analysis" />
           </section>
+          </div>
         </div>
       </article>
 
