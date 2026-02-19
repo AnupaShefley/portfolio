@@ -58,7 +58,7 @@ export const projects: Project[] = [
     category: 'Web Application / Data Platform',
     description: 'Enterprise web application for managing and visualising operational data at scale.',
     image: asset('/designprocess.jpg'),
-    active: true,
+    active: false,
   },
   {
     id: '7',
@@ -78,6 +78,18 @@ export const projects: Project[] = [
     description:
       'Case study on redesigning the global navigation bar to improve findability, consistency and user flows.',
     image: asset('/designprocess.jpg'),
+    active: true,
+  },
+  {
+    id: '9',
+    slug: 'synthetics',
+    title: 'Synthetics',
+    category: 'Synthetic Telematics · Fleet Scheduling',
+    description:
+      'Redesigning the scheduling interface from a hierarchical table into a calendar-based system for managing 100+ vehicles and generating telematics simulations.',
+    image: asset('/designprocess.jpg'),
+    company: 'Dynamon',
+    role: 'UX/UI Designer',
     active: true,
   },
 ]
