@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
@@ -37,67 +38,94 @@ export default function SyntheticsPage() {
 
       <article className="pt-24 pb-16 md:pt-32 md:pb-24">
         {/* 1. Hero Section – Immediate Impact */}
-        <section className="bg-teal-content/5 border-b border-teal-medium/20">
-          <div className="container mx-auto px-6 py-10 md:py-14 grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1.1fr)] gap-10 items-center">
-            <div>
-              <p className="text-sm md:text-base font-semibold tracking-[0.2em] uppercase text-teal-content mb-4">
-                Synthetic Telematics · Fleet Scheduling
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-teal-dark mb-6">
-                Redesigning Fleet Scheduling for Synthetic Telematics
-              </h1>
-              <p className="text-base md:text-lg text-teal-dark/90 leading-relaxed mb-8 max-w-xl">
-                Transforming a form-based table into a scalable scheduling system for managing 100+
-                vehicles and generating telematics simulations.
-              </p>
+        <section className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden">
+          {/* Background image */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/backgrounds/background3.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+              quality={85}
+            />
+            <div
+              className="absolute inset-0 z-10 bg-gradient-to-b from-teal-950/85 via-teal-900/75 to-teal-950/90"
+              aria-hidden
+            />
+          </div>
 
-              <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 p-5 md:p-6 bg-white/70 border border-teal-medium/30 rounded-xl backdrop-blur-sm">
-                <div>
-                  <dt className="text-xs md:text-sm uppercase tracking-wider font-semibold text-teal-content mb-1">
-                    Schedule creation
-                  </dt>
-                  <dd className="text-xl md:text-2xl font-serif font-semibold text-teal-dark">
-                    ↓ 60–80%
-                  </dd>
-                  <dd className="text-xs md:text-sm text-teal-dark/70">time reduction</dd>
-                </div>
-                <div>
-                  <dt className="text-xs md:text-sm uppercase tracking-wider font-semibold text-teal-content mb-1">
-                    Scale
-                  </dt>
-                  <dd className="text-xl md:text-2xl font-serif font-semibold text-teal-dark">
-                    ↑ 100+
-                  </dd>
-                  <dd className="text-xs md:text-sm text-teal-dark/70">vehicles supported</dd>
-                </div>
-                <div>
-                  <dt className="text-xs md:text-sm uppercase tracking-wider font-semibold text-teal-content mb-1">
-                    Configuration
-                  </dt>
-                  <dd className="text-xl md:text-2xl font-serif font-semibold text-teal-dark">
-                    ↓ Fewer
-                  </dd>
-                  <dd className="text-xs md:text-sm text-teal-dark/70">repetitive actions</dd>
-                </div>
-                <div>
-                  <dt className="text-xs md:text-sm uppercase tracking-wider font-semibold text-teal-content mb-1">
-                    Visibility
-                  </dt>
-                  <dd className="text-xl md:text-2xl font-serif font-semibold text-teal-dark">
-                    ↑ Improved
-                  </dd>
-                  <dd className="text-xs md:text-sm text-teal-dark/70">schedule validation</dd>
-                </div>
-              </dl>
-            </div>
+          <div className="container relative z-20 mx-auto px-6 py-16 md:py-24 lg:py-28">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+              <div>
+                <p className="text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-teal-200/90 mb-5">
+                  Synthetic Telematics · Fleet Scheduling
+                </p>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight tracking-tight">
+                  Redesigning Fleet Scheduling for Synthetic Telematics
+                </h1>
+                <p className="text-base md:text-lg text-teal-100/90 leading-relaxed mb-10 max-w-xl">
+                  Transforming a form-based table into a scalable scheduling system for managing 100+
+                  vehicles and generating telematics simulations.
+                </p>
 
-            <div className="relative">
-              <div className="relative w-full max-w-xl mx-auto aspect-[16/9] rounded-2xl overflow-hidden shadow-[0_24px_70px_rgba(15,118,110,0.2)] bg-gradient-to-br from-teal-50 via-sky-50 to-slate-50">
-                <SyntheticsHeroCalendar className="w-full h-full" />
+                <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-5 p-5 md:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md">
+                  <div>
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                      Schedule creation
+                    </dt>
+                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                      ↓ 60–80%
+                    </dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80">time reduction</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                      Scale
+                    </dt>
+                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                      ↑ 100+
+                    </dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80">vehicles supported</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                      Configuration
+                    </dt>
+                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                      ↓ Fewer
+                    </dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80">repetitive actions</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                      Visibility
+                    </dt>
+                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                      ↑ Improved
+                    </dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80">schedule validation</dd>
+                  </div>
+                </dl>
               </div>
-              <p className="mt-3 text-xs md:text-sm text-teal-dark/70 text-center">
-                Calendar-based scheduling: vehicles as rows, days as columns, routes as cards.
-              </p>
+
+              <div className="relative flex flex-col items-center lg:items-end">
+                <div className="relative w-full max-w-lg mx-auto aspect-[16/9] rounded-2xl overflow-hidden ring-2 ring-white/20 shadow-2xl shadow-black/30">
+                  <Image
+                    src="/synthetics/hero-syn.png"
+                    alt="Synthetic Telematics fleet scheduling interface – calendar-based view with vehicles and routes"
+                    fill
+                    className="object-contain bg-white/5"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    priority
+                    quality={90}
+                  />
+                </div>
+                <p className="mt-4 text-xs md:text-sm text-teal-200/80 text-center lg:text-right max-w-md">
+                  Calendar-based scheduling: vehicles as rows, days as columns, routes as cards.
+                </p>
+              </div>
             </div>
           </div>
         </section>
