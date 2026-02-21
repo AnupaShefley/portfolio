@@ -57,7 +57,7 @@ export default function SyntheticsPage() {
           </div>
 
           <div className="container relative z-20 mx-auto px-6 py-16 md:py-24 lg:py-28">
-            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-center max-w-8xl mx-auto">
               <div>
                 <p className="text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-teal-200/90 mb-5">
                   Synthetic Telematics · Fleet Scheduling
@@ -70,61 +70,67 @@ export default function SyntheticsPage() {
                   vehicles and generating telematics simulations.
                 </p>
 
-                <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-5 p-5 md:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md">
-                  <div>
+                <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-5 p-5 md:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md items-stretch">
+                  <div className="flex flex-col">
                     <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
                       Schedule creation
                     </dt>
                     <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
                       ↓ 60–80%
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80">time reduction</dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                      time reduction
+                    </dd>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
                       Scale
                     </dt>
                     <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
                       ↑ 100+
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80">vehicles supported</dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                      vehicles supported
+                    </dd>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
                       Configuration
                     </dt>
                     <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
                       ↓ Fewer
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80">repetitive actions</dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                      repetitive actions
+                    </dd>
                   </div>
-                  <div>
+                  <div className="flex flex-col">
                     <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
                       Visibility
                     </dt>
                     <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
                       ↑ Improved
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80">schedule validation</dd>
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                      schedule validation
+                    </dd>
                   </div>
                 </dl>
               </div>
 
-              <div className="relative flex flex-col items-center lg:items-end">
-                <div className="relative w-full max-w-lg mx-auto aspect-[16/9] rounded-2xl overflow-hidden ring-2 ring-white/20 shadow-2xl shadow-black/30">
+              <div className="relative flex flex-col items-center lg:items-end justify-center">
+                <div className="relative w-full max-w-2xl mx-auto aspect-[16/9] lg:max-w-none lg:aspect-auto lg:min-h-[480px] lg:w-full">
                   <Image
                     src="/synthetics/hero-syn.png"
                     alt="Synthetic Telematics fleet scheduling interface – calendar-based view with vehicles and routes"
                     fill
-                    className="object-contain bg-white/5"
-                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-contain"
+                    sizes="(max-width: 1024px) 100vw, 65vw"
                     priority
                     quality={90}
                   />
                 </div>
-                <p className="mt-4 text-xs md:text-sm text-teal-200/80 text-center lg:text-right max-w-md">
-                  Calendar-based scheduling: vehicles as rows, days as columns, routes as cards.
-                </p>
+
               </div>
             </div>
           </div>
