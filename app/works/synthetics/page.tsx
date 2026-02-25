@@ -13,10 +13,8 @@ import { slugify } from '@/lib/slug'
 const TOC_SECTIONS = [
   'Context',
   'The Problem',
-  'Understanding User Workflow',
-  'Key UX Insight',
   'The Solution',
-  'Before vs After',
+  'Key UX Insight',
   'Key Improvements',
   'Impact',
   'Design Thinking and Process',
@@ -184,98 +182,59 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 3. The Problem (Before) */}
-            <section id={TOC_SECTIONS[1].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
-                The Problem (Before)
-              </h2>
-              <p className="text-teal-dark/90 leading-relaxed mb-6 font-medium">
-                The original table didn&apos;t scale with real fleet size.
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-teal-dark/90 mb-8">
-                <li>Hard to scan across days and vehicles</li>
-                <li>Required hundreds of repetitive manual assignments</li>
-                <li>Limited visibility of scheduling patterns</li>
-                <li>Difficult to validate schedules before generating telematics</li>
-              </ul>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="rounded-xl border border-teal-medium/30 overflow-hidden bg-slate-50">
-                  <div className="aspect-video relative bg-slate-100">
-                    <Image
-                      src="/synthetics/OldSyn.svg"
-                      alt="Old Synthetic Telematics UI – hierarchical table structure"
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+            {/* 3. The Problem – Before vs After */}
+            <section id={TOC_SECTIONS[1].id} className="space-y-10">
+              <div>
+                <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
+                  The Problem: Before vs After
+                </h2>
+                <p className="text-teal-dark/90 leading-relaxed mb-4 font-medium">
+                  The original table didn&apos;t scale with real fleet size.
+                </p>
+                <ul className="list-disc list-inside space-y-2 text-teal-dark/90 mb-10">
+                  <li>Hard to scan across days and vehicles</li>
+                  <li>Required hundreds of repetitive manual assignments</li>
+                  <li>Limited visibility of scheduling patterns</li>
+                  <li>Difficult to validate schedules before generating telematics</li>
+                </ul>
+              </div>
+
+              <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen max-w-none px-4 md:px-8">
+                <div className="grid grid-cols-2 gap-6 md:gap-10 max-w-7xl mx-auto">
+                  <div className="min-w-0 w-full">
+                    <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
+                      <Image
+                        src="/synthetics/OldSyn.svg"
+                        alt="Old Synthetic Telematics UI – hierarchical table structure"
+                        fill
+                        className="object-contain object-top"
+                        sizes="50vw"
+                      />
+                    </div>
+                    <p className="mt-3 text-base font-semibold text-teal-dark">
+                      Before: Form-based · Fragmented structure · High interaction cost
+                    </p>
                   </div>
-                  <div className="p-3 border-t border-teal-medium/20">
-                    <p className="text-xs font-semibold text-teal-content uppercase tracking-wider">
-                      Old UI · Fragmented structure · Hidden relationships · High interaction cost
+                  <div className="min-w-0 w-full">
+                    <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
+                      <Image
+                        src="/synthetics/NewSyn.svg"
+                        alt="New Synthetic Telematics UI – calendar-based scheduling"
+                        fill
+                        className="object-contain object-top"
+                        sizes="50vw"
+                      />
+                    </div>
+                    <p className="mt-3 text-base font-semibold text-teal-dark">
+                      After: Calendar-based · Clear relationships · Fewer interactions
                     </p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-teal-medium/30 overflow-hidden bg-slate-50">
-                  <div className="aspect-video relative bg-slate-100">
-                    <Image
-                      src="/synthetics/NewSyn.svg"
-                      alt="New Synthetic Telematics UI – calendar-based scheduling"
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="p-3 border-t border-teal-medium/20">
-                    <p className="text-xs font-semibold text-teal-content uppercase tracking-wider">
-                      New UI · Visual calendar · Clear relationships · Fewer interactions
-                    </p>
-                  </div>
-                </div>
               </div>
             </section>
 
-            {/* 5. Understanding User Workflow */}
-            <section id={TOC_SECTIONS[3].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
-                Understanding User Workflow
-              </h2>
-              <p className="text-teal-dark/90 leading-relaxed mb-6">
-                Users follow this workflow:
-              </p>
-              <ol className="list-decimal list-inside space-y-2 text-teal-dark/90 mb-8">
-                <li>Create vehicles</li>
-                <li>Create routes</li>
-                <li><strong>Assign weekly schedules</strong> ← This step</li>
-                <li>Generate telematics data</li>
-                <li>Analyse results</li>
-              </ol>
-              <div className="rounded-xl border-l-4 border-teal-content bg-teal-content/10 p-5">
-                <p className="text-sm font-semibold text-teal-dark mb-1">Key insight</p>
-                <p className="text-teal-dark/90">
-                  Scheduling is the highest interaction and highest risk step. Errors here directly
-                  impact simulation outputs.
-                </p>
-              </div>
-            </section>
-
-            {/* 5. Key UX Insight */}
-            <section id={TOC_SECTIONS[3].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
-                Key UX Insight
-              </h2>
-              <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
-                <p className="text-xl md:text-2xl font-serif font-semibold text-teal-dark leading-relaxed">
-                  Users think in time and patterns, not in form fields.
-                </p>
-                <p className="mt-4 text-teal-dark/90">
-                  Fleet scheduling is inherently calendar-based. The interface needed to reflect this
-                  mental model.
-                </p>
-              </div>
-            </section>
-
-            {/* 6. The Solution (After) */}
-            <section id={TOC_SECTIONS[4].id}>
+            {/* 4. The Solution (After) */}
+            <section id={TOC_SECTIONS[2].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 The Solution (After)
               </h2>
@@ -298,35 +257,24 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 7. Before vs After Comparison */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 5. Key UX Insight */}
+            <section id={TOC_SECTIONS[3].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
-                Before vs After Comparison
+                Key UX Insight
               </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="rounded-xl border border-teal-medium/30 overflow-hidden bg-white">
-                  <div className="aspect-video bg-slate-100 flex items-center justify-center text-teal-dark/60 text-sm">
-                    Old UI
-                  </div>
-                  <div className="p-4 border-t border-teal-medium/20">
-                    <p className="font-semibold text-teal-dark">Form-based</p>
-                    <p className="text-sm text-teal-dark/70">Fragmented · High effort</p>
-                  </div>
-                </div>
-                <div className="rounded-xl border-2 border-teal-content overflow-hidden bg-white">
-                  <div className="aspect-video bg-teal-50 flex items-center justify-center">
-                    <SyntheticsHeroCalendar className="w-full h-full max-h-40" />
-                  </div>
-                  <div className="p-4 border-t border-teal-medium/20 bg-teal-content/5">
-                    <p className="font-semibold text-teal-dark">Calendar-based</p>
-                    <p className="text-sm text-teal-dark/70">Visual · Efficient</p>
-                  </div>
-                </div>
+              <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
+                <p className="text-xl md:text-2xl font-serif font-semibold text-teal-dark leading-relaxed">
+                  Users think in time and patterns, not in form fields.
+                </p>
+                <p className="mt-4 text-teal-dark/90">
+                  Fleet scheduling is inherently calendar-based. The interface needed to reflect this
+                  mental model.
+                </p>
               </div>
             </section>
 
-            {/* 8. Key Improvements */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 6. Key Improvements */}
+            <section id={TOC_SECTIONS[4].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">
                 Key Improvements
               </h2>
@@ -394,8 +342,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 9. Impact Section */}
-            <section id={TOC_SECTIONS[7].id}>
+            {/* 7. Impact Section */}
+            <section id={TOC_SECTIONS[5].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">Impact</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
@@ -437,8 +385,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 10. Design Thinking and Process */}
-            <section id={TOC_SECTIONS[8].id}>
+            {/* 8. Design Thinking and Process */}
+            <section id={TOC_SECTIONS[6].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Design Thinking and Process
               </h2>
@@ -455,8 +403,8 @@ export default function SyntheticsPage() {
               </ul>
             </section>
 
-            {/* 11. Final UI Showcase */}
-            <section id={TOC_SECTIONS[9].id}>
+            {/* 9. Final UI Showcase */}
+            <section id={TOC_SECTIONS[7].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Final UI Showcase
               </h2>
@@ -490,8 +438,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 12. Reflection */}
-            <section id={TOC_SECTIONS[10].id}>
+            {/* 10. Reflection */}
+            <section id={TOC_SECTIONS[8].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Reflection</h2>
               <p className="text-teal-dark/90 leading-relaxed mb-6">
                 <strong>What I learned</strong>
