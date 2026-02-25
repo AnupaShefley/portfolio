@@ -12,7 +12,6 @@ import { slugify } from '@/lib/slug'
 
 const TOC_SECTIONS = [
   'Context',
-  'My Role',
   'The Problem',
   'Understanding User Workflow',
   'Key UX Insight',
@@ -70,49 +69,38 @@ export default function SyntheticsPage() {
                   vehicles and generating telematics simulations.
                 </p>
 
-                <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-5 p-5 md:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md items-stretch">
-                  <div className="flex flex-col">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 p-6 md:p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md items-stretch">
+                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
                       Schedule creation
                     </dt>
-                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
                       ↓ 60–80%
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
                       time reduction
                     </dd>
                   </div>
-                  <div className="flex flex-col">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
                       Scale
                     </dt>
-                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
                       ↑ 100+
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
                       vehicles supported
                     </dd>
                   </div>
-                  <div className="flex flex-col">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
+                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
+                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
                       Configuration
                     </dt>
-                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
+                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
                       ↓ Fewer
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
+                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
                       repetitive actions
-                    </dd>
-                  </div>
-                  <div className="flex flex-col">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1">
-                      Visibility
-                    </dt>
-                    <dd className="text-xl md:text-2xl font-serif font-semibold text-white">
-                      ↑ Improved
-                    </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end">
-                      schedule validation
                     </dd>
                   </div>
                 </dl>
@@ -121,7 +109,7 @@ export default function SyntheticsPage() {
               <div className="relative flex flex-col items-center lg:items-end justify-center">
                 <div className="relative w-full max-w-2xl mx-auto aspect-[16/9] lg:max-w-none lg:aspect-auto lg:min-h-[480px] lg:w-full">
                   <Image
-                    src="/synthetics/hero-syn.png"
+                    src="/synthetics/hero2.png"
                     alt="Synthetic Telematics fleet scheduling interface – calendar-based view with vehicles and routes"
                     fill
                     className="object-contain"
@@ -145,14 +133,6 @@ export default function SyntheticsPage() {
               </dt>
               <dd className="text-base md:text-lg text-teal-dark font-medium">
                 Synthetic Telematics · UX/UI Design · Information architecture
-              </dd>
-            </div>
-            <div className="flex-1 min-w-[180px]">
-              <dt className="text-xs md:text-sm uppercase tracking-wider font-semibold text-teal-content mb-2">
-                My role
-              </dt>
-              <dd className="text-base md:text-lg text-teal-dark font-medium">
-                UX/UI Designer
               </dd>
             </div>
             <div className="flex-1 min-w-[180px]">
@@ -204,36 +184,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 3. My Role */}
+            {/* 3. The Problem (Before) */}
             <section id={TOC_SECTIONS[1].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">My Role</h2>
-              <p className="text-teal-dark/90 leading-relaxed mb-6">
-                <strong>Role:</strong> UX/UI Designer. I led the research, interaction redesign,
-                and UI design for the new scheduling experience and collaborated closely with
-                development throughout.
-              </p>
-              <ul className="grid sm:grid-cols-2 gap-3 text-teal-dark/90">
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-content mt-0.5">•</span>
-                  <span>UX research and workflow analysis</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-content mt-0.5">•</span>
-                  <span>Interaction and information architecture redesign</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-content mt-0.5">•</span>
-                  <span>UI design and prototyping</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-content mt-0.5">•</span>
-                  <span>Developer collaboration</span>
-                </li>
-              </ul>
-            </section>
-
-            {/* 4. The Problem (Before) */}
-            <section id={TOC_SECTIONS[2].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 The Problem (Before)
               </h2>
@@ -248,22 +200,36 @@ export default function SyntheticsPage() {
               </ul>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="rounded-xl border border-teal-medium/30 overflow-hidden bg-slate-50">
-                  <div className="aspect-video bg-slate-200 flex items-center justify-center text-teal-dark/60 text-sm">
-                    Old UI screenshot (hierarchical table)
+                  <div className="aspect-video relative bg-slate-100">
+                    <Image
+                      src="/synthetics/OldSyn.svg"
+                      alt="Old Synthetic Telematics UI – hierarchical table structure"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                   <div className="p-3 border-t border-teal-medium/20">
                     <p className="text-xs font-semibold text-teal-content uppercase tracking-wider">
-                      Annotations: Fragmented structure · Hidden relationships · High interaction cost
+                      Old UI · Fragmented structure · Hidden relationships · High interaction cost
                     </p>
                   </div>
                 </div>
                 <div className="rounded-xl border border-teal-medium/30 overflow-hidden bg-slate-50">
-                  <div className="aspect-video bg-slate-200 flex items-center justify-center text-teal-dark/60 text-sm">
-                    Annotated version highlighting issues
+                  <div className="aspect-video relative bg-slate-100">
+                    <Image
+                      src="/synthetics/NewSyn.svg"
+                      alt="New Synthetic Telematics UI – calendar-based scheduling"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
-                  <p className="p-3 border-t border-teal-medium/20 text-xs text-teal-dark/80">
-                    Add your annotated screenshot here.
-                  </p>
+                  <div className="p-3 border-t border-teal-medium/20">
+                    <p className="text-xs font-semibold text-teal-content uppercase tracking-wider">
+                      New UI · Visual calendar · Clear relationships · Fewer interactions
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -292,8 +258,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 6. Key UX Insight */}
-            <section id={TOC_SECTIONS[4].id}>
+            {/* 5. Key UX Insight */}
+            <section id={TOC_SECTIONS[3].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Key UX Insight
               </h2>
@@ -308,8 +274,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 7. The Solution (After) */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 6. The Solution (After) */}
+            <section id={TOC_SECTIONS[4].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 The Solution (After)
               </h2>
@@ -332,8 +298,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 8. Before vs After Comparison */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 7. Before vs After Comparison */}
+            <section id={TOC_SECTIONS[5].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Before vs After Comparison
               </h2>
@@ -359,8 +325,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 9. Key Improvements */}
-            <section id={TOC_SECTIONS[7].id}>
+            {/* 8. Key Improvements */}
+            <section id={TOC_SECTIONS[6].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">
                 Key Improvements
               </h2>
@@ -428,8 +394,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 10. Impact Section */}
-            <section id={TOC_SECTIONS[8].id}>
+            {/* 9. Impact Section */}
+            <section id={TOC_SECTIONS[7].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">Impact</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
@@ -471,8 +437,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 11. Design Thinking and Process */}
-            <section id={TOC_SECTIONS[9].id}>
+            {/* 10. Design Thinking and Process */}
+            <section id={TOC_SECTIONS[8].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Design Thinking and Process
               </h2>
@@ -489,8 +455,8 @@ export default function SyntheticsPage() {
               </ul>
             </section>
 
-            {/* 12. Final UI Showcase */}
-            <section id={TOC_SECTIONS[10].id}>
+            {/* 11. Final UI Showcase */}
+            <section id={TOC_SECTIONS[9].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Final UI Showcase
               </h2>
@@ -524,8 +490,8 @@ export default function SyntheticsPage() {
               </div>
             </section>
 
-            {/* 13. Reflection */}
-            <section id={TOC_SECTIONS[11].id}>
+            {/* 12. Reflection */}
+            <section id={TOC_SECTIONS[10].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">Reflection</h2>
               <p className="text-teal-dark/90 leading-relaxed mb-6">
                 <strong>What I learned</strong>
