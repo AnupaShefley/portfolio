@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Header from '@/components/Header'
+import { asset } from '@/lib/asset'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
 import { ProjectToc } from '@/components/ProjectToc'
@@ -39,7 +40,7 @@ export default function SyntheticsPage() {
           {/* Background image */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/backgrounds/background3.jpg"
+              src={asset('/backgrounds/background3.jpg')}
               alt=""
               fill
               className="object-cover"
@@ -107,7 +108,7 @@ export default function SyntheticsPage() {
               <div className="relative flex flex-col items-center lg:items-end justify-center">
                 <div className="relative w-full max-w-2xl mx-auto aspect-[16/9] lg:max-w-none lg:aspect-auto lg:min-h-[480px] lg:w-full">
                   <Image
-                    src="/synthetics/hero2.png"
+                    src={asset('/synthetics/hero2.png')}
                     alt="Synthetic Telematics fleet scheduling interface – calendar-based view with vehicles and routes"
                     fill
                     className="object-contain"
@@ -209,7 +210,7 @@ export default function SyntheticsPage() {
                   <div className="min-w-0 w-full">
                     <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
                       <Image
-                        src="/synthetics/OldSyn.svg"
+                        src={asset('/synthetics/OldSyn.svg')}
                         alt="Old Synthetic Telematics UI – hierarchical table structure"
                         fill
                         className="object-contain object-top"
@@ -223,7 +224,7 @@ export default function SyntheticsPage() {
                   <div className="min-w-0 w-full">
                     <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
                       <Image
-                        src="/synthetics/NewSyn1.svg"
+                        src={asset('/synthetics/NewSyn1.svg')}
                         alt="New Synthetic Telematics UI – calendar-based scheduling"
                         fill
                         className="object-contain object-top"
@@ -258,7 +259,7 @@ export default function SyntheticsPage() {
               >
                 <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px]">
                   <video
-                    src="/synthetics/rec1.mp4"
+                    src={asset('/synthetics/rec1.mp4')}
                     loop
                     playsInline
                     muted
