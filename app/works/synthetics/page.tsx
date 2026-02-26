@@ -144,7 +144,7 @@ export default function SyntheticsPage() {
           </dl>
         </header>
 
-        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 flex gap-12 lg:gap-16">
+        <div className="w-full max-w-[1400px] mx-auto pl-2 md:pl-4 pr-4 md:pr-8 flex gap-2 lg:gap-4">
           <ProjectToc sections={TOC_SECTIONS} />
           <div className="min-w-0 flex-1 max-w-3xl px-6 space-y-20">
             {/* 2. Context: The Product and Problem Space */}
@@ -199,8 +199,13 @@ export default function SyntheticsPage() {
                 </ul>
               </div>
 
-              <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen max-w-none px-4 md:px-8">
-                <div className="grid grid-cols-2 gap-6 md:gap-10 max-w-7xl mx-auto">
+              <div
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))]"
+                style={{
+                  maxWidth: 'min(calc(100vw - 2rem), 1144px)',
+                }}
+              >
+                <div className="grid grid-cols-2 gap-4 md:gap-6 w-full min-w-0">
                   <div className="min-w-0 w-full">
                     <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
                       <Image
@@ -208,7 +213,7 @@ export default function SyntheticsPage() {
                         alt="Old Synthetic Telematics UI – hierarchical table structure"
                         fill
                         className="object-contain object-top"
-                        sizes="50vw"
+                        sizes="45vw"
                       />
                     </div>
                     <p className="mt-3 text-base font-semibold text-teal-dark">
@@ -222,7 +227,7 @@ export default function SyntheticsPage() {
                         alt="New Synthetic Telematics UI – calendar-based scheduling"
                         fill
                         className="object-contain object-top"
-                        sizes="50vw"
+                        sizes="45vw"
                       />
                     </div>
                     <p className="mt-3 text-base font-semibold text-teal-dark">
