@@ -9,6 +9,7 @@ import {
   SyntheticsHeroCalendar,
   SyntheticsFlowDiagram,
 } from '@/components/SyntheticsGraphics'
+import { ImpactCards } from '@/components/ImpactCards'
 import { slugify } from '@/lib/slug'
 
 const TOC_SECTIONS = [
@@ -259,7 +260,7 @@ export default function SyntheticsPage() {
               >
                 <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px]">
                   <video
-                    src={asset('/synthetics/rec1.mp4')}
+                    src={asset('/synthetics/AssignWeek.mp4')}
                     loop
                     playsInline
                     muted
@@ -299,10 +300,14 @@ export default function SyntheticsPage() {
                   <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
                     Improvement 1: Full Schedule Visibility
                   </h3>
-                  <div className="rounded-xl border border-teal-medium/30 overflow-hidden mb-4">
-                    <div className="aspect-video bg-teal-50 flex items-center justify-center p-4">
-                      <SyntheticsHeroCalendar className="w-full h-full max-h-48" />
-                    </div>
+                  <div className="relative w-full aspect-video min-h-[200px] mb-4">
+                    <Image
+                      src={asset('/synthetics/WeekSchedule.png')}
+                      alt="Full weekly schedule view"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 900px"
+                    />
                   </div>
                   <p className="text-teal-dark/90 leading-relaxed">
                     Users can see the entire weekly schedule at once, making it easy to identify
@@ -312,16 +317,23 @@ export default function SyntheticsPage() {
 
                 <div>
                   <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
-                    Improvement 2: Faster Scheduling Through Direct Interaction
+                    Improvement 2: Ability to Filter Vehicles
                   </h3>
-                  <div className="rounded-xl border border-teal-medium/30 bg-white p-6 mb-4">
-                    <div className="h-24 rounded-lg bg-teal-content/20 border border-teal-content/40 flex items-center justify-center text-teal-dark/80 text-sm">
-                      Route card example – assign directly in grid
-                    </div>
+                  <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] mb-4">
+                    <video
+                      src={asset('/synthetics/FilterVehicles.mp4')}
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      className="absolute inset-0 w-full h-full object-contain"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                   <p className="text-teal-dark/90 leading-relaxed">
-                    Users assign routes directly within the grid instead of dropdown forms,
-                    reducing repetitive interactions dramatically.
+                    Users can filter vehicles to focus on specific subsets of the fleet, making it
+                    easier to manage and configure schedules for large numbers of vehicles.
                   </p>
                 </div>
 
@@ -329,10 +341,17 @@ export default function SyntheticsPage() {
                   <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
                     Improvement 3: Horizontal and Vertical Copy Workflows
                   </h3>
-                  <div className="rounded-xl border border-teal-medium/30 bg-white p-6 mb-4">
-                    <p className="text-sm text-teal-dark/70 text-center">
-                      Copy across days · Copy across vehicles
-                    </p>
+                  <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] mb-4">
+                    <video
+                      src={asset('/synthetics/CopySchedule.mp4')}
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      className="absolute inset-0 w-full h-full object-contain"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                   <p className="text-teal-dark/90 leading-relaxed">
                     Users reuse scheduling patterns across days and vehicles, enabling rapid
@@ -344,10 +363,14 @@ export default function SyntheticsPage() {
                   <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
                     Improvement 4: Higher Information Density with Better Clarity
                   </h3>
-                  <div className="rounded-xl border border-teal-medium/30 bg-white p-6 mb-4">
-                    <p className="text-sm text-teal-dark/70 text-center">
-                      Route cards show route name and time – more information without overwhelm
-                    </p>
+                  <div className="relative w-full aspect-video min-h-[200px] mb-4">
+                    <Image
+                      src={asset('/synthetics/RouteDetails.png')}
+                      alt="Route card details showing route name and time"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 1024px) 100vw, 900px"
+                    />
                   </div>
                   <p className="text-teal-dark/90 leading-relaxed">
                     More information is visible without overwhelming users. Schedules can be
@@ -358,47 +381,7 @@ export default function SyntheticsPage() {
             </section>
 
             {/* 7. Impact Section */}
-            <section id={TOC_SECTIONS[5].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">Impact</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
-                  <p className="text-3xl md:text-4xl font-serif font-bold text-teal-dark">
-                    60–80%
-                  </p>
-                  <p className="text-sm uppercase tracking-wider font-semibold text-teal-content mt-2">
-                    reduction
-                  </p>
-                  <p className="text-teal-dark/90 mt-1">Schedule creation time</p>
-                </div>
-                <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
-                  <p className="text-3xl md:text-4xl font-serif font-bold text-teal-dark">
-                    100+
-                  </p>
-                  <p className="text-sm uppercase tracking-wider font-semibold text-teal-content mt-2">
-                    vehicles
-                  </p>
-                  <p className="text-teal-dark/90 mt-1">Supported efficiently</p>
-                </div>
-                <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
-                  <p className="text-3xl md:text-4xl font-serif font-bold text-teal-dark">
-                    5× fewer
-                  </p>
-                  <p className="text-sm uppercase tracking-wider font-semibold text-teal-content mt-2">
-                    interactions
-                  </p>
-                  <p className="text-teal-dark/90 mt-1">Using copy workflows</p>
-                </div>
-                <div className="rounded-2xl border-2 border-teal-content bg-teal-content/10 p-8 text-center">
-                  <p className="text-3xl md:text-4xl font-serif font-bold text-teal-dark">
-                    Improved
-                  </p>
-                  <p className="text-sm uppercase tracking-wider font-semibold text-teal-content mt-2">
-                    confidence
-                  </p>
-                  <p className="text-teal-dark/90 mt-1">User validation and trust</p>
-                </div>
-              </div>
-            </section>
+            <ImpactCards id={TOC_SECTIONS[5].id} />
 
             {/* 8. Design Thinking and Process */}
             <section id={TOC_SECTIONS[6].id}>
