@@ -223,7 +223,7 @@ export default function SyntheticsPage() {
                   <div className="min-w-0 w-full">
                     <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
                       <Image
-                        src="/synthetics/NewSyn.svg"
+                        src="/synthetics/NewSyn1.svg"
                         alt="New Synthetic Telematics UI – calendar-based scheduling"
                         fill
                         className="object-contain object-top"
@@ -252,13 +252,22 @@ export default function SyntheticsPage() {
                 <li>Routes displayed as visual schedule cards</li>
                 <li>Users can see and interact with the entire weekly schedule at once</li>
               </ul>
-              <div className="rounded-2xl border border-teal-medium/30 overflow-hidden bg-gradient-to-br from-teal-50 to-slate-50">
-                <div className="aspect-video w-full flex items-center justify-center p-4">
-                  <SyntheticsHeroCalendar className="w-full h-full max-h-80" />
+              <div
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))]"
+                style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+              >
+                <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px]">
+                  <video
+                    src="/synthetics/rec1.mp4"
+                    loop
+                    playsInline
+                    muted
+                    autoPlay
+                    className="absolute inset-0 w-full h-full object-contain"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <p className="p-3 text-center text-sm text-teal-dark/70 bg-white/60">
-                  Calendar-based scheduling system – full weekly view
-                </p>
               </div>
             </section>
 
