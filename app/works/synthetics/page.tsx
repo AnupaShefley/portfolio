@@ -5,10 +5,7 @@ import { asset } from '@/lib/asset'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
 import { ProjectToc } from '@/components/ProjectToc'
-import {
-  SyntheticsHeroCalendar,
-  SyntheticsFlowDiagram,
-} from '@/components/SyntheticsGraphics'
+import { SyntheticsFlowDiagram } from '@/components/SyntheticsGraphics'
 import { ImpactCards } from '@/components/ImpactCards'
 import { slugify } from '@/lib/slug'
 
@@ -27,7 +24,7 @@ const TOC_SECTIONS = [
 export const metadata: Metadata = {
   title: 'Synthetics – Fleet Scheduling Redesign | Anupa Shefley',
   description:
-    'Case study: redesigning the Synthetic Telematics scheduling interface from a hierarchical table into a calendar-based system for 100+ vehicles.',
+    'Case study: redesigning the Synthetic Telematics scheduling interface from a hierarchical table into a calendar-based system for 50+ vehicles.',
 }
 
 export default function SyntheticsPage() {
@@ -65,41 +62,41 @@ export default function SyntheticsPage() {
                   Redesigning Fleet Scheduling for Synthetic Telematics
                 </h1>
                 <p className="text-base md:text-lg text-teal-100/90 leading-relaxed mb-10 max-w-xl">
-                  Transforming a form-based table into a scalable scheduling system for managing 100+
+                  Transforming a form-based table into a scalable scheduling system for managing 50+
                   vehicles and generating telematics simulations.
                 </p>
 
-                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 p-6 md:p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md items-stretch">
-                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
+                <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md items-stretch min-w-0">
+                  <div className="flex flex-col p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 min-w-0">
+                    <dt className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1.5 shrink-0">
                       Schedule creation
                     </dt>
-                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
+                    <dd className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-white leading-tight tabular-nums shrink-0 whitespace-nowrap">
                       ↓ 60–80%
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
+                    <dd className="text-[11px] sm:text-xs text-teal-200/80 mt-1 break-words line-clamp-2">
                       time reduction
                     </dd>
                   </div>
-                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
+                  <div className="flex flex-col p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 min-w-0">
+                    <dt className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1.5 shrink-0">
                       Scale
                     </dt>
-                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
-                      ↑ 100+
+                    <dd className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-white leading-tight tabular-nums shrink-0 whitespace-nowrap">
+                      ↑ 50+
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
+                    <dd className="text-[11px] sm:text-xs text-teal-200/80 mt-1 break-words line-clamp-2">
                       vehicles supported
                     </dd>
                   </div>
-                  <div className="flex flex-col p-4 md:p-5 rounded-xl bg-white/5 border border-white/10">
-                    <dt className="text-[10px] md:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-2">
+                  <div className="flex flex-col p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 min-w-0">
+                    <dt className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-teal-200/90 mb-1.5 shrink-0">
                       Configuration
                     </dt>
-                    <dd className="text-2xl md:text-3xl font-serif font-semibold text-white">
+                    <dd className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-white leading-tight shrink-0 whitespace-nowrap">
                       ↓ Fewer
                     </dd>
-                    <dd className="text-xs md:text-sm text-teal-200/80 min-h-[2.5rem] flex items-end mt-1">
+                    <dd className="text-[11px] sm:text-xs text-teal-200/80 mt-1 break-words line-clamp-2">
                       repetitive actions
                     </dd>
                   </div>
@@ -148,7 +145,7 @@ export default function SyntheticsPage() {
 
         <div className="w-full max-w-[1400px] mx-auto pl-2 md:pl-4 pr-4 md:pr-8 flex gap-2 lg:gap-4">
           <ProjectToc sections={TOC_SECTIONS} />
-          <div className="min-w-0 flex-1 max-w-3xl px-6 space-y-20">
+          <div className="min-w-0 flex-1 max-w-3xl px-6 space-y-12">
             {/* 2. Context: The Product and Problem Space */}
             <section id={TOC_SECTIONS[0].id}>
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
@@ -207,31 +204,29 @@ export default function SyntheticsPage() {
                   maxWidth: 'min(calc(100vw - 2rem), 1144px)',
                 }}
               >
-                <div className="grid grid-cols-2 gap-4 md:gap-6 w-full min-w-0">
+                <div className="grid grid-cols-2 gap-4 md:gap-6 w-full min-w-0 items-start">
                   <div className="min-w-0 w-full">
-                    <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
-                      <Image
-                        src={asset('/synthetics/OldSyn.svg')}
-                        alt="Old Synthetic Telematics UI – hierarchical table structure"
-                        fill
-                        className="object-contain object-top"
-                        sizes="45vw"
-                      />
-                    </div>
+                    <Image
+                      src={asset('/synthetics/OldSyn.svg')}
+                      alt="Old Synthetic Telematics UI – hierarchical table structure"
+                      width={0}
+                      height={0}
+                      sizes="45vw"
+                      className="w-full h-auto"
+                    />
                     <p className="mt-3 text-base font-semibold text-teal-dark">
                       Before: Form-based · Fragmented structure · High interaction cost
                     </p>
                   </div>
                   <div className="min-w-0 w-full">
-                    <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
-                      <Image
-                        src={asset('/synthetics/NewSyn1.svg')}
-                        alt="New Synthetic Telematics UI – calendar-based scheduling"
-                        fill
-                        className="object-contain object-top"
-                        sizes="45vw"
-                      />
-                    </div>
+                    <Image
+                      src={asset('/synthetics/NewSyn1.svg')}
+                      alt="New Synthetic Telematics UI – calendar-based scheduling"
+                      width={0}
+                      height={0}
+                      sizes="45vw"
+                      className="w-full h-auto"
+                    />
                     <p className="mt-3 text-base font-semibold text-teal-dark">
                       After: Calendar-based · Clear relationships · Fewer interactions
                     </p>
@@ -248,28 +243,26 @@ export default function SyntheticsPage() {
               <p className="text-teal-dark/90 leading-relaxed mb-6">
                 A calendar-based scheduling system:
               </p>
-              <ul className="list-disc list-inside space-y-1 text-teal-dark/90 mb-8">
+              <ul className="list-disc list-inside space-y-1 text-teal-dark/90 mb-4">
                 <li>Vehicles organised as rows</li>
                 <li>Days organised as columns</li>
                 <li>Routes displayed as visual schedule cards</li>
                 <li>Users can see and interact with the entire weekly schedule at once</li>
               </ul>
               <div
-                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))]"
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
                 style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
               >
-                <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px]">
-                  <video
-                    src={asset('/synthetics/AssignWeek.mp4')}
-                    loop
-                    playsInline
-                    muted
-                    autoPlay
-                    className="absolute inset-0 w-full h-full object-contain"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+                <video
+                  src={asset('/synthetics/AssignWeek.mp4')}
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
+                  className="w-full h-auto block"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </section>
 
@@ -291,91 +284,122 @@ export default function SyntheticsPage() {
 
             {/* 6. Key Improvements */}
             <section id={TOC_SECTIONS[4].id}>
-              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-8">
+              <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Key Improvements
               </h2>
 
-              <div className="space-y-16">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
+                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-2">
                     Improvement 1: Full Schedule Visibility
                   </h3>
-                  <div className="relative w-full aspect-video min-h-[200px] mb-4">
+                  <div
+                    className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
+                    style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+                  >
                     <Image
                       src={asset('/synthetics/WeekSchedule.png')}
                       alt="Full weekly schedule view"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 1024px) 100vw, 900px"
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 1024px) 100vw, 1144px"
+                      className="w-full h-auto"
                     />
                   </div>
-                  <p className="text-teal-dark/90 leading-relaxed">
-                    Users can see the entire weekly schedule at once, making it easy to identify
-                    gaps, spot patterns, and validate assignments.
-                  </p>
+                  <div className="space-y-2 text-teal-dark/90 leading-relaxed">
+                    <p>
+                      Users can see the entire weekly schedule at once, making it easy to identify
+                      gaps, spot patterns, and validate assignments before generating telematics.
+                    </p>
+                    <p>
+                      The calendar grid replaces fragmented form views with a single, scannable overview—so operators no longer need to click through multiple screens to understand fleet coverage.
+                    </p>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
+                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-2">
                     Improvement 2: Ability to Filter Vehicles
                   </h3>
-                  <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] mb-4">
+                  <div
+                    className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
+                    style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+                  >
                     <video
                       src={asset('/synthetics/FilterVehicles.mp4')}
                       loop
                       playsInline
                       muted
                       autoPlay
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="w-full h-auto block"
                     >
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <p className="text-teal-dark/90 leading-relaxed">
-                    Users can filter vehicles to focus on specific subsets of the fleet, making it
-                    easier to manage and configure schedules for large numbers of vehicles.
-                  </p>
+                  <div className="space-y-2 text-teal-dark/90 leading-relaxed">
+                    <p>
+                      Users can filter vehicles by type, depot, or custom criteria to focus on specific subsets of the fleet. This reduces visual clutter when working with 50+ vehicles and makes it easier to target configuration changes.
+                    </p>
+                    <p>
+                      Filters persist across interactions, so operators can quickly switch between fleet-wide and focused views without losing context.
+                    </p>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
+                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-2">
                     Improvement 3: Horizontal and Vertical Copy Workflows
                   </h3>
-                  <div className="relative w-full aspect-video min-h-[280px] sm:min-h-[360px] md:min-h-[420px] mb-4">
+                  <div
+                    className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
+                    style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+                  >
                     <video
                       src={asset('/synthetics/CopySchedule.mp4')}
                       loop
                       playsInline
                       muted
                       autoPlay
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="w-full h-auto block"
                     >
                       Your browser does not support the video tag.
                     </video>
                   </div>
-                  <p className="text-teal-dark/90 leading-relaxed">
-                    Users reuse scheduling patterns across days and vehicles, enabling rapid
-                    configuration of large fleets.
-                  </p>
+                  <div className="space-y-2 text-teal-dark/90 leading-relaxed">
+                    <p>
+                      Users can copy schedules across days (horizontal) or across vehicles (vertical), enabling rapid configuration of large fleets. A typical route pattern can be replicated in seconds instead of minutes.
+                    </p>
+                    <p>
+                      This workflow proved critical for fleets with repetitive weekly patterns—operators report up to 5× fewer interactions compared to manual assignment.
+                    </p>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-4">
+                  <h3 className="text-lg font-serif font-semibold text-teal-dark mb-2">
                     Improvement 4: Higher Information Density with Better Clarity
                   </h3>
-                  <div className="relative w-full aspect-video min-h-[200px] mb-4">
+                  <div
+                    className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
+                    style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+                  >
                     <Image
                       src={asset('/synthetics/RouteDetails.png')}
                       alt="Route card details showing route name and time"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 1024px) 100vw, 900px"
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 1024px) 100vw, 1144px"
+                      className="w-full h-auto"
                     />
                   </div>
-                  <p className="text-teal-dark/90 leading-relaxed">
-                    More information is visible without overwhelming users. Schedules can be
-                    validated visually.
-                  </p>
+                  <div className="space-y-2 text-teal-dark/90 leading-relaxed">
+                    <p>
+                      Route cards display route name, duration, and timing at a glance—more information visible without overwhelming users. Clear typography and colour-coding help operators distinguish routes and validate schedules visually.
+                    </p>
+                    <p>
+                      The redesign prioritises information hierarchy: critical details (which route, when) are immediately visible, while secondary details remain accessible on demand.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
@@ -388,17 +412,40 @@ export default function SyntheticsPage() {
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Design Thinking and Process
               </h2>
-              <p className="text-teal-dark/90 leading-relaxed mb-6">
+              <p className="text-teal-dark/90 leading-relaxed mb-4">
                 I explored multiple layout models before selecting the calendar grid. Early
                 explorations included alternative table layouts and different grouping strategies.
                 The calendar grid was chosen for its scalability and alignment with how users
                 think about time and fleet operations.
               </p>
-              <ul className="list-disc list-inside space-y-1 text-teal-dark/90">
+              <ul className="list-disc list-inside space-y-1 text-teal-dark/90 mb-6">
                 <li>Early layout explorations</li>
                 <li>Grid structure exploration</li>
                 <li>Interaction ideas (copy, drag, inline assign)</li>
               </ul>
+              <div
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))]"
+                style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+              >
+                <div className="grid grid-cols-2 gap-4 md:gap-6 items-start">
+                  <Image
+                    src={asset('/synthetics/Iter1.svg')}
+                    alt="Design iteration 1 – early layout exploration"
+                    width={0}
+                    height={0}
+                    sizes="45vw"
+                    className="w-full h-auto"
+                  />
+                  <Image
+                    src={asset('/synthetics/Iter2.svg')}
+                    alt="Design iteration 2 – grid structure exploration"
+                    width={0}
+                    height={0}
+                    sizes="45vw"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </section>
 
             {/* 9. Final UI Showcase */}
@@ -406,33 +453,23 @@ export default function SyntheticsPage() {
               <h2 className="text-2xl font-serif font-bold text-teal-dark mb-6">
                 Final UI Showcase
               </h2>
-              <p className="text-teal-dark/80 text-sm mb-6">
-                Full calendar view, route card details, and interaction states. Add your final
-                screenshots here.
+              <p className="text-teal-dark/80 text-sm mb-4">
+                Full calendar view with route cards and interaction states.
               </p>
-              <div className="space-y-6">
-                <div className="rounded-2xl border border-teal-medium/30 overflow-hidden bg-gradient-to-br from-teal-50 to-slate-50">
-                  <div className="aspect-video flex items-center justify-center p-4">
-                    <SyntheticsHeroCalendar className="w-full h-full max-h-72" />
-                  </div>
-                  <p className="p-3 text-center text-xs text-teal-dark/70 bg-white/60">
-                    Full calendar
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="rounded-xl border border-teal-medium/30 bg-white p-6">
-                    <p className="text-xs uppercase tracking-wider text-teal-content font-semibold mb-2">
-                      Route card details
-                    </p>
-                    <div className="h-20 rounded-lg bg-teal-content/15" />
-                  </div>
-                  <div className="rounded-xl border border-teal-medium/30 bg-white p-6">
-                    <p className="text-xs uppercase tracking-wider text-teal-content font-semibold mb-2">
-                      Interaction states
-                    </p>
-                    <div className="h-20 rounded-lg bg-teal-content/15" />
-                  </div>
-                </div>
+              <div
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-2"
+                style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+              >
+                <video
+                  src={asset('/synthetics/Final.mp4')}
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
+                  className="w-full h-auto block"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </section>
 
@@ -450,7 +487,7 @@ export default function SyntheticsPage() {
               <p className="text-teal-dark/90 leading-relaxed">
                 This redesign transformed a slow, form-based workflow into a fast, scalable
                 scheduling system. Aligning the interface with how users think—in time and
-                patterns—reduced errors and made it possible to manage 100+ vehicles with
+                patterns—reduced errors and made it possible to manage 50+ vehicles with
                 confidence.
               </p>
             </section>

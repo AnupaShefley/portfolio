@@ -71,7 +71,7 @@ export function ImpactCards({ id }: ImpactCardsProps) {
   const isInView = useInView(ref, { once: true, margin: '-80px', amount: 0.2 })
 
   const rangeVal = useAnimatedRange(60, 80, isInView, '%')
-  const vehiclesVal = useAnimatedNumber(100, isInView, '', '+')
+  const vehiclesVal = useAnimatedNumber(50, isInView, '', '+')
   const interactionsNum = useAnimatedNumber(5, isInView)
 
   return (
