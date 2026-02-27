@@ -3,7 +3,7 @@ import { asset } from '@/lib/asset'
 
 export const projects: Project[] = [
   {
-    id: '1',
+    id: '20',
     slug: 'highbury-primary',
     title: 'Highbury Primary School',
     category: 'Research / Usability Study',
@@ -12,7 +12,7 @@ export const projects: Project[] = [
     active: true,
   },
   {
-    id: '2',
+    id: '21',
     slug: 'calendarredesign',
     title: 'iOS Calendar Redesign for Conference Meetings',
     category: 'User Research and Design',
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     active: false,
   },
   {
-    id: '8',
+    id: '1',
     slug: 'navbar',
     title: 'Navigation Bar Redesign',
     category: 'UX / UI Design',
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     active: true,
   },
   {
-    id: '9',
+    id: '2',
     slug: 'synthetics',
     title: 'Synthetics',
     category: 'Synthetic Telematics · Fleet Scheduling',

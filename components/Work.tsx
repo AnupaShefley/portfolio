@@ -38,8 +38,15 @@ export default function Work() {
     setVisitCursor((prev) => ({ ...prev, visible: false }))
   }, [])
 
-  // Filter to only show active projects (active defaults to true if not specified)
-  const activeProjects = projects.filter((project) => project.active !== false)
+  // Filter to only show active projects, sorted by id
+  const activeProjects = projects
+    .filter((project) => project.active !== false)
+    .sort((a, b) => {
+      const numA = parseInt(a.id, 10)
+      const numB = parseInt(b.id, 10)
+      if (!Number.isNaN(numA) && !Number.isNaN(numB)) return numA - numB
+      return String(a.id).localeCompare(String(b.id))
+    })
 
   return (
     <section id="work" ref={ref} className="relative bg-teal-content pt-8 md:pt-10 overflow-x-hidden">
