@@ -574,7 +574,7 @@ export default function NavbarContent() {
                 </p>
               </motion.div>
 
-              <div className="space-y-0">
+              <div className="space-y-8">
                 {[
                   {
                     num: '1',
@@ -605,7 +605,7 @@ export default function NavbarContent() {
                   <motion.div
                     key={item.num}
                     {...rv()}
-                    className="space-y-2 pt-8 border-t border-slate-200 first:border-t-0 first:pt-0"
+                    className="space-y-2"
                   >
                     <div className="flex items-center gap-3">
                       <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold ring-1 ring-emerald-200 shrink-0">
