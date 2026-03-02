@@ -12,6 +12,7 @@ import { slugify } from '@/lib/slug'
 const TOC_SECTIONS = [
   'Project Overview',
   'AI-Assisted Prototyping',
+  'Route Definition',
   'Understanding the Fleet',
   'Planning a Transition',
   'Infrastructure and Charging',
@@ -74,6 +75,103 @@ function NumberedList({ items }: { items: string[] }) {
     </ol>
   )
 }
+
+// ─── Route Definition scrollytelling data ──────────────────────────────────
+
+const ROUTE_POINTS = [
+  {
+    heading: 'Map-based route visualisation',
+    body: 'Users enter details about their daily journeys. The map interface lets operators visualise routes geographically — building a realistic picture of how the fleet actually moves.',
+  },
+  {
+    heading: 'Tabular route summary',
+    body: 'A tabular view provided a quick, scannable summary of all created routes, making it easy to review, edit and compare journey data at a glance.',
+  },
+  {
+    heading: 'Click-to-create on map',
+    body: 'Users could create routes directly by clicking on the map — reducing friction and making the process intuitive even for operators unfamiliar with data entry tools.',
+  },
+  {
+    heading: 'Bulk route upload',
+    body: 'For larger fleets, bulk route creation via file upload allowed teams to import existing route data quickly, removing a major barrier to onboarding.',
+  },
+]
+
+function RouteDefinitionSection({ id }: { id: string }) {
+  return (
+    <section id={id}>
+      <motion.div {...rv()}>
+        <SectionNum n="03" />
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
+          Route Definition
+        </h2>
+        <p className="text-slate-500 mb-8">
+          Before modelling transitions, operators need to accurately capture how their fleet
+          currently operates. EcoFleet&apos;s route definition tools made this fast and flexible.
+        </p>
+      </motion.div>
+
+      {/* Breakout two-column layout */}
+      <div
+        className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+26rem))]"
+        style={{ maxWidth: 'min(calc(100vw - 2rem), 1200px)' }}
+      >
+        <div className="grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-start">
+
+          {/* Left: feature cards animate in one by one as section enters viewport */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+            className="space-y-3 lg:pt-1"
+          >
+            {ROUTE_POINTS.map((point, i) => (
+              <motion.div
+                key={point.heading}
+                variants={{
+                  hidden: { opacity: 0, x: -16 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="flex gap-4 p-4 md:p-5 rounded-xl border border-slate-200 bg-white shadow-sm"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-50 ring-1 ring-teal-200 text-teal-600 text-xs font-bold flex items-center justify-center mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">{point.heading}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{point.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Right: sticky looping video — occupies full left-column height */}
+          <motion.div
+            {...rv(0.1)}
+            className="lg:sticky lg:top-20 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl"
+          >
+            <video
+              src={asset('/Ecofleet/RouteSetup.mp4')}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto block"
+            />
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function EcoFleetContent() {
   return (
@@ -165,7 +263,7 @@ export default function EcoFleetContent() {
                 </motion.dl>
               </div>
 
-              {/* Right: hero image */}
+              {/* Right: hero video */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -183,15 +281,13 @@ export default function EcoFleetContent() {
                   }}
                 />
                 <div className="relative rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl">
-                  <Image
-                    src={asset('/Ecofleet/Step1Routes.png')}
-                    alt="EcoFleet routes and fleet overview dashboard"
-                    width={0}
-                    height={0}
-                    sizes="(max-width: 1024px) 100vw, 55vw"
-                    className="w-full h-auto"
-                    priority
-                    quality={90}
+                  <video
+                    src={asset('/Ecofleet/overview.mp4')}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-auto block"
                   />
                 </div>
               </motion.div>
@@ -346,25 +442,16 @@ export default function EcoFleetContent() {
                 alignment and reducing ambiguity before development began.
               </motion.p>
 
-              <motion.div {...rv(0.15)}>
-                <MediaWrap>
-                  <Image
-                    src={asset('/Ecofleet/Step3aScenarios.png')}
-                    alt="EcoFleet interactive scenario comparison — built as a functional React prototype using Cursor"
-                    width={0}
-                    height={0}
-                    sizes="(max-width: 1024px) 100vw, 1144px"
-                    className="w-full h-auto block"
-                    quality={90}
-                  />
-                </MediaWrap>
-              </motion.div>
+             
             </section>
 
-            {/* 03 – Understanding the Fleet */}
-            <section id={TOC_SECTIONS[2].id}>
+            {/* 03 – Route Definition */}
+            <RouteDefinitionSection id={TOC_SECTIONS[2].id} />
+
+            {/* 04 – Understanding the Fleet */}
+            <section id={TOC_SECTIONS[3].id}>
               <motion.div {...rv()}>
-                <SectionNum n="03" />
+                <SectionNum n="04" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Understanding the Fleet and Duty Cycles
                 </h2>
@@ -444,10 +531,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 04 – Planning a Phased Transition */}
-            <section id={TOC_SECTIONS[3].id}>
+            {/* 05 – Planning a Phased Transition */}
+            <section id={TOC_SECTIONS[4].id}>
               <motion.div {...rv()}>
-                <SectionNum n="04" />
+                <SectionNum n="05" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Planning a Phased Transition
                 </h2>
@@ -522,10 +609,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 05 – Infrastructure and Charging */}
-            <section id={TOC_SECTIONS[4].id}>
+            {/* 06 – Infrastructure and Charging */}
+            <section id={TOC_SECTIONS[5].id}>
               <motion.div {...rv()}>
-                <SectionNum n="05" />
+                <SectionNum n="06" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Infrastructure and Charging Strategy
                 </h2>
@@ -601,10 +688,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 06 – Communicating Outcomes */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 07 – Communicating Outcomes */}
+            <section id={TOC_SECTIONS[6].id}>
               <motion.div {...rv()}>
-                <SectionNum n="06" />
+                <SectionNum n="07" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Communicating Outcomes with Stakeholders
                 </h2>
@@ -677,10 +764,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 07 – Impact */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 08 – Impact */}
+            <section id={TOC_SECTIONS[7].id}>
               <motion.div {...rv()}>
-                <SectionNum n="07" />
+                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Impact
                 </h2>
