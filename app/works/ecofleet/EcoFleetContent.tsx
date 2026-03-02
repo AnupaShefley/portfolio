@@ -13,6 +13,7 @@ const TOC_SECTIONS = [
   'Project Overview',
   'AI-Assisted Prototyping',
   'Route Definition',
+  'Infrastructure Setup',
   'Understanding the Fleet',
   'Planning a Transition',
   'Infrastructure and Charging',
@@ -163,6 +164,102 @@ function RouteDefinitionSection({ id }: { id: string }) {
               playsInline
               className="w-full h-auto block"
             />
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Infrastructure Setup data ───────────────────────────────────────────────
+
+const INFRA_POINTS = [
+  {
+    heading: 'Define your charging and refuelling strategy',
+    body: 'Set the infrastructure approach for each depot — EV charging, hydrogen refuelling or LNG stations. Specify capacity, charger type and availability windows to reflect real operational constraints.',
+  },
+  {
+    heading: 'Multiple ways to add locations',
+    body: 'Add infrastructure manually, import locations in bulk via file upload, or connect directly to a live charging network API to pull real location and capacity data automatically.',
+  },
+  {
+    heading: 'Live connectivity to charging networks',
+    body: 'API integration with third-party charging networks keeps infrastructure data current — reducing manual effort and ensuring planning is based on accurate, up-to-date availability.',
+  },
+  {
+    heading: 'Map-based gap analysis',
+    body: 'The interactive map lets operators filter and explore infrastructure coverage across their operating area. Locations with low density are immediately visible, making it easy to identify where new infrastructure should be placed.',
+  },
+]
+
+function InfrastructureSetupSection({ id }: { id: string }) {
+  return (
+    <section id={id}>
+      <motion.div {...rv()}>
+        <SectionNum n="04" />
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
+          Infrastructure Setup
+        </h2>
+        <p className="text-slate-500 mb-8">
+          Getting the charging and refuelling strategy right is one of the most complex parts of
+          fleet transition. EcoFleet makes it straightforward to define, import and visualise
+          infrastructure across your entire operation.
+        </p>
+      </motion.div>
+
+      {/* Breakout two-column layout — video left, cards right */}
+      <div
+        className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+26rem))]"
+        style={{ maxWidth: 'min(calc(100vw - 2rem), 1200px)' }}
+      >
+        <div className="grid lg:grid-cols-[7fr_5fr] gap-8 lg:gap-10 items-start">
+
+          {/* Left: sticky looping video */}
+          <motion.div
+            {...rv(0.05)}
+            className="lg:sticky lg:top-20 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl"
+          >
+            <video
+              src={asset('/Ecofleet/Infra.mp4')}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto block"
+            />
+          </motion.div>
+
+          {/* Right: feature cards animate in one by one */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+            className="space-y-3 lg:pt-1"
+          >
+            {INFRA_POINTS.map((point, i) => (
+              <motion.div
+                key={point.heading}
+                variants={{
+                  hidden: { opacity: 0, x: 16 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="flex gap-4 p-4 md:p-5 rounded-xl border border-slate-200 bg-white shadow-sm"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-50 ring-1 ring-teal-200 text-teal-600 text-xs font-bold flex items-center justify-center mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">{point.heading}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{point.body}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
 
         </div>
@@ -448,10 +545,13 @@ export default function EcoFleetContent() {
             {/* 03 – Route Definition */}
             <RouteDefinitionSection id={TOC_SECTIONS[2].id} />
 
-            {/* 04 – Understanding the Fleet */}
-            <section id={TOC_SECTIONS[3].id}>
+            {/* 04 – Infrastructure Setup */}
+            <InfrastructureSetupSection id={TOC_SECTIONS[3].id} />
+
+            {/* 05 – Understanding the Fleet */}
+            <section id={TOC_SECTIONS[4].id}>
               <motion.div {...rv()}>
-                <SectionNum n="04" />
+                <SectionNum n="05" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Understanding the Fleet and Duty Cycles
                 </h2>
@@ -531,10 +631,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 05 – Planning a Phased Transition */}
-            <section id={TOC_SECTIONS[4].id}>
+            {/* 06 – Planning a Phased Transition */}
+            <section id={TOC_SECTIONS[5].id}>
               <motion.div {...rv()}>
-                <SectionNum n="05" />
+                <SectionNum n="06" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Planning a Phased Transition
                 </h2>
@@ -609,10 +709,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 06 – Infrastructure and Charging */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 07 – Infrastructure and Charging */}
+            <section id={TOC_SECTIONS[6].id}>
               <motion.div {...rv()}>
-                <SectionNum n="06" />
+                <SectionNum n="07" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Infrastructure and Charging Strategy
                 </h2>
@@ -688,10 +788,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 07 – Communicating Outcomes */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 08 – Communicating Outcomes */}
+            <section id={TOC_SECTIONS[7].id}>
               <motion.div {...rv()}>
-                <SectionNum n="07" />
+                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Communicating Outcomes with Stakeholders
                 </h2>
@@ -764,10 +864,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 08 – Impact */}
-            <section id={TOC_SECTIONS[7].id}>
+            {/* 09 – Impact */}
+            <section id={TOC_SECTIONS[8].id}>
               <motion.div {...rv()}>
-                <SectionNum n="08" />
+                <SectionNum n="09" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Impact
                 </h2>
