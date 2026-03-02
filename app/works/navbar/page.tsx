@@ -1,13 +1,25 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import OtherWorks from '@/components/OtherWorks'
 import { ProjectToc } from '@/components/ProjectToc'
-import {
-  NavbarHeroVisualization,
-  NavbarStructureDiagram,
-} from '@/components/NavbarGraphics'
+import { NavbarStructureDiagram } from '@/components/NavbarGraphics'
+import { asset } from '@/lib/asset'
 import { slugify } from '@/lib/slug'
+
+function MediaWrap({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] my-3"
+      style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+    >
+      <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
+        {children}
+      </div>
+    </div>
+  )
+}
 
 const TOC_SECTIONS = [
   'Context',
@@ -83,13 +95,23 @@ export default function NavbarPage() {
             </div>
 
             <div className="relative">
-              <div className="relative w-full max-w-xl mx-auto aspect-[16/9] rounded-2xl overflow-hidden shadow-[0_24px_70px_rgba(15,118,110,0.2)] bg-gradient-to-br from-teal-50 via-sky-50 to-slate-50">
-                <NavbarHeroVisualization className="w-full h-full" />
+              <div
+                className="relative w-full min-w-0 max-w-xl mx-auto"
+                style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+              >
+                <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl">
+                  <Image
+                    src={asset('/navbar/NavMenu.png')}
+                    alt="Navigation bar redesign overview – header visual"
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="w-full h-auto"
+                    priority
+                    quality={90}
+                  />
+                </div>
               </div>
-              <p className="mt-3 text-xs md:text-sm text-teal-dark/70 text-center">
-                Vector illustration of the navbar structure and key entry points. Editable in code
-                for future refinements.
-              </p>
             </div>
           </div>
         </section>
@@ -163,11 +185,21 @@ export default function NavbarPage() {
                     <li>Running simulations</li>
                     <li>Analysing results</li>
                   </ul>
-                  <p className="text-teal-dark/90 leading-relaxed">
+                  <p className="text-teal-dark/90 leading-relaxed mb-4">
                     However, the navigation did not reflect this progression. Users frequently
                     expressed uncertainty about where to begin or what to do next. This increased
                     cognitive load and reduced confidence in using the platform.
                   </p>
+                  <MediaWrap>
+                    <Image
+                      src={asset('/navbar/Confused.svg')}
+                      alt="User confusion – unclear where to start in the navigation"
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 1024px) 100vw, 1144px"
+                      className="w-full h-auto"
+                    />
+                  </MediaWrap>
                 </div>
 
                 <div>
@@ -183,9 +215,19 @@ export default function NavbarPage() {
                     <li>Maintain clear structure</li>
                     <li>Support future expansion</li>
                   </ul>
-                  <p className="text-teal-dark/90 leading-relaxed">
+                  <p className="text-teal-dark/90 leading-relaxed mb-4">
                     This created long-term scalability limitations.
                   </p>
+                  <MediaWrap>
+                    <Image
+                      src={asset('/navbar/OldvsNew.svg')}
+                      alt="Before vs after – old horizontal navigation vs new scalable structure"
+                      width={0}
+                      height={0}
+                      sizes="(max-width: 1024px) 100vw, 1144px"
+                      className="w-full h-auto"
+                    />
+                  </MediaWrap>
                 </div>
 
                 <div>
