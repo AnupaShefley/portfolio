@@ -257,28 +257,21 @@ Instead of forcing content into limited horizontal space, we could now expose me
 
               </p>
 
-              <div className="mt-8 rounded-2xl border border-teal-medium/30 bg-white shadow-sm overflow-hidden">
-                <div className="px-5 py-4 border-b border-teal-medium/20 flex items-center justify-between">
-                  <p className="text-sm font-medium text-teal-dark">
-                    Before and after – information architecture
-                  </p>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-teal-content/10 px-3 py-1 text-xs font-medium text-teal-content">
-                    <span className="h-1.5 w-1.5 rounded-full bg-teal-content" />
-                    Vector · code editable
-                  </span>
-                </div>
+              <MediaWrap>
+                <video
+                  src={asset('/navbar/Overview.mp4')}
+                  loop
+                  playsInline
+                  muted
+                  autoPlay
+                  className="w-full h-auto block"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </MediaWrap>
 
-                <div className="bg-gradient-to-br from-teal-50 via-sky-50 to-slate-50 px-2 pb-2 pt-4 md:px-4 md:pb-4">
-                  <div className="relative w-full overflow-hidden rounded-2xl">
-                    <NavbarStructureDiagram className="w-full h-full" />
-                  </div>
-                </div>
-              </div>
 
-              <p className="text-teal-dark/80 leading-relaxed mt-4 text-sm">
-                The diagram is drawn in SVG so labels, colours and layout can be updated in code as
-                the design evolves.
-              </p>
+
             </section>
 
             {/* Research and Discovery */}
@@ -323,10 +316,22 @@ Instead of forcing content into limited horizontal space, we could now expose me
                     <li>Simulation and modelling</li>
                     <li>Results analysis and decision-making</li>
                   </ol>
-                  <p className="text-teal-dark/90 leading-relaxed mb-0">
+                  <p className="text-teal-dark/90 leading-relaxed mb-4">
                     However, the navigation did not reflect this progression. This mismatch created
                     friction.
                   </p>
+                  <MediaWrap>
+                    <video
+                      src={asset('/navbar/newUserflow.mp4')}
+                      loop
+                      playsInline
+                      muted
+                      autoPlay
+                      className="w-full h-auto block"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </MediaWrap>
                 </div>
 
                 <div>
@@ -449,39 +454,7 @@ Instead of forcing content into limited horizontal space, we could now expose me
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-serif font-semibold text-teal-dark mb-4 mt-12">
-                    Visual Design
-                  </h3>
-                  <p className="text-teal-dark/90 leading-relaxed mb-6">
-                    I updated the visual design to improve clarity and align with the
-                    product&apos;s purpose.
-                  </p>
-
-                  <h4 className="text-base font-semibold text-teal-dark mb-2">
-                    Brand Alignment
-                  </h4>
-                  <p className="text-teal-dark/90 leading-relaxed mb-6">
-                    The navigation colour was updated to green to reflect the brand&apos;s
-                    association with sustainability and electrification.
-                  </p>
-
-                  <h4 className="text-base font-semibold text-teal-dark mb-2">
-                    Workflow Progress Indicators
-                  </h4>
-                  <p className="text-teal-dark/90 leading-relaxed mb-3">
-                    I introduced colour indicators aligned with the electrification workflow:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 text-teal-dark/90 mb-3">
-                    <li>Red – Data setup</li>
-                    <li>Amber – Simulation</li>
-                    <li>Green – Results</li>
-                  </ul>
-                  <p className="text-teal-dark/90 leading-relaxed">
-                    These indicators helped users understand system structure and progress.
-                  </p>
                 </div>
-              </div>
             </section>
 
             {/* Outcome and Impact */}
