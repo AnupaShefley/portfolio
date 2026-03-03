@@ -14,6 +14,7 @@ const TOC_SECTIONS = [
   'AI-Assisted Prototyping',
   'Route Definition',
   'Infrastructure Setup',
+  'Scenarios',
   'Understanding the Fleet',
   'Planning a Transition',
   'Infrastructure and Charging',
@@ -260,6 +261,102 @@ function InfrastructureSetupSection({ id }: { id: string }) {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─── Scenarios data ──────────────────────────────────────────────────────────
+
+const SCENARIOS_POINTS = [
+  {
+    heading: 'See assumptions for each technology',
+    body: 'Review and adjust the assumptions applied to each technology (EV, hydrogen, LNG) — from efficiency and range to availability and lifecycle. Transparency in assumptions keeps scenario comparisons fair and defensible.',
+  },
+  {
+    heading: 'Vehicle details that will be simulated',
+    body: 'Define which vehicle types and specs are included in each scenario. Operators can see exactly what is being simulated so results map clearly to real fleet decisions.',
+  },
+  {
+    heading: 'Enter costs for fuel and infrastructure',
+    body: 'Input fuel prices, electricity tariffs and infrastructure costs so that total cost of ownership and payback calculations reflect your actual operating context.',
+  },
+  {
+    heading: 'Calculate emission savings',
+    body: 'Run scenarios to compare emissions across transition options. See how each technology mix and phasing affects your carbon footprint and track progress toward decarbonisation targets.',
+  },
+]
+
+function ScenariosSection({ id }: { id: string }) {
+  return (
+    <section id={id}>
+      <motion.div {...rv()}>
+        <SectionNum n="05" />
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
+          Scenarios
+        </h2>
+        <p className="text-slate-500 mb-8">
+          Once routes and infrastructure are in place, operators can build and compare transition
+          scenarios — defining assumptions, costs and vehicle details to see emissions and cost
+          impact before committing.
+        </p>
+      </motion.div>
+
+      {/* Breakout two-column layout — cards left, video right (same as Route Definition) */}
+      <div
+        className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+26rem))]"
+        style={{ maxWidth: 'min(calc(100vw - 2rem), 1200px)' }}
+      >
+        <div className="grid lg:grid-cols-[5fr_7fr] gap-8 lg:gap-10 items-start">
+
+          {/* Left: feature cards animate in one by one */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+            className="space-y-3 lg:pt-1"
+          >
+            {SCENARIOS_POINTS.map((point, i) => (
+              <motion.div
+                key={point.heading}
+                variants={{
+                  hidden: { opacity: 0, x: -16 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="flex gap-4 p-4 md:p-5 rounded-xl border border-slate-200 bg-white shadow-sm"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-50 ring-1 ring-teal-200 text-teal-600 text-xs font-bold flex items-center justify-center mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">{point.heading}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{point.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Right: sticky looping video */}
+          <motion.div
+            {...rv(0.1)}
+            className="lg:sticky lg:top-20 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl"
+          >
+            <video
+              src={asset('/Ecofleet/scenarios.mp4')}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto block"
+            />
           </motion.div>
 
         </div>
@@ -548,10 +645,13 @@ export default function EcoFleetContent() {
             {/* 04 – Infrastructure Setup */}
             <InfrastructureSetupSection id={TOC_SECTIONS[3].id} />
 
-            {/* 05 – Understanding the Fleet */}
-            <section id={TOC_SECTIONS[4].id}>
+            {/* 05 – Scenarios */}
+            <ScenariosSection id={TOC_SECTIONS[4].id} />
+
+            {/* 06 – Understanding the Fleet */}
+            <section id={TOC_SECTIONS[5].id}>
               <motion.div {...rv()}>
-                <SectionNum n="05" />
+                <SectionNum n="06" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Understanding the Fleet and Duty Cycles
                 </h2>
@@ -631,10 +731,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 06 – Planning a Phased Transition */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 07 – Planning a Phased Transition */}
+            <section id={TOC_SECTIONS[6].id}>
               <motion.div {...rv()}>
-                <SectionNum n="06" />
+                <SectionNum n="07" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Planning a Phased Transition
                 </h2>
@@ -709,10 +809,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 07 – Infrastructure and Charging */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 08 – Infrastructure and Charging */}
+            <section id={TOC_SECTIONS[7].id}>
               <motion.div {...rv()}>
-                <SectionNum n="07" />
+                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Infrastructure and Charging Strategy
                 </h2>
@@ -788,10 +888,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 08 – Communicating Outcomes */}
-            <section id={TOC_SECTIONS[7].id}>
+            {/* 09 – Communicating Outcomes */}
+            <section id={TOC_SECTIONS[8].id}>
               <motion.div {...rv()}>
-                <SectionNum n="08" />
+                <SectionNum n="09" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Communicating Outcomes with Stakeholders
                 </h2>
@@ -864,10 +964,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 09 – Impact */}
-            <section id={TOC_SECTIONS[8].id}>
+            {/* 10 – Impact */}
+            <section id={TOC_SECTIONS[9].id}>
               <motion.div {...rv()}>
-                <SectionNum n="09" />
+                <SectionNum n="10" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Impact
                 </h2>
