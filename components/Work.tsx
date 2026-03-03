@@ -152,15 +152,28 @@ export default function Work() {
                   </p>
                 </div>
 
-                {/* Project image */}
+                {/* Project image or video */}
                 <div className="relative h-56 md:h-72 rounded-lg overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all order-1 sm:order-2">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      poster={project.image}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
+                      aria-label={project.title}
+                    />
+                  ) : (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  )}
                 </div>
               </div>
             )

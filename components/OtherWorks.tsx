@@ -30,13 +30,26 @@ export default function OtherWorks({ currentSlug }: OtherWorksProps) {
             className="group flex flex-col p-4 rounded-lg border border-teal-medium/20 hover:border-teal-content/40 hover:bg-teal-content/5 transition-all"
           >
             <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-teal-content/10 shrink-0 mb-4">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
+              {project.video ? (
+                <video
+                  src={project.video}
+                  poster={project.image}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  aria-label={project.title}
+                />
+              ) : (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              )}
             </div>
             <span className="text-lg md:text-xl font-serif font-bold text-teal-dark group-hover:text-teal-content transition-colors flex items-center">
               {project.title}

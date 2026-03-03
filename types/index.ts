@@ -5,6 +5,8 @@ export interface Project {
   category: string
   description: string
   image: string
+  /** When set, the project card shows this video (e.g. ecofleet.mp4) instead of the image. */
+  video?: string
   link?: string
   active?: boolean // If false, project won't be displayed. Defaults to true.
   company?: string // Company or client name

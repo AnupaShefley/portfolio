@@ -16,9 +16,7 @@ const TOC_SECTIONS = [
   'Infrastructure Setup',
   'Scenarios',
   'Results',
-  'Understanding the Fleet',
   'Planning a Transition',
-  'Infrastructure and Charging',
   'Communicating Outcomes',
   'Impact',
 ].map((label) => ({ id: slugify(label), label }))
@@ -747,93 +745,10 @@ export default function EcoFleetContent() {
             {/* 06 – Results */}
             <ResultsSection id={TOC_SECTIONS[5].id} />
 
-            {/* 07 – Understanding the Fleet */}
+            {/* 07 – Planning a Phased Transition */}
             <section id={TOC_SECTIONS[6].id}>
               <motion.div {...rv()}>
                 <SectionNum n="07" />
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
-                  Understanding the Fleet and Duty Cycles
-                </h2>
-              </motion.div>
-
-              <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-6">
-                <p>
-                  A core part of EcoFleet is helping operators understand how their current fleet
-                  behaves in practice. The prototype ingested representative telematics datasets and
-                  transformed them into interactive visualisations.
-                </p>
-              </motion.div>
-
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <motion.div
-                  {...rv(0.07)}
-                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
-                >
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">Fleet insights visualised</h3>
-                  <BulletList
-                    items={[
-                      'Vehicle utilisation',
-                      'Route predictability',
-                      'Dwell time availability',
-                      'Operational risk patterns',
-                    ]}
-                  />
-                </motion.div>
-
-                <motion.div
-                  {...rv(0.1)}
-                  className="rounded-xl border border-teal-100 bg-teal-50/40 p-5 shadow-sm"
-                >
-                  <h3 className="text-sm font-semibold text-slate-900 mb-3">Building in React allowed</h3>
-                  <BulletList
-                    items={[
-                      'Real state-driven filtering',
-                      'Interactive journey drilldowns',
-                      'Conditional UI states to test risk scenarios',
-                      'Component reuse across dashboards and planning views',
-                    ]}
-                  />
-                </motion.div>
-              </div>
-
-              <motion.p {...rv(0.12)} className="text-slate-600 leading-relaxed mb-6">
-                Instead of presenting static charts, I built dynamic views where users could filter
-                cohorts, adjust assumptions and immediately see how duty cycles changed. This made
-                early validation far more realistic than static visuals alone.
-              </motion.p>
-
-              <motion.div {...rv(0.15)}>
-                <div className="grid md:grid-cols-2 gap-3">
-                  <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
-                    <Image
-                      src={asset('/Ecofleet/Step3b.png')}
-                      alt="EcoFleet fleet duty cycle and vehicle utilisation visualisation"
-                      width={0}
-                      height={0}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="w-full h-auto block"
-                      quality={90}
-                    />
-                  </div>
-                  <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
-                    <Image
-                      src={asset('/Ecofleet/Step3c.png')}
-                      alt="EcoFleet route performance and journey breakdown"
-                      width={0}
-                      height={0}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="w-full h-auto block"
-                      quality={90}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </section>
-
-            {/* 08 – Planning a Phased Transition */}
-            <section id={TOC_SECTIONS[7].id}>
-              <motion.div {...rv()}>
-                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Planning a Phased Transition
                 </h2>
@@ -908,89 +823,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 09 – Infrastructure and Charging */}
-            <section id={TOC_SECTIONS[8].id}>
+            {/* 08 – Communicating Outcomes */}
+            <section id={TOC_SECTIONS[7].id}>
               <motion.div {...rv()}>
-                <SectionNum n="09" />
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
-                  Infrastructure and Charging Strategy
-                </h2>
-                <p className="text-slate-500 mb-8">
-                  Infrastructure is where fleet operators feel the highest uncertainty.
-                </p>
-              </motion.div>
-
-              <div className="space-y-0 mb-8">
-                <motion.div
-                  {...rv(0.05)}
-                  className="space-y-3 pb-8 border-b border-slate-200"
-                >
-                  <h3 className="text-base font-semibold text-slate-900">The prototype connected</h3>
-                  <BulletList
-                    items={[
-                      'Depot locations',
-                      'Dwell times',
-                      'Charging and refuelling capacity',
-                      'Vehicle cohort changes over time',
-                    ]}
-                  />
-                </motion.div>
-
-                <motion.div
-                  {...rv(0.07)}
-                  className="space-y-3 py-8 border-b border-slate-200"
-                >
-                  <h3 className="text-base font-semibold text-slate-900">
-                    Using Next.js routing and modular components, users could move between
-                  </h3>
-                  <NumberedList
-                    items={[
-                      'Depot-level planning',
-                      'Fleet-wide scenario impact',
-                      'Infrastructure utilisation forecasts',
-                    ]}
-                  />
-                </motion.div>
-
-                <motion.div
-                  {...rv(0.1)}
-                  className="space-y-3 pt-8"
-                >
-                  <h3 className="text-base font-semibold text-slate-900">
-                    AI-assisted development accelerated iteration on
-                  </h3>
-                  <BulletList
-                    items={[
-                      'Data visualisation logic',
-                      'Conditional highlighting for capacity constraints',
-                      'Progressive disclosure patterns for complex planning information',
-                    ]}
-                  />
-                  <p className="text-slate-600 leading-relaxed mt-2">
-                    This allowed us to test clarity and usability under realistic data conditions.
-                  </p>
-                </motion.div>
-              </div>
-
-              <motion.div {...rv(0.15)}>
-                <MediaWrap>
-                  <Image
-                    src={asset('/Ecofleet/Step2Infrastructure.png')}
-                    alt="EcoFleet depot infrastructure and charging capacity planning view"
-                    width={0}
-                    height={0}
-                    sizes="(max-width: 1024px) 100vw, 1144px"
-                    className="w-full h-auto block"
-                    quality={90}
-                  />
-                </MediaWrap>
-              </motion.div>
-            </section>
-
-            {/* 10 – Communicating Outcomes */}
-            <section id={TOC_SECTIONS[9].id}>
-              <motion.div {...rv()}>
-                <SectionNum n="10" />
+                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Communicating Outcomes with Stakeholders
                 </h2>
@@ -1063,10 +899,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 11 – Impact */}
-            <section id={TOC_SECTIONS[10].id}>
+            {/* 09 – Impact */}
+            <section id={TOC_SECTIONS[8].id}>
               <motion.div {...rv()}>
-                <SectionNum n="11" />
+                <SectionNum n="09" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Impact
                 </h2>

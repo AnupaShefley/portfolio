@@ -34,7 +34,8 @@ export const projects: Project[] = [
     title: 'EcoFleet',
     category: 'Research, Design and stakeholder alignment',
     description: 'Fleet management and mobility solution focused on sustainability and efficiency.',
-    image: asset('/designprocess.jpg'), // TODO: Replace with EcoFleet image
+    image: asset('/designprocess.jpg'),
+    video: asset('/Ecofleet/ecofleet.mp4'),
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,
