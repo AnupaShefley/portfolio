@@ -47,7 +47,7 @@ export const projects: Project[] = [
     category: 'Telematics data · Duty cycles',
     description:
       'Redesign of a telematics analysis workflow that turns raw journeys into clear, quality-checked duty cycles.',
-    image: asset('/backgroundData.jpg'),
+    image: asset('/newTelematicsResults/tele.svg'),
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,
