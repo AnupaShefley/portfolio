@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Project } from '@/types'
 import { projects } from '@/lib/projects'
 import { asset } from '@/lib/asset'
 import { hashLink } from '@/lib/link'
@@ -23,6 +24,196 @@ const headerTextItem = {
   visible: { opacity: 1, x: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
 }
 
+// ─── Shared media element ─────────────────────────────────────────────────────
+
+function CardMedia({ project, className = '' }: { project: Project; className?: string }) {
+  if (project.video) {
+    return (
+      <video
+        src={project.video}
+        poster={project.image}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 w-full h-full object-cover ${className}`}
+        aria-label={project.title}
+      />
+    )
+  }
+  return (
+    <Image
+      src={project.image}
+      alt={project.title}
+      fill
+      className={`object-cover ${className}`}
+      sizes="(max-width: 768px) 100vw, 50vw"
+    />
+  )
+}
+
+// ─── Variant A – Cinematic full-bleed ────────────────────────────────────────
+// Media fills the entire card. Text sits on a richer, layered panel below.
+
+function CardCinematic({ project, n }: { project: Project; n: string }) {
+  return (
+    <div className="relative overflow-hidden rounded-3xl group flex flex-col bg-gradient-to-b from-teal-50 via-white to-sky-50 ring-1 ring-teal-100 shadow-[0_18px_40px_rgba(15,23,42,0.18)]">
+      {/* ── Media — takes up top portion, zooms on hover ── */}
+      <div className="relative aspect-video overflow-hidden shrink-0">
+        <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]">
+          <CardMedia project={project} />
+        </div>
+        {/* Category pill — top left */}
+        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-sm ring-1 ring-white/15 text-white text-[10px] font-mono uppercase tracking-[0.18em]">
+          {project.category}
+        </span>
+        {/* Number badge — top right */}
+        <span className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm ring-1 ring-white/15 text-white/60 text-[10px] font-mono">
+          {n}
+        </span>
+      </div>
+
+      {/* ── Text section — light, with soft accent line ── */}
+      <div className="relative flex flex-col gap-2.5 px-6 py-5 md:px-7 md:py-6 bg-white/90 backdrop-blur-sm border-t border-teal-100">
+        <div className="pointer-events-none absolute inset-x-4 -top-px h-px bg-gradient-to-r from-transparent via-teal-300/70 to-transparent" />
+        <h3 className="relative text-xl md:text-2xl font-serif font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors duration-300">
+          {project.title}
+        </h3>
+        <p className="relative text-slate-600 text-sm md:text-base leading-relaxed line-clamp-2">
+          {project.description}
+        </p>
+        <span className="relative inline-flex items-center gap-1.5 text-teal-700 text-sm font-semibold mt-0.5 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          View case study <span aria-hidden>→</span>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+// ─── Variant B – Horizontal split ────────────────────────────────────────────
+// Dark text panel on the left; landscape media fills the right.
+
+function CardSplit({ project, n }: { project: Project; n: string }) {
+  return (
+    <div className="overflow-hidden rounded-2xl group grid sm:grid-cols-[5fr_7fr] min-h-[260px] md:min-h-[300px]">
+      {/* Left: dark text panel */}
+      <div className="bg-slate-900 p-6 md:p-8 flex flex-col justify-between order-2 sm:order-1">
+        <div>
+          <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-teal-400 mb-3">
+            {project.category}
+          </p>
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-white mb-3 leading-snug">
+            {project.title}
+          </h3>
+          <p className="text-white/50 text-xs leading-relaxed line-clamp-3">
+            {project.description}
+          </p>
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-teal-400 text-xs font-semibold mt-5 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          View case study <span aria-hidden>→</span>
+        </span>
+      </div>
+      {/* Right: landscape media */}
+      <div className="relative overflow-hidden order-1 sm:order-2 aspect-video sm:aspect-auto">
+        <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]">
+          <CardMedia project={project} />
+        </div>
+        <span className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/40 backdrop-blur-sm text-white/55 text-[10px] font-mono">
+          {n}
+        </span>
+      </div>
+    </div>
+  )
+}
+
+// ─── Variant C – Editorial stack ─────────────────────────────────────────────
+// Landscape media top (16/9). Clean white text block below with a teal top border.
+
+function CardEditorial({ project, n }: { project: Project; n: string }) {
+  return (
+    <div className="overflow-hidden rounded-2xl group bg-white">
+      {/* Landscape media */}
+      <div className="relative aspect-video overflow-hidden">
+        <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]">
+          <CardMedia project={project} />
+        </div>
+        <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-black/50 backdrop-blur-sm text-white/65 text-[10px] font-mono">
+          {n}
+        </span>
+      </div>
+      {/* Text block */}
+      <div className="px-6 py-5 border-t-2 border-teal-500">
+        <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-teal-600 mb-1.5">
+          {project.category}
+        </p>
+        <h3 className="text-lg md:text-xl font-serif font-bold text-slate-900 mb-2 leading-snug group-hover:text-teal-700 transition-colors duration-300">
+          {project.title}
+        </h3>
+        <p className="text-slate-500 text-xs leading-relaxed line-clamp-2 mb-4">
+          {project.description}
+        </p>
+        <span className="inline-flex items-center gap-1.5 text-teal-600 text-xs font-semibold group-hover:gap-3 transition-all duration-300">
+          View case study <span aria-hidden>→</span>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+// ─── Variant D – Frosted glass overlay ───────────────────────────────────────
+// Media fills the card. A frosted-glass panel floats at the bottom with the text.
+
+function CardFrosted({ project, n }: { project: Project; n: string }) {
+  return (
+    <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group">
+      {/* Zooming media */}
+      <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]">
+        <CardMedia project={project} />
+      </div>
+      {/* Subtle base vignette */}
+      <div className="absolute inset-0 bg-black/15 group-hover:bg-black/10 transition-colors duration-500" />
+      {/* Frosted glass card */}
+      <div className="absolute inset-x-4 bottom-4 rounded-xl overflow-hidden backdrop-blur-md bg-white/15 ring-1 ring-white/20 p-4 md:p-5 translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+        <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-teal-200 mb-1">
+          {project.category}
+        </p>
+        <h3 className="text-base md:text-lg font-serif font-bold text-white leading-snug mb-1.5">
+          {project.title}
+        </h3>
+        <p className="text-white/65 text-xs leading-relaxed line-clamp-2 mb-3 hidden sm:block">
+          {project.description}
+        </p>
+        <span className="inline-flex items-center gap-1.5 text-teal-200 text-[10px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+          View case study <span aria-hidden>→</span>
+        </span>
+      </div>
+      {/* Number badge */}
+      <span className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm ring-1 ring-white/15 text-white/55 text-[10px] font-mono">
+        {n}
+      </span>
+    </div>
+  )
+}
+
+// ─── Entry animation per column position ─────────────────────────────────────
+
+function entryProps(index: number, isInView: boolean) {
+  const fromLeft = index % 2 === 0
+  return {
+    initial: { opacity: 0, x: fromLeft ? -50 : 50, y: 10 },
+    animate: isInView
+      ? { opacity: 1, x: 0, y: 0 }
+      : { opacity: 0, x: fromLeft ? -50 : 50, y: 10 },
+    transition: {
+      duration: 1.1,
+      delay: 0.2 + (index % 2) * 0.14 + Math.floor(index / 2) * 0.12,
+      ease: [0.22, 1, 0.36, 1] as const,
+    },
+  }
+}
+
+// ─── Main component ───────────────────────────────────────────────────────────
+
 export default function Work() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -38,7 +229,6 @@ export default function Work() {
     setVisitCursor((prev) => ({ ...prev, visible: false }))
   }, [])
 
-  // Filter to only show active projects, sorted by id
   const activeProjects = projects
     .filter((project) => project.active !== false)
     .sort((a, b) => {
@@ -50,10 +240,10 @@ export default function Work() {
 
   return (
     <section id="work" ref={ref} className="relative bg-teal-content pt-8 md:pt-10 overflow-x-hidden">
-      {/* My Work header – two-column grid, image left (overlapping), teal block right */}
+      {/* ─── My Work header ─── */}
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-[420px] md:min-h-[480px]">
-          {/* Left: large image – reveal slowly from the left */}
+          {/* Left: large image */}
           <motion.div
             className="relative overflow-visible min-h-[280px] md:min-h-0 order-2 md:order-1 overflow-hidden md:overflow-visible"
             initial={{ opacity: 0, x: '-35%' }}
@@ -72,7 +262,7 @@ export default function Work() {
             </div>
           </motion.div>
 
-          {/* Right: solid muted teal block – text reveals from the left with stagger */}
+          {/* Right: teal text block */}
           <div className="relative flex flex-col items-center justify-center text-center px-6 py-16 md:py-24 bg-teal-content md:bg-[#3d6b6d] order-1 md:order-2 z-20">
             <motion.div
               className="max-w-sm"
@@ -112,7 +302,7 @@ export default function Work() {
         </div>
       </div>
 
-      {/* Custom "Visit" cursor – circle with label, follows pointer over case study links */}
+      {/* Custom "Visit" cursor */}
       {visitCursor.visible && (
         <div
           className="pointer-events-none fixed z-[9999] hidden md:flex items-center justify-center w-[56px] h-[56px] rounded-full border-2 border-teal-dark bg-white/90 text-teal-dark text-[10px] font-semibold uppercase tracking-wider"
@@ -127,87 +317,36 @@ export default function Work() {
         </div>
       )}
 
-      {/* Projects list – two columns on desktop */}
+      {/* ─── Projects grid ─── */}
       <div
         id="projects-list"
         className="container mx-auto px-6 py-12 md:py-16"
         onMouseMove={visitCursor.visible ? handleCaseStudyMouseMove : undefined}
       >
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${visitCursor.visible ? 'cursor-none' : ''}`}
-        >
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${visitCursor.visible ? 'cursor-none' : ''}`}>
           {activeProjects.map((project, index) => {
-            const cardContent = (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-6 md:p-8">
-                {/* Text content */}
-                <div className="flex flex-col justify-center order-2 sm:order-1">
-                  <p className="text-sm uppercase tracking-wider text-white/70 mb-2">
-                    {project.category}
-                  </p>
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-white mb-4 group-hover:text-teal-light transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/80 leading-relaxed text-sm md:text-base">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Project image or video */}
-                <div className="relative h-56 md:h-72 rounded-lg overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all order-1 sm:order-2">
-                  {project.video ? (
-                    <video
-                      src={project.video}
-                      poster={project.image}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover"
-                      aria-label={project.title}
-                    />
-                  ) : (
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  )}
-                </div>
-              </div>
-            )
-
-            const cardClassName =
-              'block bg-background/10 backdrop-blur-sm rounded-lg overflow-hidden hover:bg-background/20 transition-all duration-300 group h-full'
+            const n = String(index + 1).padStart(2, '0')
+            const card = <CardCinematic project={project} n={n} />
 
             return (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, x: -40 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
-                transition={{
-                  duration: 1.1,
-                  delay: 0.25 + index * 0.22,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                {...entryProps(index, isInView)}
                 whileHover={{ y: -6 }}
-                className="transition-shadow duration-300 hover:shadow-xl h-full"
+                className="transition-shadow duration-300 hover:shadow-2xl"
               >
                 {project.slug ? (
                   <Link
                     href={`/works/${project.slug}`}
-                    className={`${cardClassName} ${visitCursor.visible ? 'cursor-none' : 'cursor-pointer'}`}
+                    className={`block ${visitCursor.visible ? 'cursor-none' : ''}`}
                     onMouseEnter={handleCaseStudyMouseEnter}
                     onMouseLeave={handleCaseStudyMouseLeave}
                     onMouseMove={handleCaseStudyMouseMove}
                   >
-                    {cardContent}
+                    {card}
                   </Link>
                 ) : (
-                  <div className={`${cardClassName} cursor-default`}>
-                    {cardContent}
-                  </div>
+                  <div>{card}</div>
                 )}
               </motion.div>
             )
