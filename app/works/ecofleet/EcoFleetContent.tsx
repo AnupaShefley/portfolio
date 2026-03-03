@@ -15,6 +15,7 @@ const TOC_SECTIONS = [
   'Route Definition',
   'Infrastructure Setup',
   'Scenarios',
+  'Results',
   'Understanding the Fleet',
   'Planning a Transition',
   'Infrastructure and Charging',
@@ -365,6 +366,101 @@ function ScenariosSection({ id }: { id: string }) {
   )
 }
 
+// ─── Results data ────────────────────────────────────────────────────────────
+
+const RESULTS_POINTS = [
+  {
+    heading: 'Scenario comparison at a glance',
+    body: 'See how each transition scenario stacks up — emissions, total cost of ownership and operational risk in one place so you can quickly compare options and choose the right path.',
+  },
+  {
+    heading: 'Cost and emissions over time',
+    body: 'View how costs and carbon footprint evolve over the planning horizon. Time-series views make it clear when investment pays off and when emissions drop.',
+  },
+  {
+    heading: 'Depot and cohort breakdowns',
+    body: 'Drill into results by depot or vehicle cohort. Understand where benefits are strongest and where constraints remain — so decisions are grounded in detail, not just top-level numbers.',
+  },
+  {
+    heading: 'Stakeholder-ready summaries',
+    body: 'Results are presented in clear, exportable views that work for leadership and external stakeholders. Turn modelling output into narratives that support decision-making.',
+  },
+]
+
+function ResultsSection({ id }: { id: string }) {
+  return (
+    <section id={id}>
+      <motion.div {...rv()}>
+        <SectionNum n="06" />
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
+          Results
+        </h2>
+        <p className="text-slate-500 mb-8">
+          After running scenarios, operators see side-by-side results — cost, emissions and risk —
+          with the option to drill down by depot or cohort and share summary views with stakeholders.
+        </p>
+      </motion.div>
+
+      {/* Breakout two-column layout — video left, cards right (like Infrastructure Setup) */}
+      <div
+        className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+26rem))]"
+        style={{ maxWidth: 'min(calc(100vw - 2rem), 1200px)' }}
+      >
+        <div className="grid lg:grid-cols-[7fr_5fr] gap-8 lg:gap-10 items-start">
+
+          {/* Left: sticky looping video */}
+          <motion.div
+            {...rv(0.05)}
+            className="lg:sticky lg:top-20 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl"
+          >
+            <video
+              src={asset('/Ecofleet/results.mp4')}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto block"
+            />
+          </motion.div>
+
+          {/* Right: feature cards animate in one by one */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px' }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.14 } } }}
+            className="space-y-3 lg:pt-1"
+          >
+            {RESULTS_POINTS.map((point, i) => (
+              <motion.div
+                key={point.heading}
+                variants={{
+                  hidden: { opacity: 0, x: 16 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className="flex gap-4 p-4 md:p-5 rounded-xl border border-slate-200 bg-white shadow-sm"
+              >
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-teal-50 ring-1 ring-teal-200 text-teal-600 text-xs font-bold flex items-center justify-center mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900 mb-1">{point.heading}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{point.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function EcoFleetContent() {
@@ -648,10 +744,13 @@ export default function EcoFleetContent() {
             {/* 05 – Scenarios */}
             <ScenariosSection id={TOC_SECTIONS[4].id} />
 
-            {/* 06 – Understanding the Fleet */}
-            <section id={TOC_SECTIONS[5].id}>
+            {/* 06 – Results */}
+            <ResultsSection id={TOC_SECTIONS[5].id} />
+
+            {/* 07 – Understanding the Fleet */}
+            <section id={TOC_SECTIONS[6].id}>
               <motion.div {...rv()}>
-                <SectionNum n="06" />
+                <SectionNum n="07" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Understanding the Fleet and Duty Cycles
                 </h2>
@@ -731,10 +830,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 07 – Planning a Phased Transition */}
-            <section id={TOC_SECTIONS[6].id}>
+            {/* 08 – Planning a Phased Transition */}
+            <section id={TOC_SECTIONS[7].id}>
               <motion.div {...rv()}>
-                <SectionNum n="07" />
+                <SectionNum n="08" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Planning a Phased Transition
                 </h2>
@@ -809,10 +908,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 08 – Infrastructure and Charging */}
-            <section id={TOC_SECTIONS[7].id}>
+            {/* 09 – Infrastructure and Charging */}
+            <section id={TOC_SECTIONS[8].id}>
               <motion.div {...rv()}>
-                <SectionNum n="08" />
+                <SectionNum n="09" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Infrastructure and Charging Strategy
                 </h2>
@@ -888,10 +987,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 09 – Communicating Outcomes */}
-            <section id={TOC_SECTIONS[8].id}>
+            {/* 10 – Communicating Outcomes */}
+            <section id={TOC_SECTIONS[9].id}>
               <motion.div {...rv()}>
-                <SectionNum n="09" />
+                <SectionNum n="10" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Communicating Outcomes with Stakeholders
                 </h2>
@@ -964,10 +1063,10 @@ export default function EcoFleetContent() {
               </motion.div>
             </section>
 
-            {/* 10 – Impact */}
-            <section id={TOC_SECTIONS[9].id}>
+            {/* 11 – Impact */}
+            <section id={TOC_SECTIONS[10].id}>
               <motion.div {...rv()}>
-                <SectionNum n="10" />
+                <SectionNum n="11" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
                   Impact
                 </h2>
