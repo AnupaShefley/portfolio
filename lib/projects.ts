@@ -78,7 +78,7 @@ export const projects: Project[] = [
     category: 'UX / UI Design',
     description:
       'Case study on redesigning the global navigation bar to improve findability, consistency and user flows.',
-    image: asset('/designprocess.jpg'),
+    image: asset('/navbar/navcard.png'),
     active: true,
   },
   {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     category: 'Synthetic Telematics · Fleet Scheduling',
     description:
       'Redesigning the scheduling interface from a hierarchical table into a calendar-based system for managing 100+ vehicles and generating telematics simulations.',
-    image: asset('/designprocess.jpg'),
+    image: asset('/synthetics/synth.svg'),
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,

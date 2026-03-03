@@ -74,7 +74,7 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
       </div>
 
       {/* ── Text section — light, with soft accent line ── */}
-      <div className="relative flex flex-col gap-2.5 px-6 py-5 md:px-7 md:py-6 bg-white/90 backdrop-blur-sm border-t border-teal-100">
+      <div className="relative flex flex-col gap-1.5 px-5 py-3 md:px-5.5 md:py-3 bg-white/90 backdrop-blur-sm border-t border-teal-100">
         <div className="pointer-events-none absolute inset-x-4 -top-px h-px bg-gradient-to-r from-transparent via-teal-300/70 to-transparent" />
         <h3 className="relative text-xl md:text-2xl font-serif font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors duration-300">
           {project.title}
