@@ -42,7 +42,7 @@ function MediaWrap({ children }: { children: React.ReactNode }) {
 
 function SectionNum({ n }: { n: string }) {
   return (
-    <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-600/60 mb-2 select-none">
+    <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-red-700/60 mb-2 select-none">
       {n}
     </p>
   )
@@ -53,7 +53,7 @@ function BulletList({ items }: { items: string[] }) {
     <ul className="space-y-2 text-slate-600">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-2.5">
-          <span className="mt-[7px] w-[5px] h-[5px] rounded-full shrink-0 bg-emerald-500" />
+          <span className="mt-[7px] w-[5px] h-[5px] rounded-full shrink-0 bg-red-500" />
           {item}
         </li>
       ))}
@@ -66,7 +66,7 @@ function NumberedList({ items }: { items: string[] }) {
     <ol className="space-y-2 text-slate-600">
       {items.map((item, i) => (
         <li key={item} className="flex items-start gap-3">
-          <span className="mt-[1px] text-xs font-mono font-bold text-emerald-600 shrink-0 w-4 tabular-nums">
+          <span className="mt-[1px] text-xs font-mono font-bold text-red-700 shrink-0 w-4 tabular-nums">
             {i + 1}.
           </span>
           {item}
@@ -90,7 +90,7 @@ export default function NavbarContent() {
             aria-hidden
             style={{
               background:
-                'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(16,185,129,0.09) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 90% 60%, rgba(5,150,105,0.07) 0%, transparent 65%)',
+                'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(185,28,28,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 90% 60%, rgba(159,18,57,0.06) 0%, transparent 65%)',
             }}
           />
           {/* Dot grid */}
@@ -111,7 +111,7 @@ export default function NavbarContent() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="text-xs font-semibold tracking-[0.25em] uppercase text-emerald-600 mb-4"
+                  className="text-xs font-semibold tracking-[0.25em] uppercase text-red-700 mb-4"
                 >
                   Case Study · UX / UI Design
                 </motion.p>
@@ -123,7 +123,7 @@ export default function NavbarContent() {
                   className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 mb-5 leading-[1.1] tracking-tight"
                 >
                   A clearer path{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-rose-600">
                     through the product.
                   </span>
                 </motion.h1>
@@ -153,7 +153,7 @@ export default function NavbarContent() {
                       key={stat.label}
                       className="flex flex-col p-3 rounded-xl bg-slate-50 ring-1 ring-slate-200"
                     >
-                      <dt className="text-[10px] uppercase tracking-widest font-semibold text-emerald-600 mb-1 leading-tight">
+                      <dt className="text-[10px] uppercase tracking-widest font-semibold text-red-700 mb-1 leading-tight">
                         {stat.label}
                       </dt>
                       <dd className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-slate-900 leading-tight">
@@ -177,7 +177,7 @@ export default function NavbarContent() {
                   aria-hidden
                   style={{
                     background:
-                      'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(16,185,129,0.12), transparent 70%)',
+                      'radial-gradient(ellipse 70% 70% at 50% 50%, rgba(185,28,28,0.10), transparent 70%)',
                     filter: 'blur(32px)',
                     transform: 'scale(1.1)',
                   }}
@@ -209,7 +209,7 @@ export default function NavbarContent() {
               { label: 'Role', value: 'Product Designer' },
             ].map(({ label, value }) => (
               <div key={label}>
-                <p className="text-xs uppercase tracking-widest font-semibold text-emerald-600 mb-1.5">
+                <p className="text-xs uppercase tracking-widest font-semibold text-red-700 mb-1.5">
                   {label}
                 </p>
                 <p className="text-slate-700 font-medium">{value}</p>
@@ -351,18 +351,18 @@ export default function NavbarContent() {
             {/* ─── Key Insight callout ─────────────────────── */}
             <motion.div
               {...rv()}
-              className="relative rounded-2xl border border-emerald-100 bg-emerald-50/60 p-8 md:p-12 text-center overflow-hidden"
+              className="relative rounded-2xl border border-red-100 bg-red-50/60 p-8 md:p-12 text-center overflow-hidden"
             >
               <div
                 className="absolute inset-0 pointer-events-none"
                 aria-hidden
                 style={{
                   background:
-                    'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(16,185,129,0.05), transparent)',
+                    'radial-gradient(ellipse 70% 80% at 50% 50%, rgba(185,28,28,0.05), transparent)',
                 }}
               />
               <span
-                className="absolute font-serif text-emerald-300/50 select-none pointer-events-none"
+                className="absolute font-serif text-red-300/50 select-none pointer-events-none"
                 aria-hidden
                 style={{ fontSize: '160px', lineHeight: 1, top: '-20px', left: '12px' }}
               >
@@ -608,7 +608,7 @@ export default function NavbarContent() {
                     className="space-y-2"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold ring-1 ring-emerald-200 shrink-0">
+                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-red-50 text-red-700 text-xs font-bold ring-1 ring-red-200 shrink-0">
                         {item.num}
                       </span>
                       <h3 className="text-base md:text-lg font-semibold text-slate-900">
@@ -641,7 +641,7 @@ export default function NavbarContent() {
                   className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span className="w-2 h-2 rounded-full bg-red-500" />
                     <h3 className="text-base font-semibold text-slate-900">User Experience</h3>
                   </div>
                   <BulletList
@@ -659,7 +659,7 @@ export default function NavbarContent() {
                   className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span className="w-2 h-2 rounded-full bg-red-500" />
                     <h3 className="text-base font-semibold text-slate-900">Product Improvements</h3>
                   </div>
                   <BulletList
