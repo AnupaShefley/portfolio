@@ -57,9 +57,9 @@ function CardMedia({ project, className = '' }: { project: Project; className?: 
 
 function CardCinematic({ project, n }: { project: Project; n: string }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl group flex flex-col bg-gradient-to-b from-teal-50 via-white to-sky-50 ring-1 ring-teal-100 shadow-[0_18px_40px_rgba(15,23,42,0.18)]">
+    <div className="relative overflow-hidden rounded-3xl group flex flex-col bg-gradient-to-b from-teal-50 via-white to-sky-50 ring-1 ring-teal-100 shadow-[0_18px_40px_rgba(15,23,42,0.18)] h-full">
       {/* ── Media — takes up top portion, zooms on hover ── */}
-      <div className="relative aspect-[16/7] overflow-hidden shrink-0">
+      <div className="relative aspect-[16/6] overflow-hidden shrink-0">
         <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]">
           <CardMedia project={project} />
         </div>
@@ -74,7 +74,7 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
       </div>
 
       {/* ── Text section — light, with soft accent line ── */}
-      <div className="relative flex flex-col gap-1.5 px-5 py-3 md:px-5.5 md:py-3 bg-white/90 backdrop-blur-sm border-t border-teal-100">
+      <div className="relative flex flex-col gap-1.5 px-5 py-3 md:px-5.5 md:py-3 bg-white/90 backdrop-blur-sm border-t border-teal-100 min-h-[110px]">
         <div className="pointer-events-none absolute inset-x-4 -top-px h-px bg-gradient-to-r from-transparent via-teal-300/70 to-transparent" />
         <h3 className="relative text-xl md:text-2xl font-serif font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors duration-300">
           {project.title}
@@ -82,9 +82,6 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
         <p className="relative text-slate-600 text-sm md:text-base leading-relaxed line-clamp-2">
           {project.description}
         </p>
-        <span className="relative inline-flex items-center gap-1.5 text-teal-700 text-sm font-semibold mt-0.5 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          View case study <span aria-hidden>→</span>
-        </span>
       </div>
     </div>
   )
@@ -320,10 +317,10 @@ export default function Work() {
       {/* ─── Projects grid ─── */}
       <div
         id="projects-list"
-        className="container mx-auto px-6 py-12 md:py-16"
+        className="container mx-auto px-8 py-16 md:py-20"
         onMouseMove={visitCursor.visible ? handleCaseStudyMouseMove : undefined}
       >
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${visitCursor.visible ? 'cursor-none' : ''}`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch ${visitCursor.visible ? 'cursor-none' : ''}`}>
           {activeProjects.map((project, index) => {
             const n = String(index + 1).padStart(2, '0')
             const card = <CardCinematic project={project} n={n} />
@@ -333,7 +330,7 @@ export default function Work() {
                 key={project.id}
                 {...entryProps(index, isInView)}
                 whileHover={{ y: -6 }}
-                className="transition-shadow duration-300 hover:shadow-2xl"
+                className="transition-shadow duration-300 hover:shadow-2xl h-full"
               >
                 {project.slug ? (
                   <Link
