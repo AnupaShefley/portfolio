@@ -59,7 +59,7 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
   return (
     <div className="relative overflow-hidden rounded-3xl group flex flex-col bg-gradient-to-b from-teal-50 via-white to-sky-50 ring-1 ring-teal-100 shadow-[0_18px_40px_rgba(15,23,42,0.18)]">
       {/* ── Media — takes up top portion, zooms on hover ── */}
-      <div className="relative aspect-video overflow-hidden shrink-0">
+      <div className="relative aspect-[16/7] overflow-hidden shrink-0">
         <div className="absolute inset-0 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]">
           <CardMedia project={project} />
         </div>
