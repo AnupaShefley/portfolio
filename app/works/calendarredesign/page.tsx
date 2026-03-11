@@ -109,13 +109,14 @@ export default function CalendarRedesignPage() {
                 computers.
               </p>
               <AnimatedDiv delay={0.1}>
-                <div className="relative w-full aspect-video overflow-hidden rounded-2xl ring-1 ring-teal-medium/20 shadow-[0_20px_60px_rgba(46,71,60,0.15)]">
+                <div className="max-w-2xl mx-auto">
                   <Image
                     src={asset('/homestatistics.png')}
                     alt="Work from home statistics"
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 672px"
+                    width={1200}
+                    height={675}
+                    className="w-full h-auto rounded-2xl"
+                    sizes="(max-width: 768px) 100vw, 576px"
                   />
                 </div>
                 <p className="text-sm text-teal-dark/45 text-center mt-2.5 italic">
@@ -226,13 +227,14 @@ export default function CalendarRedesignPage() {
                 two categories of individuals — remote workers and parents/students.
               </p>
               <AnimatedDiv delay={0.1}>
-                <div className="relative w-full aspect-video overflow-hidden rounded-2xl ring-1 ring-teal-medium/20 shadow-md mb-6">
+                <div className="max-w-3xl mx-auto mb-6">
                   <Image
                     src={asset('/comicg.png')}
                     alt="User research comic"
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 672px"
+                    width={700}
+                    height={500}
+                    className="w-full h-auto rounded-3xl"
+                    sizes="(max-width: 768px) 80vw, 400px"
                   />
                 </div>
               </AnimatedDiv>
@@ -375,15 +377,14 @@ export default function CalendarRedesignPage() {
                     diagrams. These sketches are ideal for brainstorming and team collaboration.
                   </p>
                   <AnimatedDiv delay={0.1}>
-                    <div className="relative w-full aspect-video overflow-hidden rounded-2xl ring-1 ring-teal-medium/20 shadow-[0_20px_60px_rgba(46,71,60,0.15)]">
-                      <Image
-                        src={asset('/bookdrawing.png')}
-                        alt="Initial sketches for low fidelity prototypes"
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 672px"
-                      />
-                    </div>
+                    <Image
+                      src={asset('/bookdrawing.png')}
+                      alt="Initial sketches for low fidelity prototypes"
+                      width={1200}
+                      height={675}
+                      className="w-full h-auto rounded-2xl"
+                      sizes="(max-width: 768px) 100vw, 672px"
+                    />
                     <p className="text-sm text-teal-dark/45 text-center mt-2.5 italic">
                       Initial sketches for low fidelity prototypes
                     </p>
@@ -401,28 +402,26 @@ export default function CalendarRedesignPage() {
                     information architecture. The screens were designed in Balsamiq. This helped to
                     focus on the main elements that were needed for the screens.
                   </p>
-                  <div className="space-y-6">
+                  <div className="space-y-6 max-w-xl mx-auto">
                     <AnimatedDiv delay={0.1}>
-                      <div className="relative w-full aspect-video overflow-hidden rounded-2xl ring-1 ring-teal-medium/20 shadow-md">
-                        <Image
-                          src={asset('/lofi.png')}
-                          alt="Mid fidelity prototype wireframe"
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 100vw, 100vw"
-                        />
-                      </div>
+                      <Image
+                        src={asset('/lofi.png')}
+                        alt="Mid fidelity prototype wireframe"
+                        width={800}
+                        height={450}
+                        className="w-full h-auto rounded-2xl"
+                        sizes="(max-width: 768px) 100vw, 576px"
+                      />
                     </AnimatedDiv>
                     <AnimatedDiv delay={0.15}>
-                      <div className="relative w-full aspect-video overflow-hidden rounded-2xl ring-1 ring-teal-medium/20 shadow-md">
-                        <Image
-                          src={asset('/lofi2.png')}
-                          alt="Mid fidelity prototype wireframe"
-                          fill
-                          className="object-contain"
-                          sizes="(max-width: 768px) 100vw, 100vw"
-                        />
-                      </div>
+                      <Image
+                        src={asset('/lofi2.png')}
+                        alt="Mid fidelity prototype wireframe"
+                        width={800}
+                        height={450}
+                        className="w-full h-auto rounded-2xl"
+                        sizes="(max-width: 768px) 100vw, 576px"
+                      />
                     </AnimatedDiv>
                   </div>
                 </div>
@@ -447,7 +446,7 @@ export default function CalendarRedesignPage() {
                           { src: asset('/Lockscreen.png'), label: 'Lock Screen notification' },
                         ].map(({ src, label }) => (
                           <div key={label} className="group flex flex-col items-center">
-                            <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-2xl overflow-hidden ring-1 ring-teal-medium/20 shadow-lg bg-white mb-2 transition-transform duration-500 group-hover:scale-[1.03] group-hover:shadow-xl">
+                            <div className="relative w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] aspect-[9/16] rounded-2xl overflow-hidden mb-2 transition-transform duration-500 group-hover:scale-[1.03]">
                               <Image
                                 src={src}
                                 alt={label}
