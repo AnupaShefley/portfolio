@@ -8,6 +8,7 @@ import type { Project } from '@/types'
 import { projects } from '@/lib/projects'
 import { asset } from '@/lib/asset'
 import { hashLink } from '@/lib/link'
+import TiltCard from './TiltCard'
 
 const WORK_HEADER_IMAGE = asset('/works.jpg')
 
@@ -336,15 +337,15 @@ export default function Work() {
                 {project.slug ? (
                   <Link
                     href={`/works/${project.slug}`}
-                    className={`block ${visitCursor.visible ? 'cursor-none' : ''}`}
+                    className={`block h-full ${visitCursor.visible ? 'cursor-none' : ''}`}
                     onMouseEnter={handleCaseStudyMouseEnter}
                     onMouseLeave={handleCaseStudyMouseLeave}
                     onMouseMove={handleCaseStudyMouseMove}
                   >
-                    {card}
+                    <TiltCard className="h-full">{card}</TiltCard>
                   </Link>
                 ) : (
-                  <div>{card}</div>
+                  <TiltCard className="h-full">{card}</TiltCard>
                 )}
               </motion.div>
             )

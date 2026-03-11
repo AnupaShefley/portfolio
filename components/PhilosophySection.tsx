@@ -21,8 +21,8 @@ export default function PhilosophySection() {
       />
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="container mx-auto px-6 relative z-10"
@@ -34,8 +34,15 @@ export default function PhilosophySection() {
             So what am I doing with a portfolio site?
             <br />
             Well, I want to solve them{' '}
-            <strong className="font-semibold text-teal-light/90">before</strong>{' '}
-            they have a chance to become a problem!
+            <motion.span
+              className="font-semibold text-teal-light rounded-sm px-1 -mx-0.5"
+              initial={{ backgroundColor: 'rgba(130,196,187,0)' }}
+              whileInView={{ backgroundColor: 'rgba(130,196,187,0.2)' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
+            >
+              before they have a chance to become a problem!
+            </motion.span>
           </p>
         </div>
       </motion.div>

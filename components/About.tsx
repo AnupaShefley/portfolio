@@ -30,8 +30,8 @@ export default function About() {
 
             {/* Teal overlay box - left, ~one-third width, overlapping image */}
             <motion.div
-              initial={{ opacity: 0, x: -80 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -80 }}
+              initial={{ opacity: 0, x: -80, filter: 'blur(8px)' }}
+              animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, x: -80, filter: 'blur(8px)' }}
               transition={{ duration: 0.8 }}
               className="absolute left-0 top-0 bottom-0 w-full sm:w-2/3 md:w-1/2 lg:w-[38%] bg-teal-content p-6 md:p-8 lg:p-10 flex flex-col justify-center rounded-l-lg"
             >
@@ -68,8 +68,8 @@ export default function About() {
 
         {/* Beginnings section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 50, filter: 'blur(8px)' }}
+          animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 50, filter: 'blur(8px)' }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-12 md:mt-16 grid md:grid-cols-2 gap-8 md:gap-10 items-center"
         >

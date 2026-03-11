@@ -22,8 +22,8 @@ export default function ApproachSection() {
     <section id="approach" ref={ref} className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 50, filter: 'blur(8px)' }}
+          animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 50, filter: 'blur(8px)' }}
           transition={{ duration: 0.8 }}
         >
           <h3 className="text-3xl md:text-4xl font-serif font-bold text-teal-dark mb-8">
@@ -35,8 +35,8 @@ export default function ApproachSection() {
               {steps.map((step, index) => (
                 <motion.div
                   key={step.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
+                  animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, x: -20, filter: 'blur(4px)' }}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   className="border-l-4 border-teal-medium pl-4"
                 >
@@ -47,8 +47,8 @@ export default function ApproachSection() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.9, filter: 'blur(8px)' }}
+              animate={isInView ? { opacity: 1, scale: 1, filter: 'blur(0px)' } : { opacity: 0, scale: 0.9, filter: 'blur(8px)' }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative h-64 md:h-80 rounded-lg overflow-hidden border-4 border-background"
             >
