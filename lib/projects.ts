@@ -3,6 +3,18 @@ import { asset } from '@/lib/asset'
 
 export const projects: Project[] = [
   {
+    id: '22',
+    slug: 'dashboard-redesign',
+    title: 'Dashboard Redesign',
+    category: 'Product Design / Dashboard UX',
+    description:
+      'Redesign of the ZERO dashboard to clarify progress, guide first steps and connect setup, simulations and insights.',
+    image: asset('/Dashboard/Dashboard1.png'),
+    company: 'Dynamon',
+    role: 'UX/UI Designer',
+    active: true,
+  },
+  {
     id: '20',
     slug: 'highbury-primary',
     title: 'Highbury Primary School',
