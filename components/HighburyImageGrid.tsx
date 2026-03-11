@@ -70,7 +70,7 @@ export default function HighburyImageGrid() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-teal-dark py-10 md:py-14"
+      className="relative overflow-hidden bg-slate-50 py-10 md:py-14"
       aria-label="Highbury Primary School website mockups"
     >
       <div className="container mx-auto px-4 md:px-6 space-y-3 md:space-y-4">
@@ -82,7 +82,7 @@ export default function HighburyImageGrid() {
           {ROW1_IMAGES.map((src, i) => (
             <motion.div
               key={`row1-${i}`}
-              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
+              className="relative aspect-[16/9] rounded-lg overflow-hidden ring-1 ring-slate-200 shadow-md"
               initial={{ opacity: 0, x: -120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
               transition={{ duration, delay: i * stagger, ease }}
@@ -107,7 +107,7 @@ export default function HighburyImageGrid() {
           {ROW2_IMAGES.map((src, i) => (
             <motion.div
               key={`row2-${i}`}
-              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
+              className="relative aspect-[16/9] rounded-lg overflow-hidden ring-1 ring-slate-200 shadow-md"
               initial={{ opacity: 0, x: 120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 120 }}
               transition={{ duration, delay: 0.15 + i * stagger, ease }}
@@ -131,7 +131,7 @@ export default function HighburyImageGrid() {
           {ROW3_IMAGES.map((src, i) => (
             <motion.div
               key={`row3-${i}`}
-              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
+              className="relative aspect-[16/9] rounded-lg overflow-hidden ring-1 ring-slate-200 shadow-md"
               initial={{ opacity: 0, x: -120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
               transition={{ duration, delay: 0.3 + i * stagger, ease }}
@@ -148,11 +148,16 @@ export default function HighburyImageGrid() {
         </motion.div>
       </div>
 
-      {/* Gradient fade into page background */}
+      {/* Gradient fades — top from white (header), bottom into white (hero below) */}
+      <div
+        className="absolute top-0 left-0 right-0 h-20 pointer-events-none"
+        aria-hidden
+        style={{ background: 'linear-gradient(to bottom, #ffffff, transparent)' }}
+      />
       <div
         className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
         aria-hidden
-        style={{ background: 'linear-gradient(to bottom, transparent, #E0F2F1)' }}
+        style={{ background: 'linear-gradient(to bottom, transparent, #ffffff)' }}
       />
     </section>
   )
