@@ -64,7 +64,7 @@ export default function IosImageGrid() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-teal-content/5 py-12 md:py-16"
+      className="relative overflow-hidden bg-slate-50 py-12 md:py-16"
       aria-label="iOS Calendar redesign mockups"
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -75,7 +75,7 @@ export default function IosImageGrid() {
           {ROW1_IMAGES.map((src, i) => (
             <motion.div
               key={`row1-${i}`}
-              className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-lg"
+              className="relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 shadow-lg"
               initial={{ opacity: 0, x: -120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
               transition={{
@@ -103,7 +103,7 @@ export default function IosImageGrid() {
           {ROW2_IMAGES.map((src, i) => (
             <motion.div
               key={`row2-${i}`}
-              className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-lg"
+              className="relative aspect-[4/3] rounded-lg overflow-hidden bg-slate-100 shadow-lg"
               initial={{ opacity: 0, x: 120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 120 }}
               transition={{
