@@ -28,7 +28,7 @@ function shuffledWithSeed<T>(arr: T[], seed: number): T[] {
   return out
 }
 
-/** Build one row of 4 image srcs from the 3 base images in random order. */
+/** Build one row of 4 image srcs from the 4 base images in random order. */
 function buildRow(seed: number): string[] {
   const order = shuffledWithSeed([0, 1, 2, 3], seed)
   return order.map((i) => IMAGES[i])
@@ -36,6 +36,7 @@ function buildRow(seed: number): string[] {
 
 const ROW1_IMAGES = buildRow(1)
 const ROW2_IMAGES = buildRow(2)
+const ROW3_IMAGES = buildRow(3)
 
 const stagger = 0.08
 const duration = 0.9
@@ -50,7 +51,6 @@ export default function HighburyImageGrid() {
     offset: ['start end', 'end start'],
   })
 
-  // Map full scroll range (0→1) so rows keep moving for the whole time the section is in view
   const topRowX = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
@@ -61,30 +61,31 @@ export default function HighburyImageGrid() {
     [0, 0.2, 0.4, 0.6, 0.8, 1],
     [0, 60, 120, 180, 240, 280]
   )
+  const midRowX = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, -40, -80, -120, -160, -190]
+  )
 
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-teal-content/5 py-12 md:py-16"
+      className="relative overflow-hidden bg-teal-dark py-10 md:py-14"
       aria-label="Highbury Primary School website mockups"
     >
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Top row – enters from left, scroll moves it left */}
+      <div className="container mx-auto px-4 md:px-6 space-y-3 md:space-y-4">
+        {/* Row 1 – enters from left, scroll moves it left */}
         <motion.div
-          className="grid grid-cols-4 gap-2 md:gap-4 mb-2 md:mb-4"
+          className="grid grid-cols-4 gap-2 md:gap-4"
           style={{ x: topRowX }}
         >
           {ROW1_IMAGES.map((src, i) => (
             <motion.div
               key={`row1-${i}`}
-              className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-lg"
+              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
               initial={{ opacity: 0, x: -120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
-              transition={{
-                duration,
-                delay: i * stagger,
-                ease,
-              }}
+              transition={{ duration, delay: i * stagger, ease }}
             >
               <Image
                 src={src}
@@ -98,7 +99,7 @@ export default function HighburyImageGrid() {
           ))}
         </motion.div>
 
-        {/* Bottom row – enters from right, scroll moves it right */}
+        {/* Row 2 – enters from right, scroll moves it right */}
         <motion.div
           className="grid grid-cols-4 gap-2 md:gap-4"
           style={{ x: bottomRowX }}
@@ -106,14 +107,34 @@ export default function HighburyImageGrid() {
           {ROW2_IMAGES.map((src, i) => (
             <motion.div
               key={`row2-${i}`}
-              className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-lg"
+              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
               initial={{ opacity: 0, x: 120 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 120 }}
-              transition={{
-                duration,
-                delay: 0.2 + i * stagger,
-                ease,
-              }}
+              transition={{ duration, delay: 0.15 + i * stagger, ease }}
+            >
+              <Image
+                src={src}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 25vw, 20vw"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Row 3 – enters from left, scroll moves it slightly left */}
+        <motion.div
+          className="grid grid-cols-4 gap-2 md:gap-4"
+          style={{ x: midRowX }}
+        >
+          {ROW3_IMAGES.map((src, i) => (
+            <motion.div
+              key={`row3-${i}`}
+              className="relative aspect-[16/9] rounded-lg overflow-hidden border border-white/10 bg-teal-content/10 shadow-xl"
+              initial={{ opacity: 0, x: -120 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
+              transition={{ duration, delay: 0.3 + i * stagger, ease }}
             >
               <Image
                 src={src}
@@ -126,6 +147,13 @@ export default function HighburyImageGrid() {
           ))}
         </motion.div>
       </div>
+
+      {/* Gradient fade into page background */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
+        aria-hidden
+        style={{ background: 'linear-gradient(to bottom, transparent, #E0F2F1)' }}
+      />
     </section>
   )
 }
