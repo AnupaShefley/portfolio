@@ -92,6 +92,7 @@ export default function HighburyImageGrid() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 25vw, 20vw"
+                priority={i === 0}
               />
             </motion.div>
           ))}

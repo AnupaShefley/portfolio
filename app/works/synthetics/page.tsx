@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import SyntheticsContent from './SyntheticsContent'
+import dynamic from 'next/dynamic'
+
+const SyntheticsContent = dynamic(() => import('./SyntheticsContent'))
 
 export const metadata: Metadata = {
   title: 'Synthetics – Fleet Scheduling Redesign | Anupa Shefley',

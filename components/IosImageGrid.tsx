@@ -90,6 +90,7 @@ export default function IosImageGrid() {
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 25vw, 20vw"
+                priority={i === 0}
               />
             </motion.div>
           ))}

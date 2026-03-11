@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 
 interface AnimatedPersonImageProps {
@@ -23,10 +23,12 @@ export function AnimatedPersonImage({
   className = '',
   delay = 0,
 }: AnimatedPersonImageProps) {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <motion.div
       className={`relative w-full h-full ${className}`}
-      animate={{
+      animate={prefersReducedMotion ? {} : {
         y: [0, -5, 0],
         scale: [1, 1.03, 1],
       }}

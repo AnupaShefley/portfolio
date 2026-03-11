@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
-import NavbarContent from './NavbarContent'
+import dynamic from 'next/dynamic'
+
+const NavbarContent = dynamic(() => import('./NavbarContent'))
 
 export const metadata: Metadata = {
   title: 'Navigation Bar Redesign | Anupa Shefley',

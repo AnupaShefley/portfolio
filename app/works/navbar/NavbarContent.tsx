@@ -408,6 +408,7 @@ export default function NavbarContent() {
                     playsInline
                     muted
                     autoPlay
+                    preload="none"
                     className="w-full h-auto block"
                   >
                     Your browser does not support the video tag.
@@ -479,6 +480,7 @@ export default function NavbarContent() {
                       playsInline
                       muted
                       autoPlay
+                      preload="none"
                       className="w-full h-auto block"
                     >
                       Your browser does not support the video tag.

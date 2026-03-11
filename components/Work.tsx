@@ -36,6 +36,7 @@ function CardMedia({ project, className = '' }: { project: Project; className?: 
         loop
         muted
         playsInline
+        preload="none"
         className={`absolute inset-0 w-full h-full object-cover ${className}`}
         aria-label={project.title}
       />

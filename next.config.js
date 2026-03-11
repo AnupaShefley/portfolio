@@ -5,9 +5,13 @@ const nextConfig = {
   output: 'export',
   basePath,
   assetPrefix: basePath ? `${basePath}/` : undefined,
+  poweredByHeader: false,
   images: {
     unoptimized: true,
     domains: ['localhost'],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 }
 

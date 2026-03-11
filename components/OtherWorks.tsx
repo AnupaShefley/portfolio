@@ -38,6 +38,7 @@ export default function OtherWorks({ currentSlug }: OtherWorksProps) {
                   loop
                   muted
                   playsInline
+                  preload="none"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                   aria-label={project.title}
                 />

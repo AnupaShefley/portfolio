@@ -162,6 +162,7 @@ function RouteDefinitionSection({ id }: { id: string }) {
               loop
               muted
               playsInline
+              preload="none"
               className="w-full h-auto block"
             />
           </motion.div>
@@ -226,6 +227,7 @@ function InfrastructureSetupSection({ id }: { id: string }) {
               loop
               muted
               playsInline
+              preload="none"
               className="w-full h-auto block"
             />
           </motion.div>
@@ -354,6 +356,7 @@ function ScenariosSection({ id }: { id: string }) {
               loop
               muted
               playsInline
+              preload="none"
               className="w-full h-auto block"
             />
           </motion.div>
@@ -417,6 +420,7 @@ function ResultsSection({ id }: { id: string }) {
               loop
               muted
               playsInline
+              preload="none"
               className="w-full h-auto block"
             />
           </motion.div>
@@ -575,6 +579,7 @@ export default function EcoFleetContent() {
                     loop
                     muted
                     playsInline
+                    preload="none"
                     className="w-full h-auto block"
                   />
                 </div>
