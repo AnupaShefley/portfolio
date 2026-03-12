@@ -66,7 +66,7 @@ export default function OtherWorks({ currentSlug }: OtherWorksProps) {
           href={hashLink('/#work')}
           className="inline-flex items-center gap-2 text-teal-medium hover:text-teal-dark text-sm font-medium transition-colors"
         >
-          <span aria-hidden>←</span> Back to My Work
+          {/* <span aria-hidden>←</span> Back to My Work */}
         </Link>
       </div>
     </section>

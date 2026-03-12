@@ -12,7 +12,7 @@ export const projects: Project[] = [
     image: asset('/Dashboard/Dashboard1.png'),
     company: 'Dynamon',
     role: 'UX/UI Designer',
-    active: true,
+    active: false,
   },
   {
     id: '20',
