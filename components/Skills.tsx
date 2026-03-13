@@ -19,6 +19,7 @@ const skills: Skill[] = [
       'Usability testing',
     ],
     tools: ['Figma', 'Adobe XD', 'Miro'],
+    aiTools: ['Bolt', 'v0', 'Galileo AI', 'Midjourney'],
   },
   {
     title: 'DEVELOPER',
@@ -29,6 +30,7 @@ const skills: Skill[] = [
       'Database mapping',
     ],
     tools: ['Java', 'Python', 'HTML', 'CSS', 'JavaScript'],
+    aiTools: ['Cursor', 'GitHub Copilot', 'Bolt', 'Claude'],
   },
   {
     title: 'ANALYST',
@@ -38,6 +40,7 @@ const skills: Skill[] = [
       'Study user needs and convert to goals',
     ],
     tools: ['Data Analysis', 'Requirements Gathering', 'Stakeholder Management'],
+    aiTools: ['ChatGPT', 'Perplexity', 'Notion AI', 'Microsoft Copilot'],
   },
 ]
 
@@ -77,6 +80,19 @@ function SkillCard({
             <p className="text-sm font-semibold text-teal-dark/80 mb-2">Tools:</p>
             <p className="text-teal-dark/70">{skill.tools.join(', ')}</p>
           </div>
+          <div className="pt-3 border-t border-teal-medium/20">
+            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-teal-content/70 mb-2">AI tools</p>
+            <div className="flex flex-wrap gap-1.5">
+              {skill.aiTools.map((tool) => (
+                <span
+                  key={tool}
+                  className="px-2 py-0.5 rounded-full bg-teal-content/10 text-teal-dark text-xs font-medium ring-1 ring-teal-content/20"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </motion.div>
     </TiltCard>
@@ -105,7 +121,7 @@ export default function Skills() {
             My Skills
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch mb-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -50, filter: 'blur(8px)' }}
               animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, x: -50, filter: 'blur(8px)' }}
@@ -125,6 +141,7 @@ export default function Skills() {
             <SkillCard skill={skills[2]} isInView={isInView} delay={0.4} />
             <SkillCard skill={skills[1]} isInView={isInView} delay={0.5} />
           </div>
+
         </motion.div>
       </div>
     </section>

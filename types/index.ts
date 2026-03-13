@@ -17,6 +17,7 @@ export interface Skill {
   title: string
   responsibilities: string[]
   tools: string[]
+  aiTools: string[]
 }
 
 export interface ContactFormData {
