@@ -12,7 +12,7 @@ import { slugify } from '@/lib/slug'
 const TOC_SECTIONS = [
   'Context',
   'Problem and Design Goals',
-  'Designing Safer Input Parameters',
+  'Designing User-Friendly Input Parameters',
   'From Raw Results to Interpretable Duty Cycles',
   'Impact',
 ].map((label) => ({ id: slugify(label), label }))
@@ -309,30 +309,35 @@ export default function TelematicsContent() {
               </p>
             </motion.div>
 
-            {/* 03 – Designing Safer Input Parameters */}
+            {/* 03 – Designing User-Friendly Input Parameters */}
             <section id={TOC_SECTIONS[2].id}>
               <motion.div {...rv()}>
                 <SectionNum n="03" />
                 <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-4">
-                  Designing Safer Input Parameters
+                  Designing User-Friendly Input Parameters
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  Instead of a long mixed list of numeric fields, the new input screen groups
-                  parameters into logical sections with helper copy and sensible defaults.
+                  Instead of a wall of unlabelled numeric fields, the new input screen groups
+                  parameters into logical sections with plain-language questions and helper copy.
                 </p>
               </motion.div>
 
-              <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-6">
+              <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
-                  Each section — journey structure, stop detection and analysis horizon — includes
-                  short helper copy so that users can get started quickly and only adjust what they
-                  understand. Removing the wall of undifferentiated fields made the form feel
-                  approachable and reduced the chance of accidental misconfiguration.
+                  Each section — journey structure, stop detection and analysis horizon — is written
+                  in language that makes sense to the person filling it in. Removing the
+                  undifferentiated list of fields made the form feel approachable and reduced the
+                  chance of accidental misconfiguration.
                 </p>
               </motion.div>
 
-              <motion.div {...rv(0.1)}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {/* Before / After — full breakout width for clarity */}
+              <motion.div
+                {...rv(0.08)}
+                className="w-full min-w-0 lg:w-[min(calc(100vw-14rem),calc(100%+24rem))] mb-12"
+                style={{ maxWidth: 'min(calc(100vw - 2rem), 1144px)' }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-slate-400 mb-2">
                       Before
@@ -340,7 +345,7 @@ export default function TelematicsContent() {
                     <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
                       <Image
                         src={asset('/analyseData/Screenshot 2026-02-11 115915.png')}
-                        alt="Original parameter-heavy input view for telematics analysis"
+                        alt="Original parameter-heavy input view — unlabelled numeric fields"
                         width={0}
                         height={0}
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -356,7 +361,7 @@ export default function TelematicsContent() {
                     <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
                       <Image
                         src={asset('/newTelematicsResults/Screenshot 2026-02-11 120940.png')}
-                        alt="Redesigned structured input view for telematics duty-cycle analysis"
+                        alt="Redesigned input view — grouped sections with plain-language questions"
                         width={0}
                         height={0}
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -365,6 +370,72 @@ export default function TelematicsContent() {
                       />
                     </div>
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Presets */}
+              <motion.div {...rv(0.1)} className="space-y-4 text-slate-600 leading-relaxed mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Operation presets as a starting point
+                </h3>
+                <p>
+                  Most users had no idea what numeric values to enter for their specific operation.
+                  Leaving every field blank and expecting analysts to know the right numbers created
+                  paralysis — and often led to using whatever values had been used last time, without
+                  understanding why.
+                </p>
+                <p>
+                  Four operation presets gave users a structured starting point tailored to their
+                  fleet context — urban delivery, regional logistics, long haul, and mixed
+                  operations. Rather than facing a blank form, users could select the preset closest
+                  to their operation and adjust from there.
+                </p>
+              </motion.div>
+
+              <motion.div {...rv(0.12)}>
+                <MediaWrap>
+                  <Image
+                    src={asset('/newTelematicsResults/Presets.png')}
+                    alt="Four operation presets giving users a tailored starting point for their analysis parameters"
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 1024px) 100vw, 1144px"
+                    className="w-full h-auto block"
+                    quality={90}
+                  />
+                </MediaWrap>
+              </motion.div>
+
+              {/* Simpler questions */}
+              <motion.div {...rv(0.1)} className="space-y-4 text-slate-600 leading-relaxed mb-4 mt-10">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Questions reworded into plain language
+                </h3>
+                <p>
+                  Technical parameter names were replaced with plain questions written from the
+                  user&apos;s perspective. Each answer includes helper text explaining exactly what
+                  happens to the data based on that choice — making the consequences of each setting
+                  visible before the analysis runs.
+                </p>
+                <p>
+                  Instead of guessing what a field like <span className="font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded">min_stop_duration_s</span> means,
+                  users see a question like &ldquo;How long does a vehicle need to be stationary
+                  before it counts as a stop?&rdquo; — with a note on how a shorter threshold
+                  captures more stops but may introduce noise.
+                </p>
+              </motion.div>
+
+              <motion.div {...rv(0.12)}>
+                <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm max-w-lg">
+                  <Image
+                    src={asset('/newTelematicsResults/Helpful.png')}
+                    alt="Input questions reworded in plain language with helper text explaining how each answer affects the filtered data"
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 768px) 100vw, 512px"
+                    className="w-full h-auto block"
+                    quality={90}
+                  />
                 </div>
               </motion.div>
             </section>
@@ -395,35 +466,97 @@ export default function TelematicsContent() {
                 </p>
               </motion.div>
 
-              <motion.div {...rv(0.08)}>
-                <div className="mb-3">
-                  <p className="text-[11px] tracking-[0.2em] uppercase font-semibold text-slate-400 mb-2">
-                    Before — flat table with binary pass / fail
-                  </p>
-                  <div className="rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-sm">
-                    <Image
-                      src={asset('/analyseData/Screenshot 2026-02-11 115850.png')}
-                      alt="Legacy telematics analysis results table with pass or fail flags"
-                      width={0}
-                      height={0}
-                      sizes="(max-width: 1024px) 100vw, 1144px"
-                      className="w-full h-auto block"
-                      quality={90}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div {...rv(0.12)}>
+              {/* Example 1 — Failure reasons categorised */}
+              <motion.div {...rv(0.08)} className="space-y-3 mb-10">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Failure reasons split into clear categories
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Rather than a single pass or fail flag, failures are now grouped into distinct
+                  categories — such as bad data and threshold failures. This makes it immediately
+                  clear whether a problem is a data quality issue or a configuration issue, and
+                  points analysts to the right next step.
+                </p>
                 <MediaWrap>
                   <Image
-                    src={asset('/newTelematicsResults/Screenshot 2026-02-11 121006.png')}
-                    alt="Redesigned telematics results dashboard highlighting duty-cycle quality"
+                    src={asset('/newTelematicsResults/FailureReasons.png')}
+                    alt="Failure reasons split into categories — bad data versus threshold failures"
                     width={0}
                     height={0}
                     sizes="(max-width: 1024px) 100vw, 1144px"
                     className="w-full h-auto block"
                     quality={90}
+                  />
+                </MediaWrap>
+              </motion.div>
+
+              {/* Example 2 — Colour and icons */}
+              <motion.div {...rv(0.08)} className="space-y-3 mb-10">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Colour and icons make results instantly readable
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  The redesigned results view uses colour and iconography to communicate quality
+                  status at a glance. Users can scan an entire fleet&apos;s duty cycles and spot
+                  patterns, outliers and failures without reading every row of a table.
+                </p>
+                <MediaWrap>
+                  <Image
+                    src={asset('/newTelematicsResults/passfail.png')}
+                    alt="Colourful duty-cycle results view using icons and colour to communicate pass and fail status"
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 1024px) 100vw, 1144px"
+                    className="w-full h-auto block"
+                    quality={90}
+                  />
+                </MediaWrap>
+              </motion.div>
+
+              {/* Example 3 — Per-vehicle detail */}
+              <motion.div {...rv(0.08)} className="space-y-3 mb-10">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Detailed breakdown per vehicle and duty cycle
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Selecting any result opens a detailed view for that specific vehicle and duty
+                  cycle — showing the underlying data, quality checks applied and what each check
+                  found. Teams can drill into exactly why a cycle passed or failed without switching
+                  between tools.
+                </p>
+                <MediaWrap>
+                  <video
+                    src={asset('/newTelematicsResults/Details.mp4')}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    className="w-full h-auto block"
+                  />
+                </MediaWrap>
+              </motion.div>
+
+              {/* Example 4 — Action buttons */}
+              <motion.div {...rv(0.08)} className="space-y-3 mb-4">
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  Contextual actions based on failure reasons
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  When a duty cycle fails, the interface surfaces relevant action buttons based on
+                  the specific failure reason. Instead of leaving analysts to figure out what to do
+                  next, the system guides them — whether that means adjusting a threshold,
+                  flagging a data issue, or re-running the analysis with different parameters.
+                </p>
+                <MediaWrap>
+                  <video
+                    src={asset('/newTelematicsResults/FailureReasons.mp4')}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    className="w-full h-auto block"
                   />
                 </MediaWrap>
               </motion.div>
