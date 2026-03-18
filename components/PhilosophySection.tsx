@@ -39,7 +39,7 @@ export default function PhilosophySection() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-snug mb-5"
           >
-            I think like an engineer.{' '}
+            Twelve years of development.{' '}
             <motion.span
               className="text-teal-light"
               initial={{ opacity: 0 }}
@@ -47,7 +47,7 @@ export default function PhilosophySection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.55, ease: 'easeOut' }}
             >
-              I design for people.
+              Now applied to design.
             </motion.span>
           </motion.h2>
 
@@ -58,7 +58,7 @@ export default function PhilosophySection() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-base md:text-lg text-white/60 leading-relaxed max-w-xl mx-auto"
           >
-            My background in development means I bridge the gap between great design and what actually ships — delivering UX that teams trust and users enjoy.
+            Most designers hand off to developers. I was one. That changes how I research, how I scope, what I prototype, and how fast improvements actually ship.
           </motion.p>
 
         </div>
