@@ -12,11 +12,11 @@ const skills: Skill[] = [
   {
     title: 'DESIGNER',
     responsibilities: [
-      'Map user flows',
-      'Create prototypes',
-      'Persona creation',
-      'Design thinking',
-      'Usability testing',
+      'UX research, user personas & journey mapping',
+      'Wireframing, prototyping & usability testing',
+      'Design systems & component libraries',
+      'Information architecture & interaction design',
+      'Cross-functional design collaboration',
     ],
     tools: ['Figma', 'Adobe XD', 'Miro'],
     aiTools: ['Bolt', 'v0', 'Galileo AI', 'Midjourney'],
@@ -24,22 +24,25 @@ const skills: Skill[] = [
   {
     title: 'DEVELOPER',
     responsibilities: [
-      'Web page creation',
-      'File processing solutions',
-      'API services',
-      'Database mapping',
+      'Front-end development with React & Next.js',
+      'Responsive UI implementation from design to code',
+      'Rapid prototyping of working applications & screens using AI',
+      'RESTful API integration & data pipeline development',
+      'Java back-end development & database modelling',
     ],
-    tools: ['Java', 'Python', 'HTML', 'CSS', 'JavaScript'],
+    tools: ['Next.js', 'TypeScript', 'React', 'HTML/CSS', 'Java', 'Python'],
     aiTools: ['Cursor', 'GitHub Copilot', 'Bolt', 'Claude'],
   },
   {
     title: 'ANALYST',
     responsibilities: [
-      'Understand client requirements and propose solutions',
-      'Liaise with teams to recognize pain points',
-      'Study user needs and convert to goals',
+      'Requirements gathering & stakeholder workshops',
+      'Pain point analysis & solution mapping',
+      'Translating user needs into product goals',
+      'Process improvement & workflow documentation',
+      'Data-driven reporting & insight communication',
     ],
-    tools: ['Data Analysis', 'Requirements Gathering', 'Stakeholder Management'],
+    tools: ['Notion', 'Confluence', 'Miro', 'JIRA'],
     aiTools: ['ChatGPT', 'Perplexity', 'Notion AI', 'Microsoft Copilot'],
   },
 ]
@@ -64,30 +67,35 @@ function SkillCard({
         <h3 className="text-xl font-bold text-teal-dark mb-4 uppercase">
           {skill.title}
         </h3>
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div>
-            <p className="text-sm font-semibold text-teal-dark/80 mb-2">Responsibilities:</p>
-            <ul className="list-none space-y-1 text-teal-dark/70">
+            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-teal-content/70 mb-2">What I do</p>
+            <ul className="list-none space-y-1.5 text-teal-dark/70 text-sm">
               {skill.responsibilities.map((item, i) => (
-                <li key={i} className="flex items-start">
-                  <span className="mr-2">&bull;</span>
+                <li key={i} className="flex items-start gap-2">
+                  <span className="mt-[3px] shrink-0 w-1 h-1 rounded-full bg-teal-content/50 inline-block" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div>
-            <p className="text-sm font-semibold text-teal-dark/80 mb-2">Tools:</p>
-            <p className="text-teal-dark/70">{skill.tools.join(', ')}</p>
-          </div>
           <div className="pt-3 border-t border-teal-medium/20">
-            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-teal-content/70 mb-2">AI tools</p>
+            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-teal-content/70 mb-2.5">Tools &amp; Frameworks</p>
             <div className="flex flex-wrap gap-1.5">
+              {skill.tools.map((tool) => (
+                <span
+                  key={tool}
+                  className="px-2.5 py-0.5 rounded-full bg-teal-medium/20 text-teal-dark text-xs font-medium ring-1 ring-teal-medium/30"
+                >
+                  {tool}
+                </span>
+              ))}
               {skill.aiTools.map((tool) => (
                 <span
                   key={tool}
-                  className="px-2 py-0.5 rounded-full bg-teal-content/10 text-teal-dark text-xs font-medium ring-1 ring-teal-content/20"
+                  className="px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-700 text-xs font-medium ring-1 ring-violet-400/25 flex items-center gap-1"
                 >
+                  <span className="text-[9px] leading-none">✦</span>
                   {tool}
                 </span>
               ))}
@@ -116,10 +124,19 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20, filter: 'blur(6px)' }}
             animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 20, filter: 'blur(6px)' }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-teal-dark mb-8 text-center md:text-left"
+            className="text-4xl md:text-5xl font-serif font-bold text-teal-dark mb-3 text-center md:text-left"
           >
-            My Skills
+            Expertise
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="flex items-center gap-1.5 text-xs text-teal-dark/50 mb-8 justify-center md:justify-start"
+          >
+            <span className="text-violet-500 text-[10px]">✦</span>
+            <span>AI-assisted tools</span>
+          </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
             <motion.div
