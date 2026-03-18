@@ -153,6 +153,17 @@ export default function Hero() {
               Developer
             </motion.span>
           </div>
+
+          {/* Tagline */}
+          <motion.p
+            className="mt-6 md:mt-8 text-center text-sm md:text-base text-teal-dark/70 font-medium tracking-wide"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: INTRO_DELAY + 1.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            UX / UI Designer — turning complex workflows into intuitive products
+          </motion.p>
+
         </div>
       </motion.div>
 
