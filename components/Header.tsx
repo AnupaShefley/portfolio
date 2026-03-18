@@ -4,12 +4,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { hashLink } from '@/lib/link'
+import { hashLink, pathLink } from '@/lib/link'
 
 const navItems = [
-  { label: 'About', href: '/#about' },
-  { label: 'Skills', href: '/#skills' },
-  { label: 'Work', href: '/#work' },
+  { label: 'About', href: '/about', isPage: true },
+  { label: 'Work', href: '/#work', isPage: false },
 ]
 
 export default function Header() {
@@ -60,16 +59,26 @@ export default function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={hashLink(item.href)}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className="text-teal-dark hover:text-teal-medium transition-colors font-medium"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.isPage ? (
+              <Link
+                key={item.href}
+                href={pathLink(item.href)}
+                className="text-teal-dark hover:text-teal-medium transition-colors font-medium"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={hashLink(item.href)}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className="text-teal-dark hover:text-teal-medium transition-colors font-medium"
+              >
+                {item.label}
+              </a>
+            )
+          )}
           <Link
             href={hashLink('/#contact')}
             onClick={(e) => isHome && scrollToSection(e, '/#contact')}
@@ -134,16 +143,27 @@ export default function Header() {
             className="md:hidden bg-background/98 backdrop-blur-sm border-t border-teal-medium/20"
           >
             <div className="container mx-auto px-6 py-4 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={hashLink(item.href)}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className="text-teal-dark hover:text-teal-medium transition-colors font-medium py-2"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navItems.map((item) =>
+                item.isPage ? (
+                  <Link
+                    key={item.href}
+                    href={pathLink(item.href)}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-teal-dark hover:text-teal-medium transition-colors font-medium py-2"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.href}
+                    href={hashLink(item.href)}
+                    onClick={(e) => scrollToSection(e, item.href)}
+                    className="text-teal-dark hover:text-teal-medium transition-colors font-medium py-2"
+                  >
+                    {item.label}
+                  </a>
+                )
+              )}
               <Link
                 href={hashLink('/#contact')}
                 onClick={() => setIsMobileMenuOpen(false)}
