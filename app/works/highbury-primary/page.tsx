@@ -413,7 +413,7 @@ export default function HighburyPrimaryPage() {
                 {[
                   'Aged between 25 and 50 (as per statistics of average age of first-time parents in UK — Office for National Statistics)',
                   'Have kids in school aged between 4 and 12 years old, or',
-                  'Planning to send kids to school in next academic year 2021/2022',
+                  'Planning to send kids to school in next academic year',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span
@@ -437,7 +437,7 @@ export default function HighburyPrimaryPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  'Find Inset dates for 2020–2021',
+                  'Find Inset dates for next academic year',
                   'Find out how to access Numbots which is an educational website for kids',
                   'Find out uniform/kit for Forest School days',
                   'Find out who is the school Headteacher',
