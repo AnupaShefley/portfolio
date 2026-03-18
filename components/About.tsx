@@ -41,7 +41,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xs md:text-sm uppercase tracking-widest text-white font-medium mb-2"
               >
-                Prepare Yourself
+               
               </motion.p>
 
               <motion.h2
@@ -54,13 +54,13 @@ export default function About() {
               </motion.h2>
 
               <motion.a
-                href={hashLink('/#skills')}
+                href={hashLink('/#beginnings')}
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.45 }}
                 className="text-xs md:text-sm uppercase tracking-widest text-white underline underline-offset-4 decoration-white/90 hover:decoration-white transition-all w-fit"
               >
-                Let&apos;s Dig In
+               
               </motion.a>
             </motion.div>
           </div>
@@ -118,13 +118,13 @@ export default function About() {
               </div>
               <div className="flex-1 px-6 py-5 flex flex-col justify-center">
                 <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-slate-400 mb-1.5">
-                  Java Development
+                  Java Development · 2012 – 2023
                 </p>
                 <h4 className="text-lg md:text-xl font-serif font-bold text-teal-dark mb-1.5">
                   Java Developer
                 </h4>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Built enterprise-grade systems developing deep foundations in problem-solving and technical rigour.
+                  A logistics technology company specialising in transport management systems. Built enterprise-grade systems developing deep foundations in problem-solving and technical rigour.
                 </p>
               </div>
             </div>
@@ -142,13 +142,13 @@ export default function About() {
               </div>
               <div className="flex-1 px-6 py-5 flex flex-col justify-center">
                 <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-teal-content/70 mb-1.5">
-                  UX / UI Design
+                  UX / UI Design · 2023 – Present
                 </p>
                 <h4 className="text-lg md:text-xl font-serif font-bold text-teal-dark mb-1.5">
                   UX / UI Designer
                 </h4>
                 <p className="text-teal-dark/60 text-sm leading-relaxed">
-                  Pivoted into design bringing a technical lens to user experience at Dynamon.
+                  A fleet intelligence platform delivering real-time telematics and analytics. Sole designer shipping multiple data-heavy products, bringing a technical lens to every user experience decision.
                 </p>
               </div>
             </div>
