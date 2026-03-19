@@ -58,7 +58,8 @@ export default function PhilosophySection() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-base md:text-lg text-white/60 leading-relaxed max-w-xl mx-auto"
           >
-            Most designers hand off to developers. I was one. That changes how I research, how I scope, what I prototype, and how fast improvements actually ship.
+            Most designers hand off to developers. I was one. Now, that experience shapes how I research, scope, and prototype—
+            so what gets designed is actually built, and shipped faster.
           </motion.p>
 
         </div>
