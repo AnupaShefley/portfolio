@@ -14,6 +14,9 @@ import { asset } from '@/lib/asset'
 
 const INTRO_DELAY = 0.9
 
+// clip-path inset() with 0 top/bottom clips descenders (e.g. “g”, “y”); negative em keeps ink visible.
+const clipY = '-0.5em'
+
 export default function Hero() {
   const { scrollY } = useScroll()
 
@@ -42,49 +45,51 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sticky top-0 z-0"
+      className="min-h-screen flex items-center justify-center relative pt-20 sticky top-0 z-0"
       onMouseMove={handleMouseMove}
     >
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={asset('/Landing.jpg')}
-          alt=""
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
+      {/* Background stack only — overflow hidden here so hero text is never clipped by the section */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={asset('/Landing.jpg')}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Softer overlay — reduced from 82% to ~55% so the image breathes */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(224,242,241,0.62) 0%, rgba(224,242,241,0.5) 50%, rgba(224,242,241,0.62) 100%)',
+          }}
         />
-      </div>
 
-      {/* Softer overlay — reduced from 82% to ~55% so the image breathes */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(224,242,241,0.62) 0%, rgba(224,242,241,0.5) 50%, rgba(224,242,241,0.62) 100%)',
-        }}
-      />
-
-      {/* Animated gradient mesh — slowly shifting coloured blobs */}
-      <div
-        className="absolute inset-0 z-[2]"
-        style={{
-          background: `
+        {/* Animated gradient mesh — slowly shifting coloured blobs */}
+        <div
+          className="absolute inset-0 z-[2]"
+          style={{
+            background: `
             radial-gradient(ellipse at 20% 50%, rgba(130,196,187,0.4) 0%, transparent 50%),
             radial-gradient(ellipse at 80% 20%, rgba(78,124,126,0.3) 0%, transparent 50%),
             radial-gradient(ellipse at 50% 80%, rgba(46,71,60,0.15) 0%, transparent 50%)
           `,
-          backgroundSize: '200% 200%',
-          animation: 'meshShift 20s ease infinite',
-        }}
-      />
+            backgroundSize: '200% 200%',
+            animation: 'meshShift 20s ease infinite',
+          }}
+        />
 
-      {/* Mouse-following spotlight (desktop only) */}
-      <motion.div
-        className="absolute inset-0 z-[3] pointer-events-none hidden md:block"
-        style={{ background: spotlightBg }}
-      />
+        {/* Mouse-following spotlight (desktop only) */}
+        <motion.div
+          className="absolute inset-0 z-[3] pointer-events-none hidden md:block"
+          style={{ background: spotlightBg }}
+        />
+      </div>
 
       {/* Parallax wrapper — scales down, blurs, and fades on scroll */}
       <motion.div
@@ -96,12 +101,12 @@ export default function Hero() {
         }}
       >
         <div className="max-w-5xl mx-auto">
-          {/* "Designer" — clip-path reveal from left */}
-          <div className="overflow-hidden mb-2 md:mb-4 pb-3 md:pb-4">
+          {/* "Designer" — clip-path reveal from left (no overflow-hidden: it clipped descenders on "g") */}
+          <div className="relative z-[1] mb-3 md:mb-6 pb-1 md:pb-2">
             <motion.span
-              className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
-              initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 0 }}
-              animate={{ clipPath: 'inset(0 0% 0 0)', opacity: 1 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight leading-normal drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
+              initial={{ clipPath: `inset(${clipY} 100% ${clipY} 0)`, opacity: 0 }}
+              animate={{ clipPath: `inset(${clipY} 0% ${clipY} 0)`, opacity: 1 }}
               transition={{
                 delay: INTRO_DELAY + 0.6,
                 duration: 0.9,
@@ -113,10 +118,10 @@ export default function Hero() {
           </div>
 
           {/* Main name — clip-path reveals with stagger */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-teal-dark flex flex-col md:flex-row md:justify-between md:items-center md:gap-4 lg:gap-8 drop-shadow-[0_0_40px_rgba(130,196,187,0.12)]">
+          <h1 className="relative z-0 text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-teal-dark flex flex-col md:flex-row md:justify-between md:items-center md:gap-4 lg:gap-8 drop-shadow-[0_0_40px_rgba(130,196,187,0.12)]">
             <motion.span
-              initial={{ clipPath: 'inset(0 100% 0 0)', opacity: 0 }}
-              animate={{ clipPath: 'inset(0 0% 0 0)', opacity: 1 }}
+              initial={{ clipPath: `inset(${clipY} 100% ${clipY} 0)`, opacity: 0 }}
+              animate={{ clipPath: `inset(${clipY} 0% ${clipY} 0)`, opacity: 1 }}
               transition={{
                 delay: INTRO_DELAY,
                 duration: 1,
@@ -126,8 +131,8 @@ export default function Hero() {
               ANUPA
             </motion.span>
             <motion.span
-              initial={{ clipPath: 'inset(0 0 0 100%)', opacity: 0 }}
-              animate={{ clipPath: 'inset(0 0 0 0%)', opacity: 1 }}
+              initial={{ clipPath: `inset(${clipY} 0 ${clipY} 100%)`, opacity: 0 }}
+              animate={{ clipPath: `inset(${clipY} 0 ${clipY} 0)`, opacity: 1 }}
               transition={{
                 delay: INTRO_DELAY + 0.15,
                 duration: 1,
@@ -139,11 +144,11 @@ export default function Hero() {
           </h1>
 
           {/* "Developer" — clip-path reveal from right */}
-          <div className="mt-2 md:mt-4 overflow-hidden md:text-right pb-3 md:pb-4">
+          <div className="relative z-[1] mt-2 md:mt-4 md:text-right pb-1 md:pb-2">
             <motion.span
-              className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
-              initial={{ clipPath: 'inset(0 0 0 100%)', opacity: 0 }}
-              animate={{ clipPath: 'inset(0 0 0 0%)', opacity: 1 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-sans font-semibold text-teal-content block tracking-tight leading-normal drop-shadow-[0_2px_8px_rgba(224,242,241,0.9)]"
+              initial={{ clipPath: `inset(${clipY} 0 ${clipY} 100%)`, opacity: 0 }}
+              animate={{ clipPath: `inset(${clipY} 0 ${clipY} 0)`, opacity: 1 }}
               transition={{
                 delay: INTRO_DELAY + 0.6,
                 duration: 0.9,
