@@ -11,6 +11,7 @@ export interface Project {
   active?: boolean // If false, project won't be displayed. Defaults to true.
   company?: string // Company or client name
   role?: string // Specific role for this project
+  aiAssisted?: boolean // If true, an AI badge is shown on the project card.
 }
 
 export interface Skill {

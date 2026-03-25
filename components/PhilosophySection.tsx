@@ -47,7 +47,7 @@ export default function PhilosophySection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.55, ease: 'easeOut' }}
             >
-              Now applied to design.
+              Now amplified by AI.
             </motion.span>
           </motion.h2>
 
@@ -58,8 +58,9 @@ export default function PhilosophySection() {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="text-base md:text-lg text-white/60 leading-relaxed max-w-xl mx-auto"
           >
-            Most designers hand off to developers. I was one. Now, that experience shapes how I research, scope, and prototype—
-            so what gets designed is actually built, and shipped faster.
+            Most designers hand off to developers. I was one. Now I pair that engineering instinct
+            with AI tools — so research takes hours instead of weeks, prototypes are functional on day one,
+            and what gets designed actually ships.
           </motion.p>
 
         </div>

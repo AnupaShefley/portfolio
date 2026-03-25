@@ -84,6 +84,12 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
         <p className="relative text-slate-600 text-sm md:text-base leading-relaxed line-clamp-2">
           {project.description}
         </p>
+        {project.aiAssisted && (
+          <span className="relative inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-600 text-[10px] font-mono uppercase tracking-[0.18em] ring-1 ring-violet-400/20 w-fit">
+            <span className="text-[9px] leading-none">✦</span>
+            AI-assisted
+          </span>
+        )}
       </div>
     </div>
   )
@@ -277,10 +283,16 @@ export default function Work() {
               </motion.p>
               <motion.h2
                 variants={headerTextItem}
-                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-3"
               >
                 My Work
               </motion.h2>
+              <motion.p
+                variants={headerTextItem}
+                className="text-sm text-white/60 mb-4"
+              >
+                Designed, prototyped, and shipped — with AI at every stage.
+              </motion.p>
               <motion.div variants={headerTextItem}>
                 <a
                   href={hashLink('/#work')}

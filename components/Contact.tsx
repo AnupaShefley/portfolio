@@ -38,7 +38,7 @@ export default function Contact() {
             </motion.div>
 
             <p className="text-teal-dark/70 text-center">
-              Have a project in mind, or hiring for a UX role? I'd love to hear from you.
+              Looking for an AI-fluent designer, or have a product to prototype? I'd love to hear from you.
             </p>
           </div>
 

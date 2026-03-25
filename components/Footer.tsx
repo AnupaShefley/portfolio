@@ -20,7 +20,7 @@ export default function Footer() {
             © {currentYear} Anupa Shefley. All rights reserved.
           </p>
           <p className="text-white/60 text-sm mb-6">
-            Designed and developed with care
+            Designed and built with AI + care
           </p>
           <div className="flex justify-center">
             <a

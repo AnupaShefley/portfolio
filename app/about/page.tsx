@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'About – Anupa Shefley',
   description:
-    'Designer, developer, and analyst. Learn about my background, career, skills, and approach to design.',
+    'AI-augmented designer, developer, and analyst. Learn about my background, career, skills, and AI-first approach to design.',
 }
 
 export default function AboutPage() {

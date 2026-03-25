@@ -166,7 +166,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: INTRO_DELAY + 1.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            UX / UI Designer — turning complex workflows into intuitive products
+            Designing and shipping products faster with AI-augmented prototyping
           </motion.p>
 
         </div>

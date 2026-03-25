@@ -51,6 +51,7 @@ export const projects: Project[] = [
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,
+    aiAssisted: true,
   },
   {
     id: '5',
@@ -63,6 +64,7 @@ export const projects: Project[] = [
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,
+    aiAssisted: true,
   },
   {
     id: '6',
@@ -92,6 +94,7 @@ export const projects: Project[] = [
       'Case study on redesigning the global navigation bar to improve findability, consistency and user flows.',
     image: asset('/navbar/navcard.png'),
     active: true,
+    aiAssisted: true,
   },
   {
     id: '2',
@@ -104,5 +107,6 @@ export const projects: Project[] = [
     company: 'Dynamon',
     role: 'UX/UI Designer',
     active: true,
+    aiAssisted: true,
   },
 ]

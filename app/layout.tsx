@@ -19,8 +19,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Anupa Shefley - Developer & Designer',
-  description: 'Personal portfolio showcasing development and design work',
+  title: 'Anupa Shefley — AI-Augmented Designer & Developer',
+  description:
+    'Designer and developer who uses AI to research, prototype, and ship products faster. 12 years of engineering applied to modern design.',
 }
 
 export default function RootLayout({
