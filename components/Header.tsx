@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { hashLink, pathLink } from '@/lib/link'
+import { hashLink } from '@/lib/link'
 
 const navItems = [
   { label: 'About', href: '/about', isPage: true },
@@ -63,7 +63,7 @@ export default function Header() {
             item.isPage ? (
               <Link
                 key={item.href}
-                href={pathLink(item.href)}
+                href={item.href}
                 className="text-teal-dark hover:text-teal-medium transition-colors font-medium"
               >
                 {item.label}
@@ -80,7 +80,7 @@ export default function Header() {
             )
           )}
           <Link
-            href={hashLink('/#contact')}
+            href="/#contact"
             onClick={(e) => isHome && scrollToSection(e, '/#contact')}
             className="inline-block"
           >
@@ -147,7 +147,7 @@ export default function Header() {
                 item.isPage ? (
                   <Link
                     key={item.href}
-                    href={pathLink(item.href)}
+                    href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-teal-dark hover:text-teal-medium transition-colors font-medium py-2"
                   >
@@ -165,7 +165,7 @@ export default function Header() {
                 )
               )}
               <Link
-                href={hashLink('/#contact')}
+                href="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block"
               >

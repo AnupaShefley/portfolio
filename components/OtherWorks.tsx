@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { projects } from '@/lib/projects'
-import { hashLink } from '@/lib/link'
 
 interface OtherWorksProps {
   currentSlug: string
@@ -63,7 +62,7 @@ export default function OtherWorks({ currentSlug }: OtherWorksProps) {
       </div>
       <div className="mt-6">
         <Link
-          href={hashLink('/#work')}
+          href="/#work"
           className="inline-flex items-center gap-2 text-teal-medium hover:text-teal-dark text-sm font-medium transition-colors"
         >
           {/* <span aria-hidden>←</span> Back to My Work */}
