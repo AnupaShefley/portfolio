@@ -78,18 +78,20 @@ function CardCinematic({ project, n }: { project: Project; n: string }) {
       {/* ── Text section — light, with soft accent line ── */}
       <div className="relative flex flex-col gap-1.5 px-5 py-3 md:px-5.5 md:py-3 bg-white/90 backdrop-blur-sm border-t border-teal-100 min-h-[110px]">
         <div className="pointer-events-none absolute inset-x-4 -top-px h-px bg-gradient-to-r from-transparent via-teal-300/70 to-transparent" />
-        <h3 className="relative text-xl md:text-2xl font-serif font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors duration-300">
-          {project.title}
-        </h3>
+        <div className="relative flex items-start justify-between gap-3">
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition-colors duration-300">
+            {project.title}
+          </h3>
+          {project.aiAssisted && (
+            <span className="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-600 text-[10px] font-mono uppercase tracking-[0.18em] ring-1 ring-violet-400/20">
+              <span className="text-[9px] leading-none">✦</span>
+              AI-assisted
+            </span>
+          )}
+        </div>
         <p className="relative text-slate-600 text-sm md:text-base leading-relaxed line-clamp-2">
           {project.description}
         </p>
-        {project.aiAssisted && (
-          <span className="relative inline-flex items-center gap-1 mt-1.5 px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-600 text-[10px] font-mono uppercase tracking-[0.18em] ring-1 ring-violet-400/20 w-fit">
-            <span className="text-[9px] leading-none">✦</span>
-            AI-assisted
-          </span>
-        )}
       </div>
     </div>
   )

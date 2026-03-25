@@ -94,7 +94,6 @@ export const projects: Project[] = [
       'Case study on redesigning the global navigation bar to improve findability, consistency and user flows.',
     image: asset('/navbar/navcard.png'),
     active: true,
-    aiAssisted: true,
   },
   {
     id: '2',
