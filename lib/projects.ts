@@ -96,6 +96,18 @@ export const projects: Project[] = [
     active: true,
   },
   {
+    id: '10',
+    slug: 'portfolio-site',
+    title: 'Portfolio Site',
+    category: 'Design & Development',
+    description:
+      'Designed and built from scratch — a personal portfolio that balances clean visual design, thoughtful UX and modern front-end engineering.',
+    image: asset('/Portfolio.png'),
+    role: 'Designer & Developer',
+    active: true,
+    aiAssisted: true,
+  },
+  {
     id: '2',
     slug: 'synthetics',
     title: 'Synthetics',
