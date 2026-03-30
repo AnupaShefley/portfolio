@@ -108,6 +108,19 @@ export const projects: Project[] = [
     aiAssisted: true,
   },
   {
+    id: '8',
+    slug: 'design-system',
+    title: 'EcoFleet Design System',
+    category: 'Design Systems · Component Library',
+    description:
+      'A shared visual and interaction language built for EcoFleet — covering colour, typography, spacing, components, data visualisation and feedback patterns.',
+    image: asset('/DesignSystem/Components1.png'),
+    video: asset('/DesignSystem/DesignSystem.mp4'),
+    company: 'Dynamon',
+    role: 'UX/UI Designer',
+    active: true,
+  },
+  {
     id: '2',
     slug: 'synthetics',
     title: 'Synthetics',
