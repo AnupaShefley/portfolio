@@ -82,7 +82,7 @@ function NumberedList({ items }: { items: string[] }) {
 const ROUTE_POINTS = [
   {
     heading: 'Map-based route visualisation',
-    body: 'Users enter details about their daily journeys. The map interface lets operators visualise routes geographically — building a realistic picture of how the fleet actually moves.',
+    body: 'Users enter details about their daily journeys. The map interface lets operators visualise routes geographically, building a realistic picture of how the fleet actually moves.',
   },
   {
     heading: 'Tabular route summary',
@@ -90,7 +90,7 @@ const ROUTE_POINTS = [
   },
   {
     heading: 'Click-to-create on map',
-    body: 'Users could create routes directly by clicking on the map — reducing friction and making the process intuitive even for operators unfamiliar with data entry tools.',
+    body: 'Users could create routes directly by clicking on the map, making the process intuitive even for operators who were new to data entry tools.',
   },
   {
     heading: 'Bulk route upload',
@@ -178,7 +178,7 @@ function RouteDefinitionSection({ id }: { id: string }) {
 const INFRA_POINTS = [
   {
     heading: 'Define your charging and refuelling strategy',
-    body: 'Set the infrastructure approach for each depot — EV charging, hydrogen refuelling or LNG stations. Specify capacity, charger type and availability windows to reflect real operational constraints.',
+    body: 'Set the infrastructure approach for each depot: EV charging, hydrogen refuelling or LNG stations. Specify capacity, charger type and availability windows to reflect real operational constraints.',
   },
   {
     heading: 'Multiple ways to add locations',
@@ -186,7 +186,7 @@ const INFRA_POINTS = [
   },
   {
     heading: 'Live connectivity to charging networks',
-    body: 'API integration with third-party charging networks keeps infrastructure data current — reducing manual effort and ensuring planning is based on accurate, up-to-date availability.',
+    body: 'API integration with third-party charging networks keeps infrastructure data current, cutting down on manual updates and ensuring plans are built on accurate, up-to-date availability.',
   },
   {
     heading: 'Map-based gap analysis',
@@ -275,7 +275,7 @@ function InfrastructureSetupSection({ id }: { id: string }) {
 const SCENARIOS_POINTS = [
   {
     heading: 'See assumptions for each technology',
-    body: 'Review and adjust the assumptions applied to each technology (EV, hydrogen, LNG) — from efficiency and range to availability and lifecycle. Transparency in assumptions keeps scenario comparisons fair and defensible.',
+    body: 'Review and adjust the assumptions applied to each technology (EV, hydrogen, LNG), from efficiency and range to availability and lifecycle. Transparent assumptions keep scenario comparisons fair and defensible.',
   },
   {
     heading: 'Vehicle details that will be simulated',
@@ -301,7 +301,7 @@ function ScenariosSection({ id }: { id: string }) {
         </h2>
         <p className="text-slate-500 mb-8">
           Once routes and infrastructure are in place, operators can build and compare transition
-          scenarios — defining assumptions, costs and vehicle details to see emissions and cost
+          scenarios, defining assumptions, costs and vehicle details to see emissions and cost
           impact before committing.
         </p>
       </motion.div>
@@ -372,7 +372,7 @@ function ScenariosSection({ id }: { id: string }) {
 const RESULTS_POINTS = [
   {
     heading: 'Scenario comparison at a glance',
-    body: 'See how each transition scenario stacks up — emissions, total cost of ownership and operational risk in one place so you can quickly compare options and choose the right path.',
+    body: 'See how each transition scenario stacks up: emissions, total cost of ownership and operational risk in one place so you can quickly compare options and choose the right path.',
   },
   {
     heading: 'Cost and emissions over time',
@@ -380,7 +380,7 @@ const RESULTS_POINTS = [
   },
   {
     heading: 'Depot and cohort breakdowns',
-    body: 'Drill into results by depot or vehicle cohort. Understand where benefits are strongest and where constraints remain — so decisions are grounded in detail, not just top-level numbers.',
+    body: 'Drill into results by depot or vehicle cohort. Understand where benefits are strongest and where constraints remain, so decisions are grounded in detail rather than just top-level numbers.',
   },
   {
     heading: 'Stakeholder-ready summaries',
@@ -397,7 +397,7 @@ function ResultsSection({ id }: { id: string }) {
           Results
         </h2>
         <p className="text-slate-500 mb-8">
-          After running scenarios, operators see side-by-side results — cost, emissions and risk —
+          After running scenarios, operators see side-by-side results covering cost, emissions and risk,
           with the option to drill down by depot or cohort and share summary views with stakeholders.
         </p>
       </motion.div>
@@ -524,7 +524,7 @@ export default function EcoFleetContent() {
                   transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="text-base md:text-lg text-slate-500 leading-relaxed mb-10 max-w-lg"
                 >
-                  A decision-support tool helping commercial fleets decarbonise with confidence —
+                  A decision-support tool helping commercial fleets decarbonise with confidence,
                   designed and prototyped in React and Next.js using AI-assisted development.
                 </motion.p>
 
@@ -607,7 +607,7 @@ export default function EcoFleetContent() {
                 <p>
                   Commercial fleets know they must decarbonise, but the path to get there is rarely
                   straightforward. Operators are balancing vehicle performance, depot constraints,
-                  driver needs and whole-life costs — all while regulations and technologies continue
+                  driver needs and whole-life costs, all while regulations and technologies continue
                   to evolve.
                 </p>
                 <p>
@@ -619,14 +619,13 @@ export default function EcoFleetContent() {
                 </p>
                 <p>
                   Instead of stopping at static mockups, I used AI-assisted prototyping to build a
-                  working product prototype directly in the team&apos;s existing tech stack — React
+                  working product prototype directly in the team&apos;s existing tech stack, React
                   and Next.js. Using Cursor, I translated design intent into functional components,
-                  allowing stakeholders to interact with real flows, real states and real data
+                  so stakeholders could interact with real flows, real states and real data
                   structures rather than conceptual screens.
                 </p>
                 <p>
-                  This approach fundamentally changed how the product was discussed, validated and
-                  iterated.
+                  This changed how the product was discussed, tested and refined.
                 </p>
               </motion.div>
 
@@ -671,8 +670,8 @@ export default function EcoFleetContent() {
                 I built it directly in the production stack.
               </p>
               <p className="relative mt-5 text-slate-500 z-10 max-w-md mx-auto leading-relaxed">
-                Using Cursor to generate functional React components — blurring the boundary between
-                design and engineering.
+                Using Cursor to generate functional React components, working directly in the
+                production stack rather than handing over a static design.
               </p>
             </motion.div>
 
@@ -731,8 +730,8 @@ export default function EcoFleetContent() {
               </div>
 
               <motion.p {...rv(0.12)} className="text-slate-600 leading-relaxed mb-6">
-                This blurred the traditional boundary between design and engineering — accelerating
-                alignment and reducing ambiguity before development began.
+                This shortened the feedback loop between design and engineering, and meant far less
+                guesswork before development actually started.
               </motion.p>
 
              
@@ -841,7 +840,7 @@ export default function EcoFleetContent() {
                 <p>
                   One of EcoFleet&apos;s biggest challenges was turning modelling complexity into
                   executive-ready narratives. Because the prototype was fully interactive, summary
-                  dashboards weren&apos;t just static exports — they were dynamic scenario views.
+                  dashboards weren&apos;t just static exports; they were live scenario views you could actually interact with.
                 </p>
               </motion.div>
 
@@ -912,7 +911,7 @@ export default function EcoFleetContent() {
                   Impact
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  Using AI-assisted prototyping changed the trajectory of the project.
+                  Building a working prototype rather than handing over mockups made a real difference.
                 </p>
               </motion.div>
 
@@ -957,13 +956,14 @@ export default function EcoFleetContent() {
                 <p>
                   EcoFleet helps turn decarbonisation from an abstract ambition into a structured,
                   data-informed roadmap. By grounding decisions in actual fleet behaviour and making
-                  trade-offs visible, it gives operators confidence to take the next step — whether
+                  trade-offs visible,                   it gives operators confidence to take the next step, whether that means
                   piloting a small electric cohort or planning a multi-year transition across depots.
                 </p>
                 <p>
-                  For me, this project represents more than a sustainability tool. It demonstrates
-                  how AI can extend the role of a product designer — enabling the creation of
-                  functional, stack-aligned prototypes that bridge strategy, design and engineering.
+                  For me, this project represents more than a sustainability tool. It showed how AI
+                  can expand what a product designer is capable of, making it possible to build
+                  functional prototypes that connect strategy, design and engineering in a way
+                  that static Figma files simply cannot.
                 </p>
               </motion.div>
 

@@ -139,7 +139,7 @@ export default function DesignSystemContent() {
                   transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="text-base md:text-lg text-slate-500 leading-relaxed mb-10 max-w-lg"
                 >
-                  A structured design system built for EcoFleet — giving the team a shared source
+                  A structured design system built for EcoFleet, giving the team a shared source
                   of truth for colour, typography, spacing, components and interaction patterns.
                 </motion.p>
 
@@ -220,14 +220,14 @@ export default function DesignSystemContent() {
 
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
-                  Good design at scale needs more than good taste — it needs a shared language.
+                  Good design at scale needs more than good taste. It needs a shared language.
                   While working on EcoFleet, I recognised early on that without consistent
                   foundations, every new screen would introduce its own micro-decisions: slightly
                   different spacing, a new shade of blue, another way to show an alert. That
                   inconsistency compounds fast.
                 </p>
                 <p>
-                  To address this, I built a design system for the EcoFleet project — a single
+                  To address this, I built a design system for the EcoFleet project: a single
                   source of truth that brought visual coherence, reduced repetitive decision-making
                   and gave the team a shared toolkit to build from.
                 </p>
@@ -235,9 +235,9 @@ export default function DesignSystemContent() {
                   The system covers every layer of the interface.
                 </p>
                 <p>
-                  From the base tokens — colour, typography and spacing — through to fully
-                  assembled components, chart patterns and feedback states. Each piece was designed
-                  to work independently and compose cleanly with everything else.
+                  From the base tokens (colour, typography and spacing) through to fully assembled
+                  components, chart patterns and feedback states. Each piece was designed to work
+                  independently and compose cleanly with everything else.
                 </p>
               </motion.div>
 
@@ -265,8 +265,8 @@ export default function DesignSystemContent() {
                   Built for EcoFleet, but designed to outlast it.
                 </p>
                 <p className="relative mt-5 text-slate-500 z-10 max-w-md mx-auto leading-relaxed">
-                  A system that gives the team a shared starting point — so every new screen starts
-                  from a place of consistency, not a blank canvas.
+                  A system that gives the team a shared starting point, so every new screen starts
+                  from a place of consistency rather than a blank canvas.
                 </p>
               </motion.div>
 
@@ -293,8 +293,8 @@ export default function DesignSystemContent() {
                   Colour &amp; Typography
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  The visual foundation of the system — every decision made with legibility,
-                  accessibility and brand coherence in mind.
+                  The visual foundation of the system, with every decision guided by legibility,
+                  accessibility and brand coherence.
                 </p>
               </motion.div>
 
@@ -310,7 +310,7 @@ export default function DesignSystemContent() {
                   <BulletList
                     items={[
                       'A structured palette with primary, secondary and semantic tokens',
-                      'Semantic colours for status — success, warning, error and neutral',
+                      'Semantic colours for status: success, warning, error and neutral',
                       'Sufficient contrast ratios across all text and interactive elements',
                       'Consistent use of teal as the brand-primary action colour',
                     ]}
@@ -368,9 +368,9 @@ export default function DesignSystemContent() {
 
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
-                  The spacing system follows a base-4 scale, giving every element — from padding
-                  inside a button to the gap between sections — a home within a defined set of
-                  values. This means layout decisions never have to be arbitrary.
+                  The spacing system follows a base-4 scale, giving every element (from padding
+                  inside a button to the gap between sections) a home within a defined set of
+                  values. Layout decisions never have to be arbitrary.
                 </p>
                 <p>
                   Applying the same scale throughout the interface creates a visual rhythm that
@@ -402,7 +402,7 @@ export default function DesignSystemContent() {
                   Components
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  Reusable, composable building blocks — each designed to handle a specific job
+                  Reusable, composable building blocks, each designed to handle a specific job
                   clearly and hand off cleanly to engineering.
                 </p>
               </motion.div>
@@ -411,7 +411,7 @@ export default function DesignSystemContent() {
                 <p>
                   Every component in the library was designed with both use and reuse in mind.
                   Rather than designing one-off solutions for each screen, I worked from a library
-                  of defined building blocks — buttons, inputs, cards, tables, modals — each with
+                  of defined building blocks: buttons, inputs, cards, tables and modals, each with
                   documented states, variants and interaction behaviour.
                 </p>
                 <p>
@@ -445,7 +445,7 @@ export default function DesignSystemContent() {
                   Data Visualisation
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  EcoFleet is a data-intensive product. Charts and graphs are not decorative —
+                  EcoFleet is a data-intensive product. Charts and graphs are not decorative;
                   they are the primary way users understand their fleet and make decisions.
                 </p>
               </motion.div>
@@ -453,12 +453,12 @@ export default function DesignSystemContent() {
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
                   Getting data visualisation right required more than picking chart types. It meant
-                  defining a consistent visual grammar — how colour encodes meaning, how axes are
+                  defining a consistent visual grammar: how colour encodes meaning, how axes are
                   labelled, when to use a bar versus a line, and how to present uncertainty.
                 </p>
                 <p>
-                  The chart components were designed to work across all context sizes — from a small
-                  summary card to a full-width comparison view — maintaining readability and
+                  The chart components were designed to work across all context sizes, from a small
+                  summary card to a full-width comparison view, maintaining readability and
                   clarity at every scale.
                 </p>
               </motion.div>
@@ -496,13 +496,13 @@ export default function DesignSystemContent() {
                 <p>
                   In a product where users are configuring scenarios, running simulations and
                   reviewing results, feedback states are critical. A failed validation, a successful
-                  submission, a loading state — each one is a moment where the interface either
-                  reassures or unsettles the user.
+                  submission, a loading state. Each of these is a moment where the interface
+                  either reassures or unsettles the user.
                 </p>
                 <p>
                   The alert and feedback system uses semantic colour consistently: green for success,
                   amber for warnings, red for errors, and neutral tones for information. Alerts are
-                  designed to be immediately legible without relying on colour alone — icons and
+                  designed to be immediately legible without relying on colour alone. Icons and
                   language carry equal weight.
                 </p>
               </motion.div>
@@ -518,10 +518,10 @@ export default function DesignSystemContent() {
                   </div>
                   <BulletList
                     items={[
-                      'Success — confirming an action was completed',
-                      'Warning — flagging something worth attention',
-                      'Error — blocking issue requiring user action',
-                      'Info — contextual guidance without urgency',
+                      'Success: an action was completed',
+                      'Warning: something worth checking',
+                      'Error: a blocking issue that needs attention',
+                      'Info: contextual guidance, no urgency',
                     ]}
                   />
                 </motion.div>
@@ -537,7 +537,7 @@ export default function DesignSystemContent() {
                   <BulletList
                     items={[
                       'Colour reinforces meaning but never carries it alone',
-                      'Copy is direct — users know exactly what happened and what to do',
+                      'Copy is direct. Users know exactly what happened and what to do',
                       'Inline and toast patterns for different interruption levels',
                       'Consistent placement so users always know where to look',
                     ]}
@@ -569,7 +569,7 @@ export default function DesignSystemContent() {
                   Impact
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  A design system is an investment that pays out over time — in consistency,
+                  A design system is an investment that pays out over time: consistency,
                   speed and trust between design and engineering.
                 </p>
               </motion.div>
@@ -582,7 +582,7 @@ export default function DesignSystemContent() {
                   },
                   {
                     title: 'Consistent user experience',
-                    desc: 'Every screen in EcoFleet speaks the same visual language — reducing cognitive load and building user familiarity over time.',
+                    desc: 'Every screen in EcoFleet speaks the same visual language, which reduces cognitive load and builds user familiarity over time.',
                   },
                   {
                     title: 'Clearer design handoff',
@@ -617,15 +617,15 @@ export default function DesignSystemContent() {
 
               <motion.div {...rv(0.1)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Design systems are often seen as a luxury — something teams build when they have
+                  Design systems are often treated as a luxury, something you build when there is
                   time. The reality is the opposite. The earlier you invest in shared foundations,
-                  the more time you save as the product grows. Every inconsistency that gets caught
-                  at the system level is one that never makes it into the product.
+                  the more time you save as the product grows. Every inconsistency caught at the
+                  system level is one that never makes it into the product.
                 </p>
                 <p>
-                  For EcoFleet, the design system was not a separate project — it was the
+                  For EcoFleet, the design system was not a separate project. It was the
                   scaffolding that made the product possible to build well. It is the kind of
-                  work that does not always get seen, but is felt in every screen.
+                  work that does not always get seen, but you feel it in every screen.
                 </p>
               </motion.div>
             </section>

@@ -59,7 +59,7 @@ export const projects: Project[] = [
     title: 'Telematics Analysis',
     category: 'Telematics data · Duty cycles',
     description:
-      'Redesign of a telematics analysis workflow that turns raw journeys into clear, quality-checked duty cycles.',
+      'Redesigning a telematics analysis workflow so raw journeys become clear, quality-checked duty cycles that teams can actually act on.',
     image: asset('/newTelematicsResults/tele.svg'),
     company: 'Dynamon',
     role: 'UX/UI Designer',
@@ -101,7 +101,7 @@ export const projects: Project[] = [
     title: 'Portfolio Site',
     category: 'Design & Development',
     description:
-      'Designed and built from scratch — a personal portfolio that balances clean visual design, thoughtful UX and modern front-end engineering.',
+      'Designed and built from scratch. A personal portfolio that balances clean visual design, thoughtful UX and modern front-end engineering.',
     image: asset('/Portfolio.png'),
     role: 'Designer & Developer',
     active: true,
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     title: 'EcoFleet Design System',
     category: 'Design Systems · Component Library',
     description:
-      'A shared visual and interaction language built for EcoFleet — covering colour, typography, spacing, components, data visualisation and feedback patterns.',
+      'A shared visual and interaction language built for EcoFleet, covering colour, typography, spacing, components, data visualisation and feedback patterns.',
     image: asset('/DesignSystem/Components1.png'),
     video: asset('/DesignSystem/DesignSystem.mp4'),
     company: 'Dynamon',
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     title: 'Synthetics',
     category: 'Synthetic Telematics · Fleet Scheduling',
     description:
-      'Redesigning the scheduling interface from a hierarchical table into a calendar-based system for managing 100+ vehicles and generating telematics simulations.',
+      'Redesigning the scheduling interface from a hierarchical table into a calendar-based system for managing 100+ vehicles and running telematics simulations.',
     image: asset('/synthetics/synth.svg'),
     company: 'Dynamon',
     role: 'UX/UI Designer',

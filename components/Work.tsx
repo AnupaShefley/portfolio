@@ -293,7 +293,7 @@ export default function Work() {
                 variants={headerTextItem}
                 className="text-sm text-white/60 mb-4"
               >
-                Designed, prototyped, and shipped — with AI at every stage.
+                Designed, prototyped and shipped. AI helped at every stage.
               </motion.p>
               <motion.div variants={headerTextItem}>
                 <a

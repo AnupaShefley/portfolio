@@ -473,7 +473,7 @@ export default function SyntheticsContent() {
                   </p>
                   <p>
                     The calendar grid replaces fragmented form views with a single, scannable
-                    overview—operators no longer need to click through multiple screens to
+                    overview. Operators no longer need to click through multiple screens to
                     understand fleet coverage.
                   </p>
                 </ImprovementItem>
@@ -530,7 +530,7 @@ export default function SyntheticsContent() {
                   </p>
                   <p>
                     Operators report up to 5× fewer interactions compared to manual
-                    assignment—critical for fleets with repetitive weekly patterns.
+                    assignment, which is a real time-saver for fleets with repetitive weekly patterns.
                   </p>
                 </ImprovementItem>
 
@@ -549,7 +549,7 @@ export default function SyntheticsContent() {
                   }
                 >
                   <p>
-                    Route cards display route name, duration, and timing at a glance—more
+                    Route cards display route name, duration, and timing at a glance. More
                     information visible without overwhelming users. Typography and colour-coding
                     help operators validate schedules visually.
                   </p>
@@ -655,15 +655,15 @@ export default function SyntheticsContent() {
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p className="text-slate-800 font-semibold">What I learned</p>
                 <p>
-                  Designing for data-intensive products requires optimising for scalability,
-                  interaction efficiency, and information visibility. Small inefficiencies multiply
-                  dramatically at scale.
+                  Working on data-heavy products taught me that small inefficiencies get much worse
+                  at scale. What feels like a minor friction point for ten vehicles becomes a real
+                  problem at fifty.
                 </p>
                 <p>
-                  This redesign transformed a slow, form-based workflow into a fast, scalable
-                  scheduling system. Aligning the interface with how users think—in time and
-                  patterns—reduced errors and made it possible to manage 50+ vehicles with
-                  confidence.
+                  This redesign turned a slow, form-based workflow into a scheduling system that
+                  actually keeps up with real fleet operations. Aligning the interface with how
+                  users think (in time and patterns) reduced errors and made it practical to manage
+                  50+ vehicles with confidence.
                 </p>
               </motion.div>
             </section>

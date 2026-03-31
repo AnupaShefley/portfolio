@@ -135,7 +135,7 @@ export default function NavbarContent() {
                   className="text-base md:text-lg text-slate-500 leading-relaxed mb-10 max-w-xl"
                 >
                   Redesigning the global navigation bar to improve findability, hierarchy and
-                  consistency—so users always know where they are and where to go next.
+                  consistency, so users always know where they are and where to go next.
                 </motion.p>
 
                 <motion.dl
@@ -233,7 +233,7 @@ export default function NavbarContent() {
               </motion.div>
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  When I joined Dynamon, I began working on ZERO—the company&apos;s core fleet
+                  When I joined Dynamon, I began working on ZERO, the company&apos;s core fleet
                   electrification platform. ZERO helps fleet operators upload operational data, run
                   electrification simulations, and analyse outputs to make informed decisions about
                   transitioning to electric vehicles.
@@ -245,9 +245,9 @@ export default function NavbarContent() {
                   to begin, where they were, and how to move forward.
                 </p>
                 <p>
-                  I led a redesign of the navigation system—transitioning from a horizontal top
-                  navigation to a scalable vertical sidebar, while simultaneously restructuring the
-                  product&apos;s information architecture.
+                  I led a redesign of the navigation system, moving from a horizontal top
+                  navigation to a scalable vertical sidebar, while restructuring the
+                  product&apos;s information architecture at the same time.
                 </p>
               </motion.div>
             </section>
@@ -279,8 +279,8 @@ export default function NavbarContent() {
                     </h3>
                   </div>
                   <p className="text-slate-600 leading-relaxed mb-4 pl-9">
-                    ZERO supports a multi-stage workflow—uploading fleet data, running simulations,
-                    and analysing results—but the navigation did not reflect this progression. Users
+                    ZERO supports a multi-stage workflow (uploading fleet data, running simulations,
+                    and analysing results) but the navigation did not reflect this progression. Users
                     frequently expressed uncertainty about where to begin or what to do next,
                     increasing cognitive load and reducing confidence in the platform.
                   </p>
@@ -369,9 +369,9 @@ export default function NavbarContent() {
                 &ldquo;
               </span>
               <p className="relative text-xl md:text-2xl lg:text-3xl font-serif font-bold text-slate-900 leading-snug z-10">
-                The core issue wasn&apos;t the visual design—
+                The core issue wasn&apos;t the visual design.
                 <br className="hidden sm:block" />
-                it was the information architecture.
+                It was the information architecture.
               </p>
               <p className="relative mt-5 text-slate-600 z-10 max-w-md mx-auto leading-relaxed">
                 The navigation needed to reflect the user&apos;s workflow, not the system&apos;s
@@ -396,7 +396,7 @@ export default function NavbarContent() {
                 </p>
                 <p>
                   Instead of forcing content into limited horizontal space, we could expose
-                  meaningful categories and logical groupings—improving discoverability and reducing
+                  meaningful categories and logical groupings, improving discoverability and reducing
                   reliance on deep navigation layers.
                 </p>
               </motion.div>
@@ -470,7 +470,7 @@ export default function NavbarContent() {
                     ]}
                   />
                   <p className="text-slate-600 leading-relaxed mt-3 mb-4">
-                    The navigation did not reflect this progression—this mismatch was the root of
+                    The navigation did not reflect this progression. This mismatch was the root of
                     the friction.
                   </p>
                   <MediaWrap>
@@ -526,21 +526,21 @@ export default function NavbarContent() {
                     badgeClass: 'bg-red-50 ring-red-200 text-red-500',
                     dotClass: 'bg-red-400',
                     title: 'Data setup and inputs',
-                    desc: 'Upload, validate and prepare fleet data—vehicle lists, duty cycles, depots and energy tariffs. One clear starting point so users know exactly where to begin.',
+                    desc: 'Upload, validate and prepare fleet data: vehicle lists, duty cycles, depots and energy tariffs. One clear starting point so users know exactly where to begin.',
                   },
                   {
                     step: '02',
                     badgeClass: 'bg-amber-50 ring-amber-200 text-amber-600',
                     dotClass: 'bg-amber-400',
                     title: 'Simulation and modelling',
-                    desc: 'Run electrification scenarios and models. Configuration, scenario selection and parameters in one place—a logical next step from data input to analysis.',
+                    desc: 'Run electrification scenarios and models. Configuration, scenario selection and parameters in one place, as a logical next step from data input to analysis.',
                   },
                   {
                     step: '03',
                     badgeClass: 'bg-emerald-50 ring-emerald-200 text-emerald-600',
                     dotClass: 'bg-emerald-500',
                     title: 'Results and analysis',
-                    desc: 'Interpret outputs and make decisions. Dashboards, reports, comparisons and exports in a dedicated area—data to decision in a single coherent flow.',
+                    desc: 'Interpret outputs and make decisions. Dashboards, reports, comparisons and exports in a dedicated area, taking you from data to decision in one coherent flow.',
                   },
                 ].map((card, i) => (
                   <motion.article
@@ -591,7 +591,7 @@ export default function NavbarContent() {
                   {
                     num: '3',
                     title: 'Active State Highlighting',
-                    desc: 'Strong active states were introduced—a clear visual anchor so users always know exactly where they are within the platform.',
+                    desc: 'Strong active states were introduced as a clear visual anchor, so users always know exactly where they are within the platform.',
                   },
                   {
                     num: '4',
@@ -633,7 +633,7 @@ export default function NavbarContent() {
                   Outcome and Impact
                 </h2>
                 <p className="text-slate-600 leading-relaxed mb-8">
-                  The redesign significantly improved usability and scalability across the product.
+                  The redesign made the product easier to use and gave it room to grow.
                 </p>
               </motion.div>
 
@@ -685,14 +685,14 @@ export default function NavbarContent() {
               </motion.div>
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Treating the navbar as a product in its own right—with clear goals, user flows and
-                  success criteria—helped move the conversation from &quot;where do we put this
+                  Treating the navbar as a product in its own right, with clear goals, user flows
+                  and success criteria, helped move the conversation from &quot;where do we put this
                   link?&quot; to &quot;how do we help users get where they need to go?&quot;
                   Constraining the number of primary items and defining a single CTA forced
                   prioritisation that benefited both usability and business objectives.
                 </p>
                 <p>
-                  The same discipline—clear hierarchy, constrained choices, one primary CTA—can be
+                  The same discipline (clear hierarchy, constrained choices, one primary CTA) can be
                   applied to other global UI elements so the whole experience stays coherent as the
                   product grows.
                 </p>

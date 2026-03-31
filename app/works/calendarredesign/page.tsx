@@ -224,7 +224,7 @@ export default function CalendarRedesignPage() {
               <p className="text-slate-600 leading-relaxed mb-6 text-base">
                 Research was conducted amongst individuals on the usability of various calendar
                 applications available in the market. The research was carried out primarily amongst
-                two categories of individuals — remote workers and parents/students.
+                two categories: remote workers and parents/students.
               </p>
               <AnimatedDiv delay={0.1}>
                 <div className="max-w-3xl mx-auto mb-6">
@@ -243,8 +243,8 @@ export default function CalendarRedesignPage() {
                 need for current calendars or meeting apps to <strong>keep track of online
                 meetings</strong>. Often when working from home, they can easily lose track of time
                 and fail to log in to a meeting. When they do get notified of the meeting,{' '}
-                <strong>multiple steps</strong> were needed to actually join the meeting — most of
-                them being able to join the meeting but a handful being missed out.
+                <strong>multiple steps</strong> were needed to actually join the meeting, with most
+                making it in but a handful being missed out.
               </p>
               <p className="text-slate-600 leading-relaxed text-base">
                 Parents and students had a common concern where they thought that home schooling was
@@ -363,7 +363,7 @@ export default function CalendarRedesignPage() {
               <p className="text-slate-600 leading-relaxed mb-8 text-base">
                 A prototype is the simulation or sample version of a final product which can be used
                 to test and generate user feedback. Prototypes are usually categorised into three
-                different categories — low, medium and hi fidelity prototypes.
+                different categories: low, medium and hi fidelity prototypes.
               </p>
 
               <div className="space-y-14">

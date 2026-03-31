@@ -157,7 +157,7 @@ export default function HighburyPrimaryPage() {
               <p className="text-slate-600 leading-relaxed mb-4">
                 In order to redesign the existing website, first I needed to find insight on users&apos;
                 behaviours, attitudes and expectations. I started my research by focusing on Highbury
-                school&apos;s key demographic — parents.
+                school&apos;s key demographic: parents.
               </p>
               <p className="text-slate-600 leading-relaxed mb-6">
                 Based on initial analysis, the two primary goals of a school site can be outlined as:
@@ -411,7 +411,7 @@ export default function HighburyPrimaryPage() {
               </p>
               <div className="space-y-2.5">
                 {[
-                  'Aged between 25 and 50 (as per statistics of average age of first-time parents in UK — Office for National Statistics)',
+                  'Aged between 25 and 50 (based on Office for National Statistics data on the average age of first-time parents in the UK)',
                   'Have kids in school aged between 4 and 12 years old, or',
                   'Planning to send kids to school in next academic year',
                 ].map((item, i) => (
@@ -533,7 +533,7 @@ export default function HighburyPrimaryPage() {
               </p>
               <ul className="space-y-2 mb-8">
                 {[
-                  'The categories on the top of the page were reduced to the most important ones — About Us and Parent Information. This would stop the initial confusion on which route needs to be taken to view relevant information.',
+                  'The categories on the top of the page were reduced to the most important ones: About Us and Parent Information. This stops the initial confusion about which route to take to find relevant information.',
                   'An upcoming events section was also added so that parents can check the site at a quick glance to know what events are occurring each week in school.',
                   'Term Dates and Lunch Menu were also added as quick links as these were found to be the two most searched pieces of information on the website.',
                 ].map((item, i) => (

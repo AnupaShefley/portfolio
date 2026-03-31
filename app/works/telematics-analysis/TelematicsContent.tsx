@@ -117,8 +117,8 @@ export default function TelematicsContent() {
                   transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
                   className="text-base md:text-lg text-slate-500 leading-relaxed mb-10 max-w-lg"
                 >
-                  Redesigning a telematics duty-cycle analysis workflow — turning obscure parameters
-                  and raw results into clear, quality-checked outputs that fleet teams can act on.
+                  Redesigning a telematics duty-cycle analysis workflow. Obscure parameters and raw
+                  results became clear, quality-checked outputs that fleet teams can actually act on.
                 </motion.p>
 
                 <motion.dl
@@ -199,9 +199,9 @@ export default function TelematicsContent() {
               </motion.div>
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Commercial fleets often collect large volumes of telematics data — distance
-                  travelled, speeds, stops and dwell time — but struggle to turn that into clear duty
-                  cycles they can reason about.
+                  Commercial fleets often collect large volumes of telematics data: distance
+                  travelled, speeds, stops and dwell time. But turning that into clear duty
+                  cycles they can actually reason about is rarely straightforward.
                 </p>
                 <p>
                   Our original internal tool accepted a dense set of parameters, ran a batch
@@ -300,9 +300,9 @@ export default function TelematicsContent() {
                 &ldquo;
               </span>
               <p className="relative text-xl md:text-2xl lg:text-3xl font-serif font-bold text-slate-900 leading-snug z-10">
-                The problem wasn&apos;t the analysis —
+                The problem wasn&apos;t the analysis.
                 <br className="hidden sm:block" />
-                it was the lack of explanation.
+                It was the lack of explanation.
               </p>
               <p className="relative mt-5 text-slate-500 z-10 max-w-md mx-auto leading-relaxed">
                 Teams needed to see the story behind each duty cycle, not just a binary pass or fail.
@@ -324,7 +324,7 @@ export default function TelematicsContent() {
 
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
-                  Each section — journey structure, stop detection and analysis horizon — is written
+                  Each section (journey structure, stop detection and analysis horizon) is written
                   in language that makes sense to the person filling it in. Removing the
                   undifferentiated list of fields made the form feel approachable and reduced the
                   chance of accidental misconfiguration.
@@ -381,12 +381,12 @@ export default function TelematicsContent() {
                 <p>
                   Most users had no idea what numeric values to enter for their specific operation.
                   Leaving every field blank and expecting analysts to know the right numbers created
-                  paralysis — and often led to using whatever values had been used last time, without
+                  paralysis, and often led to using whatever values had been used last time, without
                   understanding why.
                 </p>
                 <p>
                   Four operation presets gave users a structured starting point tailored to their
-                  fleet context — urban delivery, regional logistics, long haul, and mixed
+                  fleet context: urban delivery, regional logistics, long haul, and mixed
                   operations. Rather than facing a blank form, users could select the preset closest
                   to their operation and adjust from there.
                 </p>
@@ -414,14 +414,14 @@ export default function TelematicsContent() {
                 <p>
                   Technical parameter names were replaced with plain questions written from the
                   user&apos;s perspective. Each answer includes helper text explaining exactly what
-                  happens to the data based on that choice — making the consequences of each setting
+                  happens to the data based on that choice, making the consequences of each setting
                   visible before the analysis runs.
                 </p>
                 <p>
                   Instead of guessing what a field like <span className="font-mono text-sm bg-slate-100 px-1.5 py-0.5 rounded">min_stop_duration_s</span> means,
                   users see a question like &ldquo;How long does a vehicle need to be stationary
-                  before it counts as a stop?&rdquo; — with a note on how a shorter threshold
-                  captures more stops but may introduce noise.
+                  before it counts as a stop?&rdquo; Each question includes a short note on how
+                  the setting affects the results, so users know what they are changing.
                 </p>
               </motion.div>
 
@@ -448,8 +448,8 @@ export default function TelematicsContent() {
                   From Raw Results to Interpretable Duty Cycles
                 </h2>
                 <p className="text-slate-500 mb-8">
-                  The heart of the redesign is the results view — duty cycles surfaced as cards with
-                  visual summaries and plain-language quality verdicts.
+                  The heart of the redesign is the results view. Duty cycles are surfaced as cards
+                  with visual summaries and plain-language quality verdicts.
                 </p>
               </motion.div>
 
@@ -461,8 +461,8 @@ export default function TelematicsContent() {
                 </p>
                 <p>
                   Quality rules themselves did not change, but the way they are expressed did. Users
-                  can now see which checks failed — for example, missing weekends or inconsistent
-                  dwell times — and what would need to change before the duty cycle could be trusted.
+                  can now see which checks failed (missing weekends, inconsistent dwell times) and
+                  what would need to change before the duty cycle could be trusted.
                 </p>
               </motion.div>
 
@@ -473,9 +473,9 @@ export default function TelematicsContent() {
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
                   Rather than a single pass or fail flag, failures are now grouped into distinct
-                  categories — such as bad data and threshold failures. This makes it immediately
-                  clear whether a problem is a data quality issue or a configuration issue, and
-                  points analysts to the right next step.
+                  categories: bad data and threshold failures. This makes it immediately clear
+                  whether a problem is a data quality issue or a configuration issue, and points
+                  analysts to the right next step.
                 </p>
                 <MediaWrap>
                   <Image
@@ -520,7 +520,7 @@ export default function TelematicsContent() {
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
                   Selecting any result opens a detailed view for that specific vehicle and duty
-                  cycle — showing the underlying data, quality checks applied and what each check
+                  cycle, showing the underlying data, quality checks applied and what each check
                   found. Teams can drill into exactly why a cycle passed or failed without switching
                   between tools.
                 </p>
@@ -545,7 +545,7 @@ export default function TelematicsContent() {
                 <p className="text-slate-600 leading-relaxed">
                   When a duty cycle fails, the interface surfaces relevant action buttons based on
                   the specific failure reason. Instead of leaving analysts to figure out what to do
-                  next, the system guides them — whether that means adjusting a threshold,
+                  next, the system points them in the right direction: adjusting a threshold,
                   flagging a data issue, or re-running the analysis with different parameters.
                 </p>
                 <MediaWrap>
@@ -579,7 +579,7 @@ export default function TelematicsContent() {
                 {[
                   {
                     title: 'Shared understanding',
-                    desc: 'Fleet and analytics teams now have a common visual language for discussing duty cycles — reducing misalignment between technical and commercial stakeholders.',
+                    desc: 'Fleet and analytics teams now have a shared way to talk about duty cycles, which reduces misalignment between technical and commercial stakeholders.',
                   },
                   {
                     title: 'Safer configuration',
@@ -591,7 +591,7 @@ export default function TelematicsContent() {
                   },
                   {
                     title: 'Better decisions',
-                    desc: "It's now easier to decide when data is good enough to drive decisions — and when more cleaning or collection is required.",
+                    desc: "It's now easier to decide when data is good enough to drive decisions, and when more cleaning or collection is still needed.",
                   },
                 ].map((card, i) => (
                   <motion.article
@@ -610,11 +610,10 @@ export default function TelematicsContent() {
 
               <motion.div {...rv(0.1)} className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Analysts can still fine-tune parameters when needed, but the default experience is
-                  aimed at helping more people understand what the system is doing and why particular
-                  vehicles pass or fail. The workflow now feels less like a black box — the
-                  combination of contextual inputs, visual duty cycles and plain-language quality
-                  explanations makes the whole process more legible.
+                  Analysts can still fine-tune parameters when needed, but the default experience
+                  aims to help more people understand what the system is doing and why particular
+                  vehicles pass or fail. The combination of contextual inputs, visual duty cycles
+                  and plain-language quality explanations makes the whole process much more readable.
                 </p>
               </motion.div>
             </section>

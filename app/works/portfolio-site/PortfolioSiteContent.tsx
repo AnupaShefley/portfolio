@@ -118,7 +118,7 @@ export default function PortfolioSiteContent() {
                   className="text-base md:text-lg text-slate-500 leading-relaxed mb-10 max-w-xl"
                 >
                   The site you&apos;re browsing right now. I designed and developed it from
-                  scratch — a space where design thinking, UX craft and front-end engineering
+                  scratch, a space where design thinking, UX craft and front-end engineering
                   come together.
                 </motion.p>
 
@@ -231,19 +231,19 @@ export default function PortfolioSiteContent() {
                 <p>
                   A portfolio is more than a gallery of screenshots. It&apos;s the first conversation
                   you have with someone before you&apos;ve even met them. I wanted mine to feel
-                  intentional — not templated, not borrowed — something I could stand behind as
+                  intentional. Not templated, not borrowed. Something I could stand behind as
                   a genuine reflection of how I think and work.
                 </p>
                 <p>
                   Most portfolio templates optimise for speed-to-publish. That&apos;s useful, but
                   it comes at a cost: the design language, the hierarchy, the micro-interactions
-                  — they all belong to someone else. By building from scratch, every decision
-                  became mine to own — from the type scale down to how a card tilts on hover.
+                  they all belong to someone else. By building from scratch, every decision
+                  became mine to own, from the type scale down to how a card tilts on hover.
                 </p>
                 <p>
                   This wasn&apos;t about proving I could code. It was about creating a space
                   where design sensibility, attention to detail and technical fluency could
-                  coexist naturally — the way they do in my day-to-day work.
+                  coexist naturally, the way they do in my day-to-day work.
                 </p>
               </motion.div>
             </section>
@@ -266,17 +266,17 @@ export default function PortfolioSiteContent() {
                   {
                     step: '01',
                     title: 'Substance over spectacle',
-                    desc: 'Every visual choice should serve comprehension. Generous whitespace, a restrained palette and clear typographic hierarchy keep the focus on the work — not the wrapper.',
+                    desc: 'Every visual choice should serve comprehension. Generous whitespace, a restrained palette and clear typographic hierarchy keep the focus on the work, not the wrapper.',
                   },
                   {
                     step: '02',
                     title: 'Warmth and clarity',
-                    desc: 'Portfolios can feel cold and transactional. I wanted this one to feel human — approachable serif headings, a muted teal palette that feels calm rather than corporate, and writing that sounds like me.',
+                    desc: 'Portfolios can feel cold and transactional. I wanted this one to feel human: approachable serif headings, a muted teal palette that feels calm rather than corporate, and writing that actually sounds like me.',
                   },
                   {
                     step: '03',
                     title: 'Show the thinking',
-                    desc: 'Each case study walks through the real process — the messy research, the trade-offs, the iterations — because good design is rarely a straight line.',
+                    desc: 'Each case study walks through the real process: the messy research, the trade-offs, the iterations. Good design is rarely a straight line.',
                   },
                 ].map((card, i) => (
                   <motion.article
@@ -322,9 +322,9 @@ export default function PortfolioSiteContent() {
                 &ldquo;
               </span>
               <p className="relative text-xl md:text-2xl lg:text-3xl font-serif font-bold text-slate-900 leading-snug z-10">
-                The best portfolio doesn&apos;t just show what you made —
+                The best portfolio doesn&apos;t just show what you made.
                 <br className="hidden sm:block" />
-                it shows how you think.
+                It shows how you think.
               </p>
               <p className="relative mt-5 text-slate-600 z-10 max-w-md mx-auto leading-relaxed">
                 Every layout choice, every transition, every word here is a design decision
@@ -348,8 +348,8 @@ export default function PortfolioSiteContent() {
                 </p>
                 <p>
                   The landing page opens with a concise introduction, moves into the work
-                  section, then closes with a contact form. Each case study follows a
-                  consistent internal structure — context, challenge, process, outcome — so
+                  section, then closes with a contact form.                   Each case study follows a
+                  consistent internal structure (context, challenge, process, outcome) so
                   visitors always know where they are and what comes next.
                 </p>
               </motion.div>
@@ -357,10 +357,10 @@ export default function PortfolioSiteContent() {
               <motion.div {...rv(0.1)}>
                 <div className="grid gap-3 md:grid-cols-4">
                   {[
-                    { label: 'Hero', desc: 'Who I am and what I do — in under five seconds' },
+                    { label: 'Hero', desc: 'Who I am and what I do, communicated in under five seconds' },
                     { label: 'Work', desc: 'Curated projects with visual hierarchy and filtering' },
                     { label: 'Case studies', desc: 'Structured narratives with a sticky table of contents' },
-                    { label: 'Contact', desc: 'Low-friction form — no barriers, no dead ends' },
+                    { label: 'Contact', desc: 'Low-friction form with no barriers and no dead ends' },
                   ].map((item, i) => (
                     <div
                       key={item.label}
@@ -398,7 +398,7 @@ export default function PortfolioSiteContent() {
                 <motion.div {...rv(0.05)}>
                   <h3 className="text-base font-semibold text-slate-900 mb-3">Colour palette</h3>
                   <p className="text-slate-600 leading-relaxed mb-5">
-                    The palette centres on a deep, muted teal — calm and professional without
+                    The palette centres on a deep, muted teal, calm and professional without
                     being sterile. Warm slate tones handle body text, while small accents of
                     violet mark AI-assisted work. The restrained range avoids visual noise and
                     lets the project imagery take centre stage.
@@ -432,7 +432,7 @@ export default function PortfolioSiteContent() {
                   <p className="text-slate-600 leading-relaxed mb-4">
                     Headings use a serif typeface to add warmth and editorial character. Body
                     text stays in a clean sans-serif for readability. The pairing creates a
-                    subtle contrast — personal yet polished — that mirrors the tone I wanted
+                    subtle contrast, personal yet polished, that mirrors the tone I wanted
                     for the whole site.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
@@ -454,7 +454,7 @@ export default function PortfolioSiteContent() {
                     Generous whitespace gives content room to breathe. The two-column project
                     grid provides visual rhythm on desktop while collapsing gracefully on
                     mobile. Case study pages use a narrower reading column (max 768 px) with
-                    a sticky sidebar for navigation — an editorial pattern that keeps long
+                    a sticky sidebar for navigation, an editorial pattern that keeps long
                     narratives scannable.
                   </p>
                 </motion.div>
@@ -479,7 +479,7 @@ export default function PortfolioSiteContent() {
                   {
                     num: '1',
                     title: 'Scroll-triggered reveals',
-                    desc: 'Content fades and slides into view as the user scrolls, providing a sense of progression without being distracting. Each section animates once and stays put — no replay loops.',
+                    desc: 'Content fades and slides into view as the user scrolls, giving a sense of progression without being distracting. Each section animates once and stays put, no replay loops.',
                   },
                   {
                     num: '2',
@@ -494,7 +494,7 @@ export default function PortfolioSiteContent() {
                   {
                     num: '4',
                     title: 'Staggered entry animations',
-                    desc: 'In the project grid, cards enter with a staggered delay based on their position — left column first, then right. This creates a natural reading rhythm rather than everything appearing at once.',
+                    desc: 'In the project grid, cards enter with a staggered delay based on their position: left column first, then right. This creates a natural reading rhythm rather than everything appearing at once.',
                   },
                   {
                     num: '5',
@@ -543,11 +543,11 @@ export default function PortfolioSiteContent() {
                 {[
                   {
                     title: 'Next.js with static export',
-                    desc: 'Server components handle metadata and layout. Static export keeps hosting simple and performance instant — no server runtime, just pre-rendered HTML deployed to GitHub Pages.',
+                    desc: 'Server components handle metadata and layout. Static export keeps hosting simple and performance instant: pre-rendered HTML deployed to GitHub Pages with no server runtime.',
                   },
                   {
                     title: 'Tailwind CSS',
-                    desc: 'Utility-first styling keeps the design system small and co-located with the markup. No separate stylesheets to drift out of sync, no naming debates — just visual decisions expressed directly in code.',
+                    desc: 'Utility-first styling keeps the design system small and co-located with the markup. No separate stylesheets to drift out of sync, no naming debates, just visual decisions expressed directly in code.',
                   },
                   {
                     title: 'Framer Motion',
@@ -579,10 +579,10 @@ export default function PortfolioSiteContent() {
                 <h3 className="text-base font-semibold text-slate-900 mb-3">Performance focus</h3>
                 <BulletList
                   items={[
-                    'Dynamic imports for heavy case study pages — code-split per route',
-                    'Optimised images with next/image — responsive sizes and lazy loading',
-                    'Video posters and preload="none" for project cards — no unnecessary bandwidth',
-                    'Minimal JavaScript footprint — animations are CSS-driven where possible',
+                    'Dynamic imports for heavy case study pages (code-split per route)',
+                    'Optimised images with next/image for responsive sizes and lazy loading',
+                    'Video posters and preload="none" for project cards to avoid unnecessary bandwidth',
+                    'Minimal JavaScript footprint, with animations CSS-driven where possible',
                   ]}
                 />
               </motion.div>
@@ -598,15 +598,15 @@ export default function PortfolioSiteContent() {
               </motion.div>
               <motion.div {...rv(0.05)} className="space-y-4 text-slate-600 leading-relaxed mb-8">
                 <p>
-                  I used AI tools throughout the build — not as a shortcut, but as a
-                  collaborator. The distinction matters. AI didn&apos;t make the design
+                  I used AI tools throughout the build, not as a shortcut but as a
+                  collaborator. That distinction matters. AI did not make the design
                   decisions; it helped me execute them faster and explore more variations
                   than I could have alone.
                 </p>
                 <p>
                   Component scaffolding, animation tuning, responsive edge cases, copy
-                  refinement — these are the tasks where AI accelerated my process. The
-                  creative direction, information architecture and UX rationale remained
+                  refinement. These are the tasks where AI accelerated my process. The
+                  creative direction, information architecture and UX rationale were
                   entirely my own.
                 </p>
               </motion.div>
@@ -624,7 +624,7 @@ export default function PortfolioSiteContent() {
                   </p>
                   <p className="font-semibold text-slate-900 text-base md:text-lg leading-snug">
                     AI is a force multiplier for designers who know what they want to build.
-                    It doesn&apos;t replace taste — it frees you up to exercise it more often.
+                    It doesn&apos;t replace taste. It frees you up to exercise it more often.
                   </p>
                 </div>
               </motion.div>
@@ -647,19 +647,19 @@ export default function PortfolioSiteContent() {
                 </p>
                 <p>
                   That freedom made every decision feel consequential. The palette, the motion
-                  timing, the way a case study unfolds — these weren&apos;t handed down from a
-                  brand guide. They&apos;re choices I made and can articulate the reasoning
+                  timing, the way a case study unfolds. None of it was handed down from a
+                  brand guide. They are choices I made and can articulate the reasoning
                   behind each one.
                 </p>
                 <p>
                   The site is intentionally iterative. As I complete new projects, the portfolio
                   grows with me. The component architecture and data-driven project list make
-                  adding a new case study as simple as writing the content — the layout,
+                  adding a new case study as simple as writing the content. The layout,
                   navigation and cross-linking take care of themselves.
                 </p>
                 <p>
                   If this site tells you anything about how I work, I hope it&apos;s this:
-                  I care about the details that most people scroll past — and I believe those
+                  I care about the details that most people scroll past, and I believe those
                   details are exactly what separate good design from great design.
                 </p>
               </motion.div>
