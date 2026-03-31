@@ -39,7 +39,15 @@ export default function PhilosophySection() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-snug mb-5"
           >
-            Twelve years of development.{' '}
+            Twelve years of development. {' '}
+            <motion.h2
+            initial={{ opacity: 0, y: 16, filter: 'blur(6px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-snug mb-5"
+          >
+            Three years of design.{' '}
             <motion.span
               className="text-teal-light"
               initial={{ opacity: 0 }}
@@ -49,6 +57,7 @@ export default function PhilosophySection() {
             >
               Now amplified by AI.
             </motion.span>
+            </motion.h2>
           </motion.h2>
 
           <motion.p
